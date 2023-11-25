@@ -1,6 +1,6 @@
 # Tiny Forests App
 
-This Flutter app is developed as part of the Flutter Development module at CIMDATA Academy. The concept is inspired by the work of the NGO [Miya Tiny Forest](https://www.miya-forest.de/), an organization promoting environmental awareness and sustainable practices through the creation of urban forests using the Miyawaki method[^2^].
+This Flutter app is developed as part of the course ["App-Entwicklung mit Flutter & Dart für Android & iOS"](https://www.cimdata.de/weiterbildung/app-entwicklung-mit-flutter-dart-fuer-android-ios/) of Cimdata with the mentoring of Nico Heller. The concept is inspired by the work of the NGO [Miya Tiny Forest](https://www.miya-forest.de/), an organization promoting environmental awareness and sustainable practices through the creation of urban forests using the Miyawaki method[^2^].
 
 ## Features
 
