@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
@@ -26,7 +28,6 @@ class _ForestMapsState extends State<ForestMaps> {
                 urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                 userAgentPackageName: 'com.example.app',
               ),
-              //// TODO how to change stupid logo https://docs.fleaflet.dev/layers/marker-layer
               MarkerLayer(
                 markers: [
                   Marker(
@@ -34,9 +35,9 @@ class _ForestMapsState extends State<ForestMaps> {
                     width: 80,
                     height: 80,
                     child: Image.asset(
-                      'images/trees/Default.png',
-                      width: 15,
-                      height: 15,
+                      './images/trees/Default.png',
+                      width: 10,
+                      height: 10,
                       color: Color.fromARGB(255, 47, 136, 50),
                     ),
                   ),
