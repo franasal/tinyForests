@@ -1,14 +1,18 @@
 // Klasse für Filme, damit wir neben dem Pfad das Erscheinungsjahr angeben / abrufen können
+import 'package:tinyforests/datamodels/trees_data.dart';
+import 'package:tinyforests/utils/utils.dart';
+
 class TinyForest {
   final String forestName;
   final String image;
   final int yearPlanted;
   final int totalTrees;
   final int numberPlantedSpecies;
+  final Map<String, PlantData> listPlanted;
   final int forestSize;
 
   TinyForest(this.forestName, this.image, this.yearPlanted, this.totalTrees,
-      this.numberPlantedSpecies, this.forestSize);
+      this.numberPlantedSpecies, this.listPlanted, this.forestSize);
 }
 
 // Liste mit Tiny Forests, damit wir neben dem Pfad
@@ -20,6 +24,7 @@ List<TinyForest> tForest = [
     2021,
     4526,
     45,
+    getRandomSubset(allTrees, 10),
     1500,
   ),
   TinyForest(
@@ -28,6 +33,7 @@ List<TinyForest> tForest = [
     2021,
     4526,
     45,
+    getRandomSubset(allTrees, 15),
     1500,
   ),
   TinyForest(
@@ -36,6 +42,7 @@ List<TinyForest> tForest = [
     2022,
     4526,
     45,
+    getRandomSubset(allTrees, 6),
     1500,
   ),
 ];

@@ -50,6 +50,7 @@ class _Screen1State extends State<Screen1> {
                             image: tForest[index].image,
                             yearPlanted: tForest[index].yearPlanted,
                             totalTrees: tForest[index].totalTrees,
+                            listPlanted: tForest[index].listPlanted,
                           ),
                         ),
                       );

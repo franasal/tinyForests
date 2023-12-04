@@ -16,23 +16,29 @@ class TreeGridScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Tree Details'),
       ),
-      body: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          crossAxisSpacing: 8.0,
-          mainAxisSpacing: 8.0,
-          childAspectRatio: 0.80,
-        ),
-        itemCount: allTrees.length,
-        itemBuilder: (BuildContext context, int index) {
-          // Convert the map values to a list and get the PlantData instance
-          PlantData plantData = allTrees.values.toList()[index];
-          return TreeItemCard(plantData: plantData);
-        },
-      ),
+      body: plantsGridView(allTrees),
       bottomNavigationBar: bottomNaviBar(context),
     );
   }
+}
+
+GridView plantsGridView(Map<String, PlantData> allTrees) {
+  return GridView.builder(
+    scrollDirection: Axis.vertical,
+    shrinkWrap: true,
+    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      crossAxisCount: 3,
+      crossAxisSpacing: 8.0,
+      mainAxisSpacing: 8.0,
+      childAspectRatio: 0.80,
+    ),
+    itemCount: allTrees.length,
+    itemBuilder: (BuildContext context, int index) {
+      // Convert the map values to a list and get the PlantData instance
+      PlantData plantData = allTrees.values.toList()[index];
+      return TreeItemCard(plantData: plantData);
+    },
+  );
 }
 
 // TODO add info dialogue for the futurewith total of planted trees and some additional information such as link.
