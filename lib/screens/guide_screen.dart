@@ -1,5 +1,6 @@
+// a placeholder screen for future development,
+
 import 'package:flutter/material.dart';
-// import 'package:sizer/sizer.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 
 class ForestGuide extends StatefulWidget {

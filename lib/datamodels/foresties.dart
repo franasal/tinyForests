@@ -1,5 +1,5 @@
-// Klasse für Filme, damit wir neben dem Pfad das Erscheinungsjahr angeben / abrufen können
-import 'package:tinyforests/datamodels/trees_data.dart';
+// class to hold all the forests and their characteristics.
+import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/utils/utils.dart';
 
 class TinyForest {
@@ -15,8 +15,7 @@ class TinyForest {
       this.numberPlantedSpecies, this.listPlanted, this.forestSize);
 }
 
-// Liste mit Tiny Forests, damit wir neben dem Pfad
-// auch das Jahr angeben und abrufen können
+// Lists with the Tiny Forests, with some basic info implements getRandomSubset for adding a subset of the listed trees
 List<TinyForest> tForest = [
   TinyForest(
     "Rozwarowo",
@@ -24,7 +23,7 @@ List<TinyForest> tForest = [
     2021,
     4526,
     45,
-    getRandomSubset(allTrees, 10),
+    getRandomSubset(allPlants, 10),
     1500,
   ),
   TinyForest(
@@ -33,7 +32,7 @@ List<TinyForest> tForest = [
     2021,
     4526,
     45,
-    getRandomSubset(allTrees, 15),
+    getRandomSubset(allPlants, 15),
     1500,
   ),
   TinyForest(
@@ -42,7 +41,7 @@ List<TinyForest> tForest = [
     2022,
     4526,
     45,
-    getRandomSubset(allTrees, 6),
+    getRandomSubset(allPlants, 6),
     1500,
   ),
 ];

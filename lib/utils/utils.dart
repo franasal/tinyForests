@@ -1,6 +1,6 @@
-// a funciton to select randomly some plants for testing
+// a funciton to select randomly some plants from the full allPlants Map for testing in each forest view
 import 'dart:math';
-import 'package:tinyforests/datamodels/trees_data.dart';
+import 'package:tinyforests/datamodels/plants_data.dart';
 
 Map<String, PlantData> getRandomSubset(
     Map<String, PlantData> allPlants, int numberOfItems) {

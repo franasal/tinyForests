@@ -1,29 +1,71 @@
-// tree_gird_view.dart
 import 'package:flutter/material.dart';
-import 'package:tinyforests/datamodels/trees_data.dart';
-import 'package:tinyforests/screens/tree_detail_screen.dart';
+import 'package:tinyforests/datamodels/plants_data.dart';
+import 'package:tinyforests/screens/plant_detail_screen.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 
-class TreeGridScreen extends StatelessWidget {
-  final Map<String, PlantData> allTrees;
+// screen displaying a grid of plants grouped by plant type  after eachother
 
-  TreeGridScreen({Key? key, required this.allTrees}) : super(key: key);
+// each subgrid is displayed with the function plantsGridView
+class TreeGridScreen extends StatelessWidget {
+  final Map<String, PlantData> allPlants;
+
+  TreeGridScreen({Key? key, required this.allPlants}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // groups the allPlants by plant type with the function defined at the botton of this file
+    Map<String, Map<String, PlantData>> groupedTrees =
+        groupTreesByType(allPlants);
+
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        title: const Text('Tree Details'),
+        title: const Text('Plants List'),
       ),
-      body: plantsGridView(allTrees),
-      bottomNavigationBar: bottomNaviBar(context),
+      body: ListView(
+        children: groupedTrees.keys.expand((plantType) {
+          return [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                plantType,
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ),
+            plantsGridView(groupedTrees[plantType]!),
+          ];
+        }).toList(),
+      ),
+      bottomNavigationBar:
+          bottomNaviBar(context), // custom bottom navigation bar
     );
+  }
+
+  // this function does the grouping of allPlants by plant type
+  // before it was just a single grid with all plants but wanted to add some subsections.
+  Map<String, Map<String, PlantData>> groupTreesByType(
+      Map<String, PlantData> allPlants) {
+    Map<String, Map<String, PlantData>> groupedTrees = {};
+// for loop-like function
+    allPlants.forEach((key, plantData) {
+      String plantType = plantData.plantType;
+
+      if (!groupedTrees.containsKey(plantType)) {
+        groupedTrees[plantType] = {};
+      }
+
+      groupedTrees[plantType]![key] = plantData;
+    });
+
+    return groupedTrees;
   }
 }
 
+// function to create a GridView of tree items in each row
 GridView plantsGridView(Map<String, PlantData> allTrees) {
   return GridView.builder(
+    physics:
+        NeverScrollableScrollPhysics(), // Disable GridView scrolling to fix stuck behaviour
     scrollDirection: Axis.vertical,
     shrinkWrap: true,
     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -41,8 +83,7 @@ GridView plantsGridView(Map<String, PlantData> allTrees) {
   );
 }
 
-// TODO add info dialogue for the futurewith total of planted trees and some additional information such as link.
-
+// custom widget for displaying a thumbnail, the common and scientific name of a plant
 class TreeItemCard extends StatelessWidget {
   final PlantData plantData;
 
@@ -52,12 +93,12 @@ class TreeItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        // Navigate to the tree details screen
+        // nvigate to the tree details screen when the card is tapped
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => TreeDetailsScreen(
-                plantName: plantData.scientificName, allTrees: allTrees),
+                plantName: plantData.scientificName, allPlants: allPlants),
           ),
         );
       },
@@ -66,15 +107,13 @@ class TreeItemCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Placeholder for image (you can replace this with an actual image widget)
             Container(
               height: 100.0,
               width: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  // Use a placeholder image if picturePath is null
-                  image: AssetImage(
-                      plantData.pathPicture ?? './images/trees/Default.png'),
+                  // picture from images/trees todo; change folder name to /plants
+                  image: AssetImage(plantData.pathPicture),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -89,7 +128,7 @@ class TreeItemCard extends StatelessWidget {
                     style: const TextStyle(
                         fontSize: 16.0, fontWeight: FontWeight.bold),
                     overflow: TextOverflow.ellipsis,
-                    maxLines: 1, // Adjust the number of lines to show
+                    maxLines: 1, //  the number of lines to show
                   ),
                   Text(
                     plantData.scientificName,

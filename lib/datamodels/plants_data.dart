@@ -1,7 +1,11 @@
+// this is the biggest data file defining the PlantData class and holding a Map of the most common and some rare european trees and bushes,
+// it shall also include herbs and every plant species used in the tiny forest project
+
 class PlantData {
   final String scientificName;
   final String commonName;
-  final String? pathPicture;
+  final String pathPicture;
+  final String plantType;
   final String distribution;
   final double maxSizeMeters;
   final int totalPlanted;
@@ -13,27 +17,28 @@ class PlantData {
   final String conservationStatus;
   final String interestingFact;
 
-  PlantData({
-    required this.scientificName,
-    required this.commonName,
-    required this.distribution,
-    required this.maxSizeMeters,
-    required this.totalPlanted,
-    required this.lifeExpectancyYears,
-    required this.frequency,
-    required this.habitat,
-    required this.leafType,
-    required this.floweringSeason,
-    required this.conservationStatus,
-    required this.interestingFact,
-    required this.pathPicture,
-  });
+  PlantData(
+      {required this.scientificName,
+      required this.commonName,
+      required this.distribution,
+      required this.maxSizeMeters,
+      required this.totalPlanted,
+      required this.lifeExpectancyYears,
+      required this.frequency,
+      required this.habitat,
+      required this.leafType,
+      required this.floweringSeason,
+      required this.conservationStatus,
+      required this.interestingFact,
+      required this.pathPicture,
+      required this.plantType});
 }
 
-Map<String, PlantData> allTrees = {
+Map<String, PlantData> allPlants = {
   "Quercus spp.": PlantData(
     scientificName: "Quercus spp.",
     pathPicture: "./images/trees/Eiche.png",
+    plantType: "Trees",
     commonName: "Oak",
     distribution: "Europe",
     totalPlanted: 0,
@@ -50,6 +55,7 @@ Map<String, PlantData> allTrees = {
   "Pinus sylvestris": PlantData(
     scientificName: "Pinus sylvestris",
     pathPicture: "./images/trees/Fichte.png",
+    plantType: "Trees",
     commonName: "Scots Pine",
     distribution: "Europe, Asia",
     totalPlanted: 0,
@@ -66,6 +72,7 @@ Map<String, PlantData> allTrees = {
   "Fagus sylvatica": PlantData(
     scientificName: "Fagus sylvatica",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "European Beech",
     distribution: "Europe",
     totalPlanted: 0,
@@ -82,6 +89,7 @@ Map<String, PlantData> allTrees = {
   "Betula pendula": PlantData(
     scientificName: "Betula pendula",
     pathPicture: "./images/trees/Birken.png",
+    plantType: "Trees",
     commonName: "Silver Birch",
     distribution: "Europe, Asia",
     totalPlanted: 0,
@@ -98,6 +106,7 @@ Map<String, PlantData> allTrees = {
   "Fraxinus excelsior": PlantData(
     scientificName: "Fraxinus excelsior",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "Common Ash",
     distribution: "Europe, Asia",
     totalPlanted: 0,
@@ -114,6 +123,7 @@ Map<String, PlantData> allTrees = {
   "Carpinus betulus": PlantData(
     scientificName: "Carpinus betulus",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "European Hornbeam",
     distribution: "Europe, Asia",
     totalPlanted: 0,
@@ -130,6 +140,7 @@ Map<String, PlantData> allTrees = {
   "Picea abies": PlantData(
     scientificName: "Picea abies",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "Norway Spruce",
     distribution: "Europe",
     totalPlanted: 0,
@@ -145,6 +156,7 @@ Map<String, PlantData> allTrees = {
   "Ilex aquifolium": PlantData(
     scientificName: "Ilex aquifolium",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "European Holly",
     distribution: "Europe, Asia",
     totalPlanted: 0,
@@ -161,6 +173,7 @@ Map<String, PlantData> allTrees = {
   "Juglans regia": PlantData(
     scientificName: "Juglans regia",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "Common Walnut",
     distribution: "Europe, Asia",
     totalPlanted: 0,
@@ -176,6 +189,7 @@ Map<String, PlantData> allTrees = {
   "Taxus baccata": PlantData(
     scientificName: "Taxus baccata",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "European Yew",
     distribution: "Europe, Asia",
     totalPlanted: 0,
@@ -192,6 +206,7 @@ Map<String, PlantData> allTrees = {
   "Pinus peuce": PlantData(
     scientificName: "Pinus peuce",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "Macedonian Pine",
     distribution: "Balkans",
     totalPlanted: 0,
@@ -208,6 +223,7 @@ Map<String, PlantData> allTrees = {
   "Sorbus arranensis": PlantData(
     scientificName: "Sorbus arranensis",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "Arran Whitebeam",
     distribution: "Isle of Arran, Scotland",
     totalPlanted: 0,
@@ -224,6 +240,7 @@ Map<String, PlantData> allTrees = {
   "Picea omorika": PlantData(
     scientificName: "Picea omorika",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "Serbian Spruce",
     distribution: "Balkans",
     totalPlanted: 0,
@@ -240,6 +257,7 @@ Map<String, PlantData> allTrees = {
   "Quercus faginea": PlantData(
     scientificName: "Quercus faginea",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "Lusitanian Oak",
     distribution: "Iberian Peninsula",
     totalPlanted: 0,
@@ -256,6 +274,7 @@ Map<String, PlantData> allTrees = {
   "Cedrus atlantica": PlantData(
     scientificName: "Cedrus atlantica",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "Atlas Cedar",
     distribution: "Atlas Mountains, Morocco",
     totalPlanted: 0,
@@ -272,6 +291,7 @@ Map<String, PlantData> allTrees = {
   "Pinus nigra subsp. salzmannii": PlantData(
     scientificName: "Pinus nigra subsp. salzmannii",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "Balearic Pine",
     distribution: "Balearic Islands",
     totalPlanted: 0,
@@ -288,6 +308,7 @@ Map<String, PlantData> allTrees = {
   "Pyrus bourgaeana": PlantData(
     scientificName: "Pyrus bourgaeana",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "Iberian Pear",
     distribution: "Iberian Peninsula",
     totalPlanted: 0,
@@ -304,6 +325,7 @@ Map<String, PlantData> allTrees = {
   "Pinus heldreichii": PlantData(
     scientificName: "Pinus heldreichii",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "Bosnian Pine",
     distribution: "Balkans",
     totalPlanted: 0,
@@ -320,6 +342,7 @@ Map<String, PlantData> allTrees = {
   "Juniperus sabina": PlantData(
     scientificName: "Juniperus sabina",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "Savin Juniper",
     distribution: "Europe, Asia",
     totalPlanted: 0,
@@ -336,6 +359,7 @@ Map<String, PlantData> allTrees = {
   "Populus nigra": PlantData(
     scientificName: "Populus nigra",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Trees",
     commonName: "Black Poplar",
     distribution: "Europe, Asia",
     totalPlanted: 0,
@@ -352,6 +376,7 @@ Map<String, PlantData> allTrees = {
   "Rubus fruticosus": PlantData(
     scientificName: "Rubus fruticosus",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Blackberry",
     distribution: "Europe",
     totalPlanted: 0,
@@ -368,6 +393,7 @@ Map<String, PlantData> allTrees = {
   "Viburnum opulus": PlantData(
     scientificName: "Viburnum opulus",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Guelder Rose",
     distribution: "Europe",
     totalPlanted: 0,
@@ -384,6 +410,7 @@ Map<String, PlantData> allTrees = {
   "Rosa canina": PlantData(
     scientificName: "Rosa canina",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Dog Rose",
     distribution: "Europe",
     totalPlanted: 0,
@@ -399,6 +426,7 @@ Map<String, PlantData> allTrees = {
   "Berberis vulgaris": PlantData(
     scientificName: "Berberis vulgaris",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Common Barberry",
     distribution: "Europe",
     totalPlanted: 0,
@@ -415,6 +443,7 @@ Map<String, PlantData> allTrees = {
   "Euonymus europaeus": PlantData(
     scientificName: "Euonymus europaeus",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Spindle",
     distribution: "Europe",
     totalPlanted: 0,
@@ -431,6 +460,7 @@ Map<String, PlantData> allTrees = {
   "Prunus spinosa": PlantData(
     scientificName: "Prunus spinosa",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Blackthorn",
     distribution: "Europe",
     totalPlanted: 0,
@@ -447,6 +477,7 @@ Map<String, PlantData> allTrees = {
   "Sambucus nigra": PlantData(
     scientificName: "Sambucus nigra",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Elder",
     distribution: "Europe",
     totalPlanted: 0,
@@ -463,6 +494,7 @@ Map<String, PlantData> allTrees = {
   "Cornus sanguinea": PlantData(
     scientificName: "Cornus sanguinea",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Dogwood",
     distribution: "Europe",
     totalPlanted: 0,
@@ -478,6 +510,7 @@ Map<String, PlantData> allTrees = {
   "Fragaria vesca": PlantData(
     scientificName: "Fragaria vesca",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Wild Strawberry",
     distribution: "Europe",
     totalPlanted: 0,
@@ -494,6 +527,7 @@ Map<String, PlantData> allTrees = {
   "Lonicera periclymenum": PlantData(
     scientificName: "Lonicera periclymenum",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Honeysuckle",
     distribution: "Europe",
     totalPlanted: 0,
@@ -510,6 +544,7 @@ Map<String, PlantData> allTrees = {
   "Cotoneaster horizontalis": PlantData(
     scientificName: "Cotoneaster horizontalis",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Cotoneaster",
     distribution: "Europe",
     totalPlanted: 0,
@@ -526,6 +561,7 @@ Map<String, PlantData> allTrees = {
   "Rosa rugosa": PlantData(
     scientificName: "Rosa rugosa",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Rugosa Rose",
     distribution: "Europe, Asia",
     totalPlanted: 0,
@@ -542,6 +578,7 @@ Map<String, PlantData> allTrees = {
   "Philadelphus coronarius": PlantData(
     scientificName: "Philadelphus coronarius",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Mock Orange",
     distribution: "Europe",
     totalPlanted: 0,
@@ -558,6 +595,7 @@ Map<String, PlantData> allTrees = {
   "Hypericum perforatum": PlantData(
     scientificName: "Hypericum perforatum",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "St. John's Wort",
     distribution: "Europe",
     totalPlanted: 0,
@@ -574,6 +612,7 @@ Map<String, PlantData> allTrees = {
   "Forsythia × intermedia": PlantData(
     scientificName: "Forsythia × intermedia",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Forsythia",
     distribution: "Europe, Asia",
     totalPlanted: 0,
@@ -590,6 +629,7 @@ Map<String, PlantData> allTrees = {
   "Syringa vulgaris": PlantData(
     scientificName: "Syringa vulgaris",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Lilac",
     distribution: "Europe",
     totalPlanted: 0,
@@ -606,6 +646,7 @@ Map<String, PlantData> allTrees = {
   "Escallonia spp.": PlantData(
     scientificName: "Escallonia spp.",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Escallonia",
     distribution: "Europe, South America",
     totalPlanted: 0,
@@ -622,6 +663,7 @@ Map<String, PlantData> allTrees = {
   "Weigela florida": PlantData(
     scientificName: "Weigela florida",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Weigela",
     distribution: "Asia, Europe",
     totalPlanted: 0,
@@ -638,6 +680,7 @@ Map<String, PlantData> allTrees = {
   "Potentilla fruticosa": PlantData(
     scientificName: "Potentilla fruticosa",
     pathPicture: "./images/trees/Default.png",
+    plantType: "Bushes",
     commonName: "Shrubby Cinquefoil",
     distribution: "Europe, Asia",
     totalPlanted: 0,
@@ -650,5 +693,22 @@ Map<String, PlantData> allTrees = {
     conservationStatus: "Least Concern",
     interestingFact:
         "Shrubby Cinquefoil has bright yellow flowers and is drought-tolerant.",
+  ),
+  "Plantita dementiras": PlantData(
+    scientificName: "Plantita dementiras",
+    pathPicture: "./images/trees/Default.png",
+    plantType: "Herbs",
+    commonName: "Mela Invete",
+    distribution: "Europe, Asia",
+    totalPlanted: 0,
+    maxSizeMeters: 1,
+    lifeExpectancyYears: 10 - 20,
+    frequency: "Common",
+    habitat: "Woodlands, meadows",
+    leafType: "Deciduous",
+    floweringSeason: "Summer",
+    conservationStatus: "Least Concern",
+    interestingFact:
+        "A plant with the magical power of turning everyone into a shapeshifter.",
   ),
 };

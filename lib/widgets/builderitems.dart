@@ -2,104 +2,42 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tinyforests/variables.dart';
 
-// ListView Screen1
-class ListViewContainer extends StatelessWidget {
-  // variables
-  // image -> für Bildpfad (Character.image)
-  final String image;
-  // name -> für Character.name
-  final String name;
-
-  // constructor
-  // erweitert um: "required this.image" und "required this.name"
-  const ListViewContainer({super.key, required this.image, required this.name});
-
-  // methods
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 30.h, // 30% der Screenhöhe
-      width: 30.h, // 30% der Screenhöhe
-      // FittedBox -> passt sich an die Größe des umgebenden Elements
-      child: FittedBox(
-        child: Container(
-          height: 30.h, // 30% der Screenhöhe
-          width: 30.h, // 30% der Screenhöhe
-          margin: EdgeInsets.only(bottom: 5.h), // 5% der Screenhöhe
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                // ALT: image: AssetImage(avengersList[index]),
-                image: AssetImage(image),
-                fit: BoxFit.cover),
-          ),
-          // Column kann auch genutzt werden zur verticalen,
-          // Positionierung eines einzelnen Elementes...
-          child: Column(
-            // ... mit Hilfe von mainAxisAlignment
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                width: 30.h, // 30% der Screenhöhe
-                color: Colors.black,
-                child: Text(
-                  name,
-                  // style -> Formatierung des Textes via TextStyle-Widget
-                  style: TextStyle(
-                      color: Colors.white,
-                      // sp -> scalable pixels - Textgröße abhängig von Screengröße
-                      fontSize: 20.sp),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// + + + + + + + + + + + + GridView Screen2 und 3 + + + + + + + + + + + + +
-
+// container for displaying the plants in a GridView that are shown in the screen1()
 class GridViewContainer extends StatelessWidget {
-  // variables
+  // variables for item image, item text, and alignment of the main axis
   final String itemImage;
   final String itemText;
-  // für eine individualisierbare Ausrichtung der Column (Text -> oben / unten)
   final MainAxisAlignment alignmentOfMain;
 
-  // constructor
   const GridViewContainer(
       {super.key,
       required this.itemImage,
       required this.itemText,
       required this.alignmentOfMain});
 
-  // methods
   @override
   Widget build(BuildContext context) {
+    // container with a decoration for the forest image
     return Container(
       decoration: BoxDecoration(
-        // itemImage -> wird bei der Instanzierung/Erstellung im itemBuilder initialisiert
-        image: DecorationImage(image: AssetImage(itemImage), fit: BoxFit.cover),
+        image: DecorationImage(
+            image: AssetImage(
+                itemImage), // forest picture from the provided path on the forests object
+            fit: BoxFit.cover),
       ),
+      //  column for vertical positioning of elements with customizable alignment
       child: Column(
-        // alignmentOfMain -> wird bei der Instanzierung/Erstellung im itemBuilder initialisiert
         mainAxisAlignment: alignmentOfMain,
         children: [
+          //  displaying the item text with a black background
           Container(
             width: double.infinity,
             color: Colors.black,
             child: Text(
-              // itemText -> wird bei der Instanzierung/Erstellung im itemBuilder initialisiert
               itemText,
-              // textAlign: TextAlign.center -> für horizontale Zentrierung des Textes
-              textAlign: TextAlign.center,
-              // style: TextStyle() -> style-formatierung des Textes
+              textAlign: TextAlign.center, // centers the text horizontally
               style: TextStyle(
-                // fontSize: 14.sp -> Schriftgröße
                 fontSize: 14.sp,
-                // color: Colors.white -> Textfarbe
                 color: Colors.white,
               ),
             ),
@@ -110,6 +48,7 @@ class GridViewContainer extends StatelessWidget {
   }
 }
 
+// Function to create a bottom navigation bar
 BottomNavigationBar bottomNaviBar(BuildContext context) {
   return BottomNavigationBar(
     showSelectedLabels: false,
@@ -117,13 +56,13 @@ BottomNavigationBar bottomNaviBar(BuildContext context) {
     fixedColor: Colors.black,
     backgroundColor: Colors.white,
     items: [
+      // Bottom navigation bar items with icons and labels
       const BottomNavigationBarItem(
         icon: Icon(
           Icons.home,
           color: Colors.black,
         ),
         label: '',
-        // backgroundColor: Colors.white
       ),
       const BottomNavigationBarItem(
         icon: Icon(
@@ -156,7 +95,7 @@ BottomNavigationBar bottomNaviBar(BuildContext context) {
         label: 'More',
       ),
     ],
-    // Handle navigation to different screens based on the selected item
+    // onTap handles the navigation to different screens based on the selected item and the routes devined in the variables.dart file
     onTap: (index) {
       switch (index) {
         case 0:
@@ -172,9 +111,10 @@ BottomNavigationBar bottomNaviBar(BuildContext context) {
           Navigator.pushNamed(context, guideScreen);
           break;
         case 4:
+          // wanted to display an AlertDialog for additional features but, TODO this is not working rightnow
           AlertDialog(
             title: const Text("More Features"),
-            content: const Text("comming soon..."),
+            content: const Text("coming soon..."),
             actions: [
               TextButton(
                 onPressed: () {
@@ -197,7 +137,6 @@ BottomNavigationBar bottomNaviBar(BuildContext context) {
             ],
           );
           break;
-        // Add more cases for other items if needed
       }
     },
   );
