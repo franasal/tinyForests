@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/screens/plant_detail_screen.dart';
+import 'package:tinyforests/utils/utils.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 
 // screen displaying a grid of plants grouped by plant type  after eachother
@@ -43,22 +44,6 @@ class TreeGridScreen extends StatelessWidget {
 
   // this function does the grouping of allPlants by plant type
   // before it was just a single grid with all plants but wanted to add some subsections.
-  Map<String, Map<String, PlantData>> groupTreesByType(
-      Map<String, PlantData> allPlants) {
-    Map<String, Map<String, PlantData>> groupedTrees = {};
-// for loop-like function
-    allPlants.forEach((key, plantData) {
-      String plantType = plantData.plantType;
-
-      if (!groupedTrees.containsKey(plantType)) {
-        groupedTrees[plantType] = {};
-      }
-
-      groupedTrees[plantType]![key] = plantData;
-    });
-
-    return groupedTrees;
-  }
 }
 
 // function to create a GridView of tree items in each row

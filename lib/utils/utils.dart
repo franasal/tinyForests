@@ -22,3 +22,20 @@ Map<String, PlantData> getRandomSubset(
   }
   return selectedSpecies;
 }
+
+Map<String, Map<String, PlantData>> groupTreesByType(
+    Map<String, PlantData> allPlants) {
+  Map<String, Map<String, PlantData>> groupedTrees = {};
+// for loop-like function
+  allPlants.forEach((key, plantData) {
+    String plantType = plantData.plantType;
+
+    if (!groupedTrees.containsKey(plantType)) {
+      groupedTrees[plantType] = {};
+    }
+
+    groupedTrees[plantType]![key] = plantData;
+  });
+
+  return groupedTrees;
+}

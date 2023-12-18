@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:tinyforests/datamodels/plants_data.dart';
+import 'package:tinyforests/screens/first_screen.dart';
+import 'package:tinyforests/screens/guide_screen.dart';
+import 'package:tinyforests/screens/map_screen.dart';
+import 'package:tinyforests/screens/plant_grid_view_screen.dart';
 import 'package:tinyforests/variables.dart';
 
 // container for displaying the plants in a GridView that are shown in the screen1()
@@ -99,16 +104,35 @@ BottomNavigationBar bottomNaviBar(BuildContext context) {
     onTap: (index) {
       switch (index) {
         case 0:
-          Navigator.pushNamed(context, startScreen);
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => const Screen1()),
+            ModalRoute.withName(startScreen),
+          );
           break;
         case 1:
-          Navigator.pushNamed(context, mapScreen);
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => const ForestMaps()),
+            ModalRoute.withName(startScreen),
+          );
           break;
         case 2:
-          Navigator.pushNamed(context, treesScreen);
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(
+                builder: (context) => TreeGridScreen(
+                      allPlants: allPlants,
+                    )),
+            ModalRoute.withName(startScreen),
+          );
           break;
         case 3:
-          Navigator.pushNamed(context, guideScreen);
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => const ForestGuide()),
+            ModalRoute.withName(startScreen),
+          );
           break;
         case 4:
           // wanted to display an AlertDialog for additional features but, TODO this is not working rightnow
