@@ -38,7 +38,7 @@ class _ForestMapsState extends State<ForestMaps> {
                 markers: [
                   // Marker at a specific point with a custom image Default.png as icon
                   Marker(
-                    point: const LatLng(53.8956, 14.7294),
+                    point: const LatLng(51.1197008, 8.3955619),
                     width: 80,
                     height: 80,
                     child: Image.asset(

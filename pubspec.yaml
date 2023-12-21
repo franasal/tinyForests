@@ -26,7 +26,10 @@ flutter:
   - images/
   - images/forests/
   - images/trees/
-  
+  - lib/
+  - lib/datamodels/
+
+
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true

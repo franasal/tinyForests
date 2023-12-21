@@ -23,6 +23,18 @@ Map<String, PlantData> getRandomSubset(
   return selectedSpecies;
 }
 
+Map<String, PlantData> getPlantsSubset(List<String> plantNames) {
+  Map<String, PlantData> subset = {};
+
+  for (String plantName in plantNames) {
+    if (allPlants.containsKey(plantName)) {
+      subset[plantName] = allPlants[plantName]!;
+    }
+  }
+
+  return subset;
+}
+
 Map<String, Map<String, PlantData>> groupTreesByType(
     Map<String, PlantData> allPlants) {
   Map<String, Map<String, PlantData>> groupedTrees = {};

@@ -1,7 +1,7 @@
 // Importing necessary packages and files
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:tinyforests/datamodels/foresties.dart';
+import 'package:tinyforests/datamodels/forests_data.dart';
 import 'package:tinyforests/screens/forest_detail_screen.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 
