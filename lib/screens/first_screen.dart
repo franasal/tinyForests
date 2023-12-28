@@ -45,7 +45,7 @@ class _Screen1State extends State<Screen1> {
                 scrollDirection: Axis
                     .horizontal, // Scroll direction set to horizontal as in the moviies exercise
                 itemCount: tForest
-                    .length, // Number of items in the GridView obtained by the forests map from the script foresties.dart TODO: rename script
+                    .length, // Number of items in the GridView obtained by the forests map from the script forests_data.dart
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     onTap: () {

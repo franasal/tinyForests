@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/screens/plant_grid_view_screen.dart';
@@ -28,6 +30,14 @@ class DetailScreen extends StatelessWidget {
     Map<String, Map<String, PlantData>> groupedTrees =
         groupTreesByType(allPlants);
 
+    // Define the order of plant types
+    List<String> plantTypeOrder = [
+      'Hauptbaumart',
+      'Nebenbaumart',
+      'Strauch',
+      'Bodendecker'
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: Text(forestName), // showing the forest name in the app bar
@@ -35,7 +45,11 @@ class DetailScreen extends StatelessWidget {
 
       body: Column(
         children: [
-          Image.asset(image), //  the forest image
+          Image.asset(
+            image,
+            width: 300,
+            height: 300,
+          ), //  the forest image
           const SizedBox(height: 16),
           Text(
             'Year Planted: $yearPlanted', // Displaying the year the forest was planted
@@ -47,7 +61,7 @@ class DetailScreen extends StatelessWidget {
           ),
           Expanded(
             child: ListView(
-              children: groupedTrees.keys.expand((plantType) {
+              children: plantTypeOrder.expand((plantType) {
                 return [
                   const SizedBox(height: 16),
                   Padding(
@@ -65,7 +79,7 @@ class DetailScreen extends StatelessWidget {
           ),
         ],
       ),
-      //  grid of trees using a custom widget. rn it shows all trees but in the future TODO should show the subset of trees planted in a given forest
+      //  grid of trees using a custom widget.
       bottomNavigationBar:
           bottomNaviBar(context), // custom bottom navigation bar
     );

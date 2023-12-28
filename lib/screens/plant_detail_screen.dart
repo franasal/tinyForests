@@ -77,7 +77,11 @@ Widget buildCustomTitleSection(
             ],
           ),
         ),
-        Image.asset(pathPicture), // displays the thumbnail of the given tree
+        Image.asset(
+          pathPicture,
+          height: 120,
+          width: 120,
+        ), // displays the thumbnail of the given tree
       ],
     ),
   );

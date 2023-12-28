@@ -73,7 +73,7 @@ BottomNavigationBar bottomNaviBar(BuildContext context) {
       ),
       BottomNavigationBarItem(
         icon: Image.asset(
-          'images/trees/Default.png',
+          'images/plants/Default.png',
           width: 28,
           height: 28,
           color: Colors.black,

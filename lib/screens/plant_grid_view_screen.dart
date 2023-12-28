@@ -105,24 +105,39 @@ class TreeItemCard extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    plantData.commonName,
-                    style: const TextStyle(
-                        fontSize: 16.0, fontWeight: FontWeight.bold),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1, //  the number of lines to show
-                  ),
-                  Text(
-                    plantData.scientificName,
-                    style: const TextStyle(
-                      fontSize: 10.0,
-                      fontStyle: FontStyle.italic,
+              child: IntrinsicWidth(
+                child: Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          plantData.commonName,
+                          style: const TextStyle(
+                              fontSize: 16.0, fontWeight: FontWeight.bold),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1, //  the number of lines to show
+                        ),
+                        Text(
+                          plantData.scientificName,
+                          style: const TextStyle(
+                            fontSize: 10.0,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            plantData.totalPlanted as String,
+                            style: const TextStyle(
+                                fontSize: 16.0, fontWeight: FontWeight.bold),
+                          ),
+                        ]),
+                  ],
+                ),
               ),
             ),
           ],

@@ -1,12 +1,12 @@
 // Imports
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'datamodels/plants_data.dart';
+import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/screens/guide_screen.dart';
 import 'package:tinyforests/screens/map_screen.dart';
 import 'package:tinyforests/screens/plant_grid_view_screen.dart';
 import 'package:tinyforests/variables.dart';
-import 'screens/first_screen.dart';
+import 'package:tinyforests/screens/first_screen.dart';
 
 // entry point of the application, like the main() function at the end of old python programs
 void main() {

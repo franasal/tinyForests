@@ -35,9 +35,9 @@ class PlantData {
 }
 
 Map<String, PlantData> allPlants = {
-  "Acer campestre.": PlantData(
+  "Acer campestre": PlantData(
     scientificName: "Acer campestre",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Acer campestre.jpeg",
     plantType: "Nebenbaumart",
     commonName: "Feldahorn",
     distribution: "ToBeDone",
@@ -51,9 +51,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "The field maple has distinctive three-lobed leaves.",
   ),
-  "Acer monspessulanum.": PlantData(
+  "Acer monspessulanum": PlantData(
     scientificName: "Acer monspessulanum",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Nebenbaumart",
     commonName: "Felsenahorn",
     distribution: "ToBeDone",
@@ -68,9 +68,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Also known as Montpellier maple, it's native to the Mediterranean region.",
   ),
-  "Acer platanoides.": PlantData(
+  "Acer platanoides": PlantData(
     scientificName: "Acer platanoides",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Hauptbaumart",
     commonName: "Spitz-Ahorn",
     distribution: "ToBeDone",
@@ -85,9 +85,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Norway maple is valued for its shade and attractive foliage.",
   ),
-  "Acer pseudoplatanus.": PlantData(
+  "Acer pseudoplatanus": PlantData(
     scientificName: "Acer pseudoplatanus",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Hauptbaumart",
     commonName: "Bergahorn",
     distribution: "ToBeDone",
@@ -102,9 +102,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Sycamore maple is known for its large, palmately lobed leaves.",
   ),
-  "Alnus glutinosa.": PlantData(
+  "Alnus glutinosa": PlantData(
     scientificName: "Alnus glutinosa",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Alnus glutinosa.jpeg",
     plantType: "Hauptbaumart",
     commonName: "Schwarzerle",
     distribution: "ToBeDone",
@@ -119,9 +119,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Common alder is associated with wet or waterlogged soils.",
   ),
-  "Amelanchier ovalis.": PlantData(
+  "Amelanchier ovalis": PlantData(
     scientificName: "Amelanchier ovalis",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Amelanchier ovalis.jpeg",
     plantType: "Strauch",
     commonName: "Gewöhnliche Felsenbirne",
     distribution: "ToBeDone",
@@ -135,9 +135,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Serviceberries produce edible berries.",
   ),
-  "Anemone nemorosa.": PlantData(
+  "Anemone nemorosa": PlantData(
     scientificName: "Anemone nemorosa",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Anemone nemorosa.jpeg",
     plantType: "Bodendecker",
     commonName: "Buschwindröschen",
     distribution: "ToBeDone",
@@ -151,9 +151,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Also known as wood anemone, it spreads by rhizomes.",
   ),
-  "Athyrium filix-femina.": PlantData(
+  "Athyrium filix-femina": PlantData(
     scientificName: "Athyrium filix-femina",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Athyrium filix-femina.jpeg",
     plantType: "Bodendecker",
     commonName: "Wald-Frauenfarn",
     distribution: "ToBeDone",
@@ -167,9 +167,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Lady fern is a common woodland fern species.",
   ),
-  "Berberis vulgaris.": PlantData(
+  "Berberis vulgaris": PlantData(
     scientificName: "Berberis vulgaris",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Berberis vulgaris.jpeg",
     plantType: "Strauch",
     commonName: "Gewöhnliche Berberitze",
     distribution: "ToBeDone",
@@ -183,9 +183,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Common barberry is known for its spiny branches.",
   ),
-  "Betula pendula.": PlantData(
+  "Betula pendula": PlantData(
     scientificName: "Betula pendula",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Betula pendula.jpeg",
     plantType: "Nebenbaumart",
     commonName: "Hängebirke",
     distribution: "ToBeDone",
@@ -200,9 +200,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Silver birch is valued for its slender, drooping branches.",
   ),
-  "Betula pubescens.": PlantData(
+  "Betula pubescens": PlantData(
     scientificName: "Betula pubescens",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Betula pendula.jpeg",
     plantType: "Nebenbaumart",
     commonName: "Moor-Birke",
     distribution: "ToBeDone",
@@ -217,9 +217,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Downy birch is more tolerant of wetter conditions than silver birch.",
   ),
-  "Brachypodium sylvaticum.": PlantData(
+  "Brachypodium sylvaticum": PlantData(
     scientificName: "Brachypodium sylvaticum",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Brachypodium sylvaticum.jpeg",
     plantType: "Bodendecker",
     commonName: "Wald-Zwenke",
     distribution: "ToBeDone",
@@ -233,9 +233,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "False brome is a common grass species in woodland areas.",
   ),
-  "Carex brizoides.": PlantData(
+  "Carex brizoides": PlantData(
     scientificName: "Carex brizoides",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Carex brizoides.jpeg",
     plantType: "Bodendecker",
     commonName: "Zittergras-Segge",
     distribution: "ToBeDone",
@@ -250,9 +250,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Common quaking grass is known for its distinctive nodding flowerheads.",
   ),
-  "Carpinus betulus.": PlantData(
+  "Carpinus betulus": PlantData(
     scientificName: "Carpinus betulus",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Hauptbaumart",
     commonName: "Hainbuche",
     distribution: "ToBeDone",
@@ -266,9 +266,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Hornbeam is often used for hedging and screening.",
   ),
-  "Cornus sanguinea.": PlantData(
+  "Cornus sanguinea": PlantData(
     scientificName: "Cornus sanguinea",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Blutroter Hartriegel",
     distribution: "ToBeDone",
@@ -282,9 +282,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Common dogwood has distinctive red stems in winter.",
   ),
-  "Corylus avellana.": PlantData(
+  "Corylus avellana": PlantData(
     scientificName: "Corylus avellana",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Hasel",
     distribution: "ToBeDone",
@@ -298,9 +298,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Common hazel produces edible nuts.",
   ),
-  "Crataegus laevigata agg..": PlantData(
-    scientificName: "Crataegus laevigata agg.",
-    pathPicture: "./images/trees/Default.png",
+  "Crataegus laevigata agg": PlantData(
+    scientificName: "Crataegus laevigata agg",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Zweigriffeliger Weißdorn",
     distribution: "ToBeDone",
@@ -315,9 +315,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Midland hawthorn is part of a complex group of hawthorn species.",
   ),
-  "Crataegus monogyna.": PlantData(
+  "Crataegus monogyna": PlantData(
     scientificName: "Crataegus monogyna",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Weißdorn",
     distribution: "ToBeDone",
@@ -332,9 +332,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Common hawthorn has thorny branches and clusters of white flowers.",
   ),
-  "Cytisus Scoparius.": PlantData(
+  "Cytisus Scoparius": PlantData(
     scientificName: "Cytisus Scoparius",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Besen Ginster",
     distribution: "ToBeDone",
@@ -348,9 +348,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Common broom is known for its bright yellow flowers.",
   ),
-  "Euonymus europaeus.": PlantData(
+  "Euonymus europaeus": PlantData(
     scientificName: "Euonymus europaeus",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "europ. Pfaffenhütchen",
     distribution: "ToBeDone",
@@ -364,9 +364,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "European spindle produces striking pink fruit capsules.",
   ),
-  "Fagus sylvatica.": PlantData(
+  "Fagus sylvatica": PlantData(
     scientificName: "Fagus sylvatica",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Hauptbaumart",
     commonName: "Buche",
     distribution: "ToBeDone",
@@ -381,9 +381,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "European beech is known for its smooth, silver-gray bark.",
   ),
-  "Frangula alnus.": PlantData(
+  "Frangula alnus": PlantData(
     scientificName: "Frangula alnus",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Faulbaum",
     distribution: "ToBeDone",
@@ -398,9 +398,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Alder buckthorn is the larval food plant for brimstone butterflies.",
   ),
-  "Fraxinus Excelsior.": PlantData(
+  "Fraxinus Excelsior": PlantData(
     scientificName: "Fraxinus Excelsior",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Hauptbaumart",
     commonName: "Esche",
     distribution: "ToBeDone",
@@ -414,9 +414,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Common ash is threatened by ash dieback disease.",
   ),
-  "Fraxinus excelsior.": PlantData(
+  "Fraxinus excelsior": PlantData(
     scientificName: "Fraxinus excelsior",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Hauptbaumart",
     commonName: "Esche",
     distribution: "ToBeDone",
@@ -430,9 +430,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Common ash is threatened by ash dieback disease.",
   ),
-  "Galium odoratum.": PlantData(
+  "Galium odoratum": PlantData(
     scientificName: "Galium odoratum",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Bodendecker",
     commonName: "Waldmeister",
     distribution: "ToBeDone",
@@ -447,9 +447,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Sweet woodruff is valued for its sweet-scented flowers and leaves.",
   ),
-  "Galium sylvaticum.": PlantData(
+  "Galium sylvaticum": PlantData(
     scientificName: "Galium sylvaticum",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Bodendecker",
     commonName: "Wald-Labkraut",
     distribution: "ToBeDone",
@@ -463,9 +463,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Wood bedstraw is often found in shady places.",
   ),
-  "Ilex aquifolium.": PlantData(
+  "Ilex aquifolium": PlantData(
     scientificName: "Ilex aquifolium",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Stechpalme",
     distribution: "ToBeDone",
@@ -479,9 +479,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Common holly is associated with winter festivities.",
   ),
-  "Impatiens noli-tangere.": PlantData(
+  "Impatiens noli-tangere": PlantData(
     scientificName: "Impatiens noli-tangere",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Bodendecker",
     commonName: "Großes Springkraut",
     distribution: "ToBeDone",
@@ -495,9 +495,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Touch-me-not has explosive seed capsules.",
   ),
-  "Lamium galeobdolon.": PlantData(
+  "Lamium galeobdolon": PlantData(
     scientificName: "Lamium galeobdolon",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Bodendecker",
     commonName: "Goldnessel",
     distribution: "ToBeDone",
@@ -512,9 +512,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Yellow archangel is known for its yellow flowers and square stems.",
   ),
-  "Larix decidua var. polonica.": PlantData(
-    scientificName: "Larix decidua var. polonica",
-    pathPicture: "./images/trees/Default.png",
+  "Larix decidua": PlantData(
+    scientificName: "Larix decidua",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Nebenbaumart",
     commonName: "Polnische Lärche",
     distribution: "ToBeDone",
@@ -528,9 +528,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Polish larch is a deciduous conifer.",
   ),
-  "Lonicera periclymenum.": PlantData(
+  "Lonicera periclymenum": PlantData(
     scientificName: "Lonicera periclymenum",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Wald-Geißblatt",
     distribution: "ToBeDone",
@@ -544,9 +544,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Common honeysuckle has fragrant, tubular flowers.",
   ),
-  "Malus sylvestris.": PlantData(
+  "Malus sylvestris": PlantData(
     scientificName: "Malus sylvestris",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Nebenbaumart",
     commonName: "Wild Apfel",
     distribution: "ToBeDone",
@@ -561,9 +561,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Wild apple is the ancestor of many cultivated apple varieties.",
   ),
-  "Oxalis acetosella.": PlantData(
+  "Oxalis acetosella": PlantData(
     scientificName: "Oxalis acetosella",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Oxalis acetosella.jpeg",
     plantType: "Bodendecker",
     commonName: "Sauerklee",
     distribution: "ToBeDone",
@@ -578,9 +578,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Wood sorrel's leaves fold up at night and in low light conditions.",
   ),
-  "Pinus sylvestris.": PlantData(
+  "Pinus sylvestris": PlantData(
     scientificName: "Pinus sylvestris",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Pinus sylvestris.jpeg",
     plantType: "Nebenbaumart",
     commonName: "Waldkiefer",
     distribution: "ToBeDone",
@@ -594,9 +594,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Scots pine is the national tree of Scotland.",
   ),
-  "Poa nemoralis.": PlantData(
+  "Poa nemoralis": PlantData(
     scientificName: "Poa nemoralis",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Poa nemoralis.jpeg",
     plantType: "Bodendecker",
     commonName: "Hain-Rispengras",
     distribution: "ToBeDone",
@@ -611,9 +611,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Wood meadow grass is a common grass in woodland habitats.",
   ),
-  "Populus tremula.": PlantData(
+  "Populus tremula": PlantData(
     scientificName: "Populus tremula",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Populus tremula.jpeg",
     plantType: "Nebenbaumart",
     commonName: "Zitterpappel",
     distribution: "ToBeDone",
@@ -628,9 +628,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Common aspen has leaves that flutter in the wind due to flattened petioles.",
   ),
-  "Potentilla sterilis.": PlantData(
+  "Potentilla sterilis": PlantData(
     scientificName: "Potentilla sterilis",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Potentilla sterilis.jpeg",
     plantType: "Bodendecker",
     commonName: "Erdbeer-Fingerkraut",
     distribution: "ToBeDone",
@@ -645,9 +645,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Barren strawberry produces small, strawberry-like fruits.",
   ),
-  "Prunus Padus.": PlantData(
+  "Prunus Padus": PlantData(
     scientificName: "Prunus Padus",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Nebenbaumart",
     commonName: "Traubenkirsche",
     distribution: "ToBeDone",
@@ -662,9 +662,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Bird cherry is known for its fragrant, drooping flower clusters.",
   ),
-  "Prunus Spinosa.": PlantData(
+  "Prunus Spinosa": PlantData(
     scientificName: "Prunus Spinosa",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Schlehe",
     distribution: "ToBeDone",
@@ -679,9 +679,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Blackthorn is the host plant for the caterpillars of several butterfly species.",
   ),
-  "Prunus avium.": PlantData(
+  "Prunus avium": PlantData(
     scientificName: "Prunus avium",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Prunus avium.jpeg",
     plantType: "Hauptbaumart",
     commonName: "Vogel-Kische",
     distribution: "ToBeDone",
@@ -696,9 +696,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Wild cherry is the ancestor of many cultivated cherry varieties.",
   ),
-  "Prunus cerasifera.": PlantData(
+  "Prunus cerasifera": PlantData(
     scientificName: "Prunus cerasifera",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Kirschpflaume",
     distribution: "ToBeDone",
@@ -713,9 +713,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Cherry plum is often cultivated for its ornamental value and edible fruits.",
   ),
-  "Prunus spinosa.": PlantData(
+  "Prunus spinosa": PlantData(
     scientificName: "Prunus spinosa",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Schlehe",
     distribution: "ToBeDone",
@@ -730,9 +730,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Blackthorn is the host plant for the caterpillars of several butterfly species.",
   ),
-  "Pyrus pyraster.": PlantData(
+  "Pyrus pyraster": PlantData(
     scientificName: "Pyrus pyraster",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Pyrus pyraster.jpeg",
     plantType: "Strauch",
     commonName: "Wild-Birne",
     distribution: "ToBeDone",
@@ -746,9 +746,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Wild pear is native to Europe and Western Asia.",
   ),
-  "Pyrus pyraster agg..": PlantData(
+  "Pyrus pyraster agg": PlantData(
     scientificName: "Pyrus pyraster agg.",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Pyrus pyraster.jpeg",
     plantType: "Nebenbaumart",
     commonName: "Wild Birne",
     distribution: "ToBeDone",
@@ -763,10 +763,10 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "The Pyrus pyraster aggregate includes several wild pear species.",
   ),
-  "Quercus patrea.": PlantData(
+  "Quercus patrea": PlantData(
     scientificName: "Quercus patrea",
-    pathPicture: "./images/trees/Default.png",
-    plantType: "Hauptbaumnart",
+    pathPicture: "./images/plants/Default.png",
+    plantType: "Hauptbaumart",
     commonName: "Traubeneiche",
     distribution: "ToBeDone",
     totalPlanted: 50,
@@ -780,9 +780,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Sessile oak is one of the native oaks in the British Isles.",
   ),
-  "Quercus petraea.": PlantData(
+  "Quercus petraea": PlantData(
     scientificName: "Quercus petraea",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Nebenbaumart",
     commonName: "Traubeneiche",
     distribution: "ToBeDone",
@@ -797,9 +797,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Commonly known as sessile oak, it lacks the acorn stalk found in pedunculate oak.",
   ),
-  "Quercus robur.": PlantData(
+  "Quercus robur": PlantData(
     scientificName: "Quercus robur",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Nebenbaumart",
     commonName: "Stieleiche",
     distribution: "ToBeDone",
@@ -814,9 +814,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Pedunculate oak is a long-lived species with significant cultural and ecological importance.",
   ),
-  "Rhammus cathartica.": PlantData(
+  "Rhammus cathartica": PlantData(
     scientificName: "Rhammus cathartica",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Rhammus cathartica.jpeg",
     plantType: "Strauch",
     commonName: "Kreuzdorn",
     distribution: "ToBeDone",
@@ -831,9 +831,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Common buckthorn is the larval host for the brimstone butterfly.",
   ),
-  "Rhamnus frangula.": PlantData(
+  "Rhamnus frangula": PlantData(
     scientificName: "Rhamnus frangula",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Rhamnus frangula.jpeg",
     plantType: "Strauch",
     commonName: "Faulbaum",
     distribution: "ToBeDone",
@@ -848,9 +848,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Alder buckthorn is the larval food plant for brimstone butterflies.",
   ),
-  "Ribes rubrum.": PlantData(
+  "Ribes rubrum": PlantData(
     scientificName: "Ribes rubrum",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Rote Johannisbeere",
     distribution: "ToBeDone",
@@ -864,9 +864,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Red currant is cultivated for its edible berries.",
   ),
-  "Ribes rubrum s. str..": PlantData(
+  "Ribes rubrum s. str.": PlantData(
     scientificName: "Ribes rubrum s. str.",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Rote Johannisbeere",
     distribution: "ToBeDone",
@@ -881,9 +881,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "This refers to the strict sense (s. str.) of red currant.",
   ),
-  "Rosa arvensis.": PlantData(
+  "Rosa arvensis": PlantData(
     scientificName: "Rosa arvensis",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Rosa arvensis.jpeg",
     plantType: "Strauch",
     commonName: "Feld-Rose",
     distribution: "ToBeDone",
@@ -897,9 +897,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Field rose is known for its fragrant flowers.",
   ),
-  "Rosa canina agg..": PlantData(
+  "Rosa canina agg": PlantData(
     scientificName: "Rosa canina agg.",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Hunds-Rose",
     distribution: "ToBeDone",
@@ -913,9 +913,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Dog rose is the most common wild rose species.",
   ),
-  "Rubus caesius.": PlantData(
+  "Rubus caesius": PlantData(
     scientificName: "Rubus caesius",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Kratzbeere",
     distribution: "ToBeDone",
@@ -929,9 +929,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Dewberry is a low-growing relative of the blackberry.",
   ),
-  "Rubus idaeus.": PlantData(
+  "Rubus idaeus": PlantData(
     scientificName: "Rubus idaeus",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Himbeere",
     distribution: "ToBeDone",
@@ -945,9 +945,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Raspberry is well-known for its delicious red berries.",
   ),
-  "Rubus sect. Rubus.": PlantData(
+  "Rubus sect. Rubus": PlantData(
     scientificName: "Rubus sect. Rubus",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Brombeere",
     distribution: "ToBeDone",
@@ -962,9 +962,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "This refers to the section (sect.) of the Rubus genus, which includes many bramble species.",
   ),
-  "Salix alba.": PlantData(
+  "Salix alba": PlantData(
     scientificName: "Salix alba",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Nebenbaumart",
     commonName: "Silberweide",
     distribution: "ToBeDone",
@@ -979,9 +979,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "White willow is the source of salicylic acid, a precursor to aspirin.",
   ),
-  "Salix aurita.": PlantData(
+  "Salix aurita": PlantData(
     scientificName: "Salix aurita",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Ohr-Weide",
     distribution: "ToBeDone",
@@ -996,9 +996,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Eared willow is named for its distinctive ear-shaped stipules.",
   ),
-  "Salix caprea.": PlantData(
+  "Salix caprea": PlantData(
     scientificName: "Salix caprea",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Nebenbaumart",
     commonName: "Salweide",
     distribution: "ToBeDone",
@@ -1013,9 +1013,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Goat willow is an important early source of nectar for bees.",
   ),
-  "Salix purpurea.": PlantData(
+  "Salix purpurea": PlantData(
     scientificName: "Salix purpurea",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Purpur-Weide",
     distribution: "ToBeDone",
@@ -1029,9 +1029,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Purple willow is known for its purple stems in winter.",
   ),
-  "Sambucus Nigra.": PlantData(
+  "Sambucus Nigra": PlantData(
     scientificName: "Sambucus Nigra",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Nebenbaumart",
     commonName: "Schwarzer Holunder",
     distribution: "ToBeDone",
@@ -1046,9 +1046,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Common elder has clusters of small, creamy-white flowers and dark berries.",
   ),
-  "Sambucus nigra.": PlantData(
+  "Sambucus nigra": PlantData(
     scientificName: "Sambucus nigra",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Schwarzer Holunder",
     distribution: "ToBeDone",
@@ -1063,9 +1063,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Black elder is known for its use in traditional medicine and as a flavoring in beverages.",
   ),
-  "Sambucus racemosa.": PlantData(
+  "Sambucus racemosa": PlantData(
     scientificName: "Sambucus racemosa",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Roter Holunder",
     distribution: "ToBeDone",
@@ -1079,9 +1079,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Red elderberry produces clusters of small red berries.",
   ),
-  "Sorbus aucuparia.": PlantData(
+  "Sorbus aucuparia": PlantData(
     scientificName: "Sorbus aucuparia",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Nebenbaumart",
     commonName: "Eberesche",
     distribution: "ToBeDone",
@@ -1096,9 +1096,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Rowan is often associated with folklore and has symbolic importance.",
   ),
-  "Sorbus torminalis.": PlantData(
+  "Sorbus torminalis": PlantData(
     scientificName: "Sorbus torminalis",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Nebenbaumart",
     commonName: "Elsbeere",
     distribution: "ToBeDone",
@@ -1113,9 +1113,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Wild service tree has distinctive lobed leaves and small fruits.",
   ),
-  "Stellaria holostea.": PlantData(
+  "Stellaria holostea": PlantData(
     scientificName: "Stellaria holostea",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Bodendecker",
     commonName: "Große Steinmiere",
     distribution: "ToBeDone",
@@ -1129,9 +1129,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Adder's tongue spearwort has star-shaped white flowers.",
   ),
-  "Taxus baccata.": PlantData(
+  "Taxus baccata": PlantData(
     scientificName: "Taxus baccata",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Hauptbaumart",
     commonName: "Europäische Eibe",
     distribution: "ToBeDone",
@@ -1145,9 +1145,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Common yew is often associated with ancient churchyards.",
   ),
-  "Tilia Cordata.": PlantData(
+  "Tilia Cordata": PlantData(
     scientificName: "Tilia Cordata",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Hauptbaumart",
     commonName: "Winterlinde",
     distribution: "ToBeDone",
@@ -1162,9 +1162,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Small-leaved lime is valued for its fragrant flowers and heart-shaped leaves.",
   ),
-  "Tilia cordata.": PlantData(
+  "Tilia cordata": PlantData(
     scientificName: "Tilia cordata",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Hauptbaumart",
     commonName: "Winterlinde",
     distribution: "ToBeDone",
@@ -1179,9 +1179,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Small-leaved lime is valued for its fragrant flowers and heart-shaped leaves.",
   ),
-  "Tilia platyphyllos.": PlantData(
+  "Tilia platyphyllos": PlantData(
     scientificName: "Tilia platyphyllos",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Hauptbaumart",
     commonName: "Sommerlinde",
     distribution: "ToBeDone",
@@ -1196,9 +1196,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Large-leaved lime has larger leaves compared to small-leaved lime.",
   ),
-  "Tilia tomentosa.": PlantData(
+  "Tilia tomentosa": PlantData(
     scientificName: "Tilia tomentosa",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Hauptbaumart",
     commonName: "Silberlinde",
     distribution: "ToBeDone",
@@ -1213,9 +1213,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Silver lime has silvery-white hairs on the underside of its leaves.",
   ),
-  "Ulmus glabra.": PlantData(
+  "Ulmus glabra": PlantData(
     scientificName: "Ulmus glabra",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Nebenbaumart",
     commonName: "Berg-Ulme",
     distribution: "ToBeDone",
@@ -1230,9 +1230,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Wych elm is the only elm species native to the British Isles.",
   ),
-  "Ulmus laevis.": PlantData(
+  "Ulmus laevis": PlantData(
     scientificName: "Ulmus laevis",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Nebenbaumart",
     commonName: "Flatterulme",
     distribution: "ToBeDone",
@@ -1246,9 +1246,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "European white elm is known for its smooth, grey bark.",
   ),
-  "Ulmus minor.": PlantData(
+  "Ulmus minor": PlantData(
     scientificName: "Ulmus minor",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Nebenbaumart",
     commonName: "Feldulme",
     distribution: "ToBeDone",
@@ -1262,9 +1262,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Field elm is susceptible to Dutch elm disease.",
   ),
-  "Vaccinium corymbosum.": PlantData(
+  "Vaccinium corymbosum": PlantData(
     scientificName: "Vaccinium corymbosum",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Bodendecker",
     commonName: "Heidelbeere",
     distribution: "ToBeDone",
@@ -1278,9 +1278,9 @@ Map<String, PlantData> allPlants = {
     conservationStatus: "Least Concern.",
     interestingFact: "Highbush blueberry is cultivated for its edible berries.",
   ),
-  "Viburnum opulus.": PlantData(
+  "Viburnum opulus": PlantData(
     scientificName: "Viburnum opulus",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Strauch",
     commonName: "Schneeball",
     distribution: "ToBeDone",
@@ -1295,9 +1295,9 @@ Map<String, PlantData> allPlants = {
     interestingFact:
         "Guelder rose has clusters of white flowers and bright red berries.",
   ),
-  "Viola reichenbachiana.": PlantData(
+  "Viola reichenbachiana": PlantData(
     scientificName: "Viola reichenbachiana",
-    pathPicture: "./images/trees/Default.png",
+    pathPicture: "./images/plants/Default.png",
     plantType: "Bodendecker",
     commonName: "Wald-Veilchen",
     distribution: "ToBeDone",

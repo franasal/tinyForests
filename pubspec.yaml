@@ -12,12 +12,16 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_map: ^6.0.1
   latlong2: ^0.9.0
+  location: ^5.0.3
+  geolocator: ^10.1.0
   sizer: ^2.0.15
+  flutter_map_location_marker: ^8.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  flutter_map_marker_popup: ^6.1.2
 
 flutter:
   uses-material-design: true
@@ -25,7 +29,8 @@ flutter:
 # !!!Einrückung beachten!!!
   - images/
   - images/forests/
-  - images/trees/
+  - images/plants/
+  - images/icons/
   - lib/
   - lib/datamodels/
 
