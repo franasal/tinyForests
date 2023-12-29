@@ -26,7 +26,7 @@ class ForestDetailWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Map<String, Map<String, PlantData>> groupedTrees =
-        groupTreesByType(allPlants);
+        groupTreesByType(listPlanted);
 
     // Define the order of plant types
     List<String> plantTypeOrder = [
@@ -58,13 +58,14 @@ class ForestDetailWidget extends StatelessWidget {
               return [
                 const SizedBox(height: 16),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: Text(
                     plantType,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),
-                plantsGridView(groupedTrees[plantType]!),
+                if (groupedTrees[plantType] != null)
+                  plantsGridView(groupedTrees[plantType]!),
               ];
             }).toList(),
           ]),

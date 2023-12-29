@@ -1,22 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:badges/badges.dart' as bds;
 import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/screens/plant_detail_screen.dart';
 import 'package:tinyforests/utils/utils.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 
-// screen displaying a grid of plants grouped by plant type  after eachother
-
-// each subgrid is displayed with the function plantsGridView
-class TreeGridScreen extends StatelessWidget {
+class PlantsGridScreen extends StatelessWidget {
   final Map<String, PlantData> allPlants;
 
-  TreeGridScreen({Key? key, required this.allPlants}) : super(key: key);
+  // Define the order of plant types
+  final List<String> plantTypeOrder = [
+    'Hauptbaumart',
+    'Nebenbaumart',
+    'Strauch',
+    'Bodendecker'
+  ];
+
+  PlantsGridScreen({Key? key, required this.allPlants}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // groups the allPlants by plant type with the function defined at the botton of this file
+    // groups the allPlants by plant type with the function defined at the bottom of this file
     Map<String, Map<String, PlantData>> groupedTrees =
         groupTreesByType(allPlants);
+
+    // Sort the keys of groupedTrees based on plantTypeOrder
+    List<String> sortedPlantTypes = plantTypeOrder
+        .where((plantType) => groupedTrees.containsKey(plantType))
+        .toList();
 
     return Scaffold(
       resizeToAvoidBottomInset: true,
@@ -24,21 +35,21 @@ class TreeGridScreen extends StatelessWidget {
         title: const Text('Plants List'),
       ),
       body: ListView(
-        children: groupedTrees.keys.expand((plantType) {
+        children: sortedPlantTypes.expand((plantType) {
           return [
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 plantType,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
             plantsGridView(groupedTrees[plantType]!),
           ];
         }).toList(),
       ),
-      bottomNavigationBar:
-          bottomNaviBar(context), // custom bottom navigation bar
+      bottomNavigationBar: bottomNaviBar(context),
     );
   }
 
@@ -47,10 +58,16 @@ class TreeGridScreen extends StatelessWidget {
 }
 
 // function to create a GridView of tree items in each row
-GridView plantsGridView(Map<String, PlantData> allTrees) {
+GridView plantsGridView(Map<String, PlantData> someTrees) {
+  Map<String, PlantData> orderedPlants = {};
+
+  // Sort the subset Map by totalPlanted in descending order
+  orderedPlants = Map.fromEntries(someTrees.entries.toList()
+    ..sort((a, b) => b.value.totalPlanted.compareTo(a.value.totalPlanted)));
+
   return GridView.builder(
     physics:
-        NeverScrollableScrollPhysics(), // Disable GridView scrolling to fix stuck behaviour
+        const NeverScrollableScrollPhysics(), // Disable GridView scrolling to fix stuck behaviour
     scrollDirection: Axis.vertical,
     shrinkWrap: true,
     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -59,10 +76,10 @@ GridView plantsGridView(Map<String, PlantData> allTrees) {
       mainAxisSpacing: 8.0,
       childAspectRatio: 0.80,
     ),
-    itemCount: allTrees.length,
+    itemCount: orderedPlants.length,
     itemBuilder: (BuildContext context, int index) {
       // Convert the map values to a list and get the PlantData instance
-      PlantData plantData = allTrees.values.toList()[index];
+      PlantData plantData = orderedPlants.values.toList()[index];
       return TreeItemCard(plantData: plantData);
     },
   );
@@ -76,71 +93,68 @@ class TreeItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        // nvigate to the tree details screen when the card is tapped
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => TreeDetailsScreen(
-                plantName: plantData.scientificName, allPlants: allPlants),
-          ),
-        );
-      },
-      child: Card(
-        elevation: 3.0,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height: 100.0,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  // picture from images/trees todo; change folder name to /plants
-                  image: AssetImage(plantData.pathPicture),
-                  fit: BoxFit.cover,
+    return bds.Badge(
+      position: bds.BadgePosition.custom(top: 10, end: 12),
+      badgeContent: Text(plantData.totalPlanted.toString()),
+      badgeStyle: const bds.BadgeStyle(
+        borderSide: BorderSide(color: Colors.grey, width: 2),
+        shape: bds.BadgeShape.square,
+        badgeColor: Colors.white,
+        padding: EdgeInsets.all(5),
+      ),
+      child: InkWell(
+        onTap: () {
+          // nvigate to the tree details screen when the card is tapped
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => TreeDetailsScreen(
+                  plantName: plantData.scientificName, allPlants: allPlants),
+            ),
+          );
+        },
+        child: Card(
+          elevation: 3.0,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 90.0,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    // picture from images/trees todo; change folder name to /plants
+                    image: AssetImage(plantData.pathPicture),
+
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(0),
-              child: IntrinsicWidth(
-                child: Row(
+              Padding(
+                padding: const EdgeInsets.all(0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          plantData.commonName,
-                          style: const TextStyle(
-                              fontSize: 16.0, fontWeight: FontWeight.bold),
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1, //  the number of lines to show
-                        ),
-                        Text(
-                          plantData.scientificName,
-                          style: const TextStyle(
-                            fontSize: 10.0,
-                            fontStyle: FontStyle.italic,
-                          ),
-                        ),
-                      ],
+                    Text(
+                      plantData.commonName,
+                      style: const TextStyle(
+                          fontSize: 14.0, fontWeight: FontWeight.bold),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1, //  the number of lines to show
                     ),
-                    Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            plantData.totalPlanted as String,
-                            style: const TextStyle(
-                                fontSize: 16.0, fontWeight: FontWeight.bold),
-                          ),
-                        ]),
+                    Text(
+                      plantData.scientificName,
+                      style: const TextStyle(
+                        fontSize: 9.0,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

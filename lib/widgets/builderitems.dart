@@ -105,34 +105,49 @@ BottomNavigationBar bottomNaviBar(BuildContext context) {
           Navigator.pushNamed(context, mapScreen);
           break;
         case 2:
-          Navigator.pushNamed(context, treesScreen);
+          Navigator.pushNamed(context, plantsScreen);
           break;
         case 3:
           Navigator.pushNamed(context, guideScreen);
           break;
         case 4:
-          // wanted to display an AlertDialog for additional features but, TODO this is not working rightnow
-          AlertDialog(
-            title: const Text("More Features"),
-            content: const Text("coming soon..."),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamedAndRemoveUntil(
-                    startScreen,
-                    (route) => false,
-                  );
-                },
-                child: const Text("some page"),
+          RenderBox renderBox = context.findRenderObject() as RenderBox;
+          Offset position = renderBox.localToGlobal(Offset.zero);
+
+          double itemWidth = renderBox.size.width;
+          double itemHeight = renderBox.size.height;
+
+          double centerX = position.dx + itemWidth / 2;
+          double centerY = (position.dy + itemHeight) - 50;
+          print(centerY);
+
+          showMenu(
+            context: context,
+            position: RelativeRect.fromLTRB(centerX, centerY - 100, 0, 0),
+            items: [
+              PopupMenuItem(
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(); // Close the menu
+                    Navigator.of(context).pushNamedAndRemoveUntil(
+                      startScreen,
+                      (route) => false,
+                    );
+                  },
+                  child: const Text("Some Page"),
+                ),
               ),
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamedAndRemoveUntil(
-                    startScreen,
-                    (route) => false,
-                  );
-                },
-                child: const Text("other page"),
+              PopupMenuItem(
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(); // Close the menu
+                    Navigator.of(context).pushNamedAndRemoveUntil(
+                      startScreen,
+                      (route) => false,
+                    );
+                  },
+                  child: const Text("Other Page"),
+                ),
               ),
             ],
           );

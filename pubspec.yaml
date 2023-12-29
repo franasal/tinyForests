@@ -16,6 +16,7 @@ dependencies:
   geolocator: ^10.1.0
   sizer: ^2.0.15
   flutter_map_location_marker: ^8.0.2
+  badges: ^3.1.2
 
 dev_dependencies:
   flutter_test:

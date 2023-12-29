@@ -8,7 +8,8 @@ class TreeDetailsScreen extends StatelessWidget {
   final Map<String, PlantData> allPlants;
 
   // constructor to receive the plant name and allPlants map
-  TreeDetailsScreen({required this.plantName, required this.allPlants});
+  const TreeDetailsScreen(
+      {super.key, required this.plantName, required this.allPlants});
 
   @override
   Widget build(BuildContext context) {

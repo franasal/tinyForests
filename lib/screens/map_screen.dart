@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+// import 'package:flutter_map_location_marker/flutter_map_location_marker.dart'S;
 import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart'; // Import the Geolocator package
 import 'package:tinyforests/datamodels/forests_data.dart';
@@ -97,6 +98,7 @@ class _ForestMapsState extends State<ForestMaps> {
               ),
             ],
           ),
+          // CurrentLocationLayer(), TODO this not working
           Positioned(
             bottom: 16.0,
             right: 16.0,
@@ -188,12 +190,12 @@ class _ForestMapsState extends State<ForestMaps> {
             children: [
               Text(
                 forest.forestName,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               // Text('Year Planted: ${forest.yearPlanted}'),
               // Text('Total Trees: ${forest.totalTrees}'),
               Expanded(

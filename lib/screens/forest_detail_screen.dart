@@ -28,7 +28,7 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Map<String, Map<String, PlantData>> groupedTrees =
-        groupTreesByType(allPlants);
+        groupTreesByType(listPlanted);
 
     // Define the order of plant types
     List<String> plantTypeOrder = [
@@ -59,6 +59,7 @@ class DetailScreen extends StatelessWidget {
             'Number of Trees Planted: $totalTrees', // Displaying the total number of trees planted
             style: const TextStyle(fontSize: 18),
           ),
+
           Expanded(
             child: ListView(
               children: plantTypeOrder.expand((plantType) {
@@ -72,7 +73,8 @@ class DetailScreen extends StatelessWidget {
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  plantsGridView(groupedTrees[plantType]!),
+                  if (groupedTrees[plantType] != null)
+                    plantsGridView(groupedTrees[plantType]!),
                 ];
               }).toList(),
             ),

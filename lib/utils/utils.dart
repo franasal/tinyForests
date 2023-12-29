@@ -1,45 +1,26 @@
 // a funciton to select randomly some plants from the full allPlants Map for testing in each forest view
-// import 'dart:math';
+import 'dart:convert';
 import 'package:tinyforests/datamodels/plants_data.dart';
+import 'package:flutter/services.dart';
 
-// Map<String, PlantData> getRandomSubset(
-//     Map<String, PlantData> allPlants, int numberOfItems) {
-//   if (numberOfItems <= 0 || numberOfItems > allPlants.length) {
-//     throw ArgumentError("Invalid number of items to select");
-//   }
-
-//   Map<String, PlantData> selectedSpecies = {};
-//   List<String> allScientificNames = allPlants.keys.toList();
-//   List<String> copyOfScientificNames = List.from(allScientificNames);
-
-//   Map<String, PlantData> selectedSubset = {};
-
-//   for (int i = 0; i < numberOfItems; i++) {
-//     int randomIndex = Random().nextInt(copyOfScientificNames.length);
-//     String selectedScientificName = copyOfScientificNames[randomIndex];
-//     selectedSubset[selectedScientificName] = allPlants[selectedScientificName]!;
-//     copyOfScientificNames.removeAt(randomIndex);
-//   }
-//   return selectedSpecies;
-// }
-
-Map<String, PlantData> getPlantsSubset(List<String> plantNames) {
+Map<String, PlantData> getPlantsSubset(Map<String, int> plantQuantities) {
   Map<String, PlantData> subset = {};
 
-  for (String plantName in plantNames) {
+  for (String plantName in plantQuantities.keys) {
     if (allPlants.containsKey(plantName)) {
-      subset[plantName] = allPlants[plantName]!;
+      PlantData plantData = allPlants[plantName]!;
+      plantData.totalPlanted = plantQuantities[plantName]!;
+      subset[plantName] = plantData;
     }
   }
-
   return subset;
 }
 
 Map<String, Map<String, PlantData>> groupTreesByType(
-    Map<String, PlantData> allPlants) {
+    Map<String, PlantData> plantsMap) {
   Map<String, Map<String, PlantData>> groupedTrees = {};
-// for loop-like function
-  allPlants.forEach((key, plantData) {
+
+  plantsMap.forEach((key, plantData) {
     String plantType = plantData.plantType;
 
     if (!groupedTrees.containsKey(plantType)) {
@@ -50,4 +31,39 @@ Map<String, Map<String, PlantData>> groupTreesByType(
   });
 
   return groupedTrees;
+}
+
+Future<void> updateImagePath(Map<String, PlantData> plants) async {
+  // Directory path for plant images
+  String imagesFolder = 'images/plants/';
+
+  // Load asset manifest to get the list of available assets
+  final manifestContent = await rootBundle.loadString('AssetManifest.json');
+  final Map<String, dynamic> manifest = json.decode(manifestContent);
+
+  // Extract asset names from the manifest
+  List<String> assetNames = manifest.keys
+      .where((String key) => key.startsWith(imagesFolder))
+      .toList();
+
+  // Iterate through the plants map and update pathPicture if a matching image is found
+  plants.forEach((key, plant) {
+    String filename = '$key.jpeg';
+    String imagePath = '$imagesFolder$filename';
+
+    // Check if the asset exists
+    if (assetNames.contains(imagePath)) {
+      plant.pathPicture = imagePath;
+    }
+  });
+}
+
+void updatePlantDistribution(
+    Map<String, String> plantDistribution, Map<String, PlantData> allPlants) {
+  plantDistribution.forEach((plantName, distribution) {
+    if (allPlants.containsKey(plantName)) {
+      allPlants[plantName]?.distribution = distribution;
+    }
+  });
+  print(allPlants);
 }
