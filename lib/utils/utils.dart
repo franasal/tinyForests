@@ -52,18 +52,11 @@ Future<void> updateImagePath(Map<String, PlantData> plants) async {
     String imagePath = '$imagesFolder$filename';
 
     // Check if the asset exists
-    if (assetNames.contains(imagePath)) {
+    if (assetNames.contains(imagePath) &&
+        !plant.pathPicture.contains(plant.scientificName)) {
       plant.pathPicture = imagePath;
+    } else if (!plant.pathPicture.contains(plant.scientificName)) {
+      print('$key$plant');
     }
   });
-}
-
-void updatePlantDistribution(
-    Map<String, String> plantDistribution, Map<String, PlantData> allPlants) {
-  plantDistribution.forEach((plantName, distribution) {
-    if (allPlants.containsKey(plantName)) {
-      allPlants[plantName]?.distribution = distribution;
-    }
-  });
-  print(allPlants);
 }

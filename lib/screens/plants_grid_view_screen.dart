@@ -108,7 +108,7 @@ class TreeItemCard extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => TreeDetailsScreen(
+              builder: (context) => PlantDetailsScreen(
                   plantName: plantData.scientificName, allPlants: allPlants),
             ),
           );

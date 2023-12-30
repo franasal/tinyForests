@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:tinyforests/datamodels/plants_data.dart'; //  tree data model
+import 'package:tinyforests/screens/fullsizeimage.dart';
 import 'package:tinyforests/widgets/builderitems.dart'; // custom widgets
 
 // This screen is for displaying details of a specific tree, right now is just plain text
-class TreeDetailsScreen extends StatelessWidget {
+class PlantDetailsScreen extends StatelessWidget {
   final String plantName;
   final Map<String, PlantData> allPlants;
 
   // constructor to receive the plant name and allPlants map
-  const TreeDetailsScreen(
+  const PlantDetailsScreen(
       {super.key, required this.plantName, required this.allPlants});
 
   @override
@@ -25,6 +26,7 @@ class TreeDetailsScreen extends StatelessWidget {
         children: [
           //  title section defined in the bottom displaying common name, scientific name, and an image
           buildCustomTitleSection(
+            context,
             plantData.commonName,
             plantData.scientificName,
             plantData.pathPicture,
@@ -50,7 +52,7 @@ class TreeDetailsScreen extends StatelessWidget {
 
 // Custom function to build a title section with a title, subtitle, and image using a container
 Widget buildCustomTitleSection(
-    String title, String subtitle, String pathPicture) {
+    BuildContext context, String title, String subtitle, String pathPicture) {
   return Container(
     padding: const EdgeInsets.all(15),
     child: Row(
@@ -78,11 +80,25 @@ Widget buildCustomTitleSection(
             ],
           ),
         ),
-        Image.asset(
-          pathPicture,
-          height: 120,
-          width: 120,
-        ), // displays the thumbnail of the given tree
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    FullSizeImageScreen(imagePath: pathPicture),
+              ),
+            );
+          },
+          child: Hero(
+            tag: pathPicture,
+            child: Image.asset(
+              pathPicture,
+              height: 120,
+              width: 120,
+            ),
+          ),
+        ),
       ],
     ),
   );

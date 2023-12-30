@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
-import 'package:tinyforests/screens/plant_grid_view_screen.dart';
+import 'package:tinyforests/screens/plants_grid_view_screen.dart';
 import 'package:tinyforests/utils/utils.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 

@@ -142,11 +142,11 @@ BottomNavigationBar bottomNaviBar(BuildContext context) {
                   onPressed: () {
                     Navigator.of(context).pop(); // Close the menu
                     Navigator.of(context).pushNamedAndRemoveUntil(
-                      startScreen,
+                      debugScreen,
                       (route) => false,
                     );
                   },
-                  child: const Text("Other Page"),
+                  child: const Text("Debug Page"),
                 ),
               ),
             ],

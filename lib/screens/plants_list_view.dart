@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
+import 'package:tinyforests/screens/plant_detail_screen.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 
 class PlantsListView extends StatelessWidget {
@@ -48,16 +49,28 @@ class PlantCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(10.0),
-              topRight: Radius.circular(10.0),
-            ),
-            child: Image.asset(
-              plant.pathPicture,
-              height: 150.0,
-              width: double.infinity,
-              fit: BoxFit.cover,
+          InkWell(
+            onTap: () {
+              // Navigate to PlantView screen when image is tapped
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PlantDetailsScreen(
+                      plantName: plant.scientificName, allPlants: allPlants),
+                ),
+              );
+            },
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(10.0),
+                topRight: Radius.circular(10.0),
+              ),
+              child: Image.asset(
+                plant.pathPicture,
+                height: 150.0,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Padding(
@@ -99,20 +112,26 @@ class PlantCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Icon(
-                  // This is a conditional statement that returns different icons based on the plant type
-                  plant.plantType == 'Hauptbaumart'
-                      ? Icons.nature
-                      : plant.plantType == 'Nebenbaumart'
-                          ? Icons.park
-                          : plant.plantType == 'Strauch'
-                              ? Icons.local_florist
-                              : Icons.grass,
-                  color: Colors.green,
+                Tooltip(
+                  message:
+                      'Plant Type: ${plant.plantType}', // Explanation for the icon
+                  child: Icon(
+                    plant.plantType == 'Hauptbaumart'
+                        ? Icons.nature
+                        : plant.plantType == 'Nebenbaumart'
+                            ? Icons.park
+                            : plant.plantType == 'Strauch'
+                                ? Icons.local_florist
+                                : Icons.grass,
+                    color: Colors.green,
+                  ),
                 ),
-                const Icon(
-                  Icons.height,
-                  color: Colors.blue,
+                Tooltip(
+                  message: 'Height', // Explanation for the icon
+                  child: const Icon(
+                    Icons.height,
+                    color: Colors.blue,
+                  ),
                 ),
                 Text(
                   '${plant.maxSizeMeters} m',
@@ -121,17 +140,29 @@ class PlantCard extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-                Icon(
-                  Icons.eco,
-                  color: plant.conservationStatus == 'endangered'
-                      ? Colors.red
-                      : Colors.green,
+                Tooltip(
+                  message:
+                      'Conservation Status: ${plant.conservationStatus}', // Explanation for the icon
+                  child: Icon(
+                    Icons.eco,
+                    color: plant.conservationStatus == 'Critically Endangered'
+                        ? Colors.red
+                        : plant.conservationStatus == 'Near Threatened'
+                            ? Colors.orange
+                            : plant.conservationStatus == 'Vulnerable'
+                                ? Colors.yellow
+                                : Colors.green,
+                  ),
                 ),
-                Icon(
-                  Icons.wb_sunny,
-                  color: plant.floweringSeason == 'summer'
-                      ? Colors.yellow
-                      : Colors.grey,
+                Tooltip(
+                  message:
+                      'Flowering Season: ${plant.floweringSeason}', // Explanation for the icon
+                  child: Icon(
+                    Icons.wb_sunny,
+                    color: plant.floweringSeason == 'summer'
+                        ? Colors.yellow
+                        : Colors.grey,
+                  ),
                 ),
               ],
             ),
@@ -141,3 +172,64 @@ class PlantCard extends StatelessWidget {
     );
   }
 }
+
+
+
+//           Padding(
+//             padding: const EdgeInsets.all(16.0),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//               children: [
+//                 Tooltip(
+//                   message: 'Plant Type', // Explanation for the icon
+//                   child: Icon(
+//                     plant.plantType == 'Hauptbaumart'
+//                         ? Icons.nature
+//                         : plant.plantType == 'Nebenbaumart'
+//                             ? Icons.park
+//                             : plant.plantType == 'Strauch'
+//                                 ? Icons.local_florist
+//                                 : Icons.grass,
+//                     color: Colors.green,
+//                   ),
+//                 ),
+//                 Tooltip(
+//                   message: 'Height', // Explanation for the icon
+//                   child: const Icon(
+//                     Icons.height,
+//                     color: Colors.blue,
+//                   ),
+//                 ),
+//                 Text(
+//                   '${plant.maxSizeMeters} m',
+//                   style: const TextStyle(
+//                     fontSize: 14.0,
+//                     color: Colors.black,
+//                   ),
+//                 ),
+//                 Tooltip(
+//                   message: 'Conservation Status', // Explanation for the icon
+//                   child: Icon(
+//                     Icons.eco,
+//                     color: plant.conservationStatus == 'endangered'
+//                         ? Colors.red
+//                         : Colors.green,
+//                   ),
+//                 ),
+//                 Tooltip(
+//                   message: 'Flowering Season', // Explanation for the icon
+//                   child: Icon(
+//                     Icons.wb_sunny,
+//                     color: plant.floweringSeason == 'summer'
+//                         ? Colors.yellow
+//                         : Colors.grey,
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
