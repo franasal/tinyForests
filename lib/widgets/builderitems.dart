@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tinyforests/variables.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 // container for displaying the plants in a GridView that are shown in the screen1()
 class GridViewContainer extends StatelessWidget {
@@ -48,67 +49,90 @@ class GridViewContainer extends StatelessWidget {
   }
 }
 
+final screen_list = [
+  startScreen,
+];
+
 // Function to create a bottom navigation bar
-BottomNavigationBar bottomNaviBar(BuildContext context) {
-  return BottomNavigationBar(
-    showSelectedLabels: false,
-    showUnselectedLabels: false,
-    fixedColor: Colors.black,
+ConvexAppBar bottomNaviBar(BuildContext context) {
+  return ConvexAppBar(
+    // showSelectedLabels: false,
+    initialActiveIndex: 2,
+    height: 50,
+    top: -30,
+    curveSize: 100,
     backgroundColor: Colors.white,
+    style: TabStyle.fixedCircle,
     items: [
       // Bottom navigation bar items with icons and labels
-      const BottomNavigationBarItem(
+      const TabItem(
         icon: Icon(
-          Icons.home,
-          color: Colors.black,
+          Icons.home_filled,
+          color: Color.fromARGB(200, 44, 148, 49),
         ),
-        label: '',
+        title: 'Home',
       ),
-      const BottomNavigationBarItem(
+      const TabItem(
         icon: Icon(
-          Icons.location_pin,
-          color: Colors.black,
+          Icons.newspaper,
+          color: Color.fromARGB(200, 44, 148, 49),
         ),
-        label: 'Map',
+        title: 'List',
       ),
-      BottomNavigationBarItem(
+      TabItem(
         icon: Image.asset(
-          'images/plants/Default.png',
-          width: 28,
-          height: 28,
-          color: Colors.black,
+          'images/TFIcon.png', //images/iconStart.png
+          width: 25,
+          height: 25,
+          // color: Colors.black,
         ),
-        label: 'Trees',
+        title: 'Trees',
       ),
-      const BottomNavigationBarItem(
+      const TabItem(
         icon: Icon(
-          Icons.menu_book,
-          color: Colors.black,
+          Icons.grid_on_outlined,
+          color: Color.fromARGB(200, 44, 148, 49),
         ),
-        label: 'Guide',
+        title: 'Guide',
       ),
-      const BottomNavigationBarItem(
+      const TabItem(
         icon: Icon(
           Icons.more_horiz,
-          color: Colors.black,
+          color: Color.fromARGB(200, 44, 148, 49),
         ),
-        label: 'More',
+        title: 'More',
       ),
     ],
     // onTap handles the navigation to different screens based on the selected item and the routes devined in the variables.dart file
     onTap: (index) {
       switch (index) {
         case 0:
-          Navigator.pushNamed(context, startScreen);
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            startScreen,
+            (route) => false,
+          );
           break;
         case 1:
-          Navigator.pushNamed(context, mapScreen);
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            plantsScreen,
+            (route) => false,
+          );
           break;
         case 2:
-          Navigator.pushNamed(context, plantsScreen);
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            mapScreen,
+            (route) => false,
+          );
           break;
         case 3:
-          Navigator.pushNamed(context, guideScreen);
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            guideScreen,
+            (route) => false,
+          );
           break;
         case 4:
           RenderBox renderBox = context.findRenderObject() as RenderBox;
@@ -119,7 +143,6 @@ BottomNavigationBar bottomNaviBar(BuildContext context) {
 
           double centerX = position.dx + itemWidth / 2;
           double centerY = (position.dy + itemHeight) - 50;
-          print(centerY);
 
           showMenu(
             context: context,
@@ -130,11 +153,11 @@ BottomNavigationBar bottomNaviBar(BuildContext context) {
                   onPressed: () {
                     Navigator.of(context).pop(); // Close the menu
                     Navigator.of(context).pushNamedAndRemoveUntil(
-                      startScreen,
+                      impressumScreen,
                       (route) => false,
                     );
                   },
-                  child: const Text("Some Page"),
+                  child: const Text("Impressum Page"),
                 ),
               ),
               PopupMenuItem(

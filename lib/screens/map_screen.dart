@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-// import 'package:flutter_map_location_marker/flutter_map_location_marker.dart'S;
+// import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart'; // Import the Geolocator package
 import 'package:tinyforests/datamodels/forests_data.dart';
@@ -82,6 +82,7 @@ class _ForestMapsState extends State<ForestMaps> {
     return Scaffold(
       body: Stack(
         children: [
+          // CurrentLocationLayer(),
           FlutterMap(
             mapController: _mapController,
             options: MapOptions(

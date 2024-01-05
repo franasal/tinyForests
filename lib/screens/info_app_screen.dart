@@ -3,22 +3,22 @@
 import 'package:flutter/material.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 
-class ForestGuide extends StatefulWidget {
-  const ForestGuide({super.key});
+class Impressum extends StatefulWidget {
+  const Impressum({super.key});
 
   @override
-  State<ForestGuide> createState() => _ForestGuideState();
+  State<Impressum> createState() => _ImpressumState();
 }
 
-class _ForestGuideState extends State<ForestGuide> {
+class _ImpressumState extends State<Impressum> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Guide'),
+        title: const Text('Impressum'),
       ),
       body: const Center(
-        child: Text("here comes a guide"),
+        child: Text("Hier kommt impressum"),
       ),
       bottomNavigationBar: bottomNaviBar(context),
     );

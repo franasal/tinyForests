@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tinyforests/datamodels/plants_data.dart'; //  tree data model
-import 'package:tinyforests/screens/fullsizeimage.dart';
+import 'package:tinyforests/screens/plant_full_size_screen.dart';
 import 'package:tinyforests/widgets/builderitems.dart'; // custom widgets
 
 // This screen is for displaying details of a specific tree, right now is just plain text

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
+import 'package:tinyforests/widgets/builderitems.dart';
 
 class DebugScreen extends StatelessWidget {
   final Map<String, PlantData> data;
@@ -27,6 +28,7 @@ class DebugScreen extends StatelessWidget {
           style: TextStyle(fontSize: 16.0),
         ),
       ),
+      bottomNavigationBar: bottomNaviBar(context),
     );
   }
 }

@@ -6,7 +6,8 @@ const guideScreen = '/guide/';
 const plantsScreen = '/plants/';
 const plantDetailsScreen = '/plantdetails/';
 const plantsListView = '/plantslistview/';
-const debugScreen = 'debugscreen';
+const debugScreen = '/debugscreen/';
+const impressumScreen = '/impressum/';
 
 final distriDict = {
   'Acer campestre': 'Europe, N. Africa, W. Asia',

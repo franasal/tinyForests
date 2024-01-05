@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/screens/debu_screen.dart';
+import 'package:tinyforests/screens/info_app_screen.dart';
 import 'package:tinyforests/screens/map_screen.dart';
 import 'package:tinyforests/screens/plants_grid_view_screen.dart';
 import 'package:tinyforests/screens/plants_list_view.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
             startScreen: (context) => const Screen1(),
             mapScreen: (context) => const ForestMaps(),
             debugScreen: (context) => DebugScreen(data: allPlants),
+            impressumScreen: (context) => const Impressum(),
 
             guideScreen: (context) => PlantsGridScreen(
                   allPlants:
