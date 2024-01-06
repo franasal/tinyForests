@@ -109,7 +109,7 @@ ConvexAppBar bottomNaviBar(BuildContext context) {
         case 0:
           Navigator.pushNamedAndRemoveUntil(
             context,
-            startScreen,
+            dragAndDropScreen,
             (route) => false,
           );
           break;

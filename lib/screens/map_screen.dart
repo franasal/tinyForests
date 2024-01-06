@@ -201,6 +201,7 @@ class _ForestMapsState extends State<ForestMaps> {
               // Text('Total Trees: ${forest.totalTrees}'),
               Expanded(
                 child: ForestDetailWidget(
+                  forestName: forest.forestName,
                   image: forest.image,
                   yearPlanted: forest.yearPlanted,
                   totalTrees: forest.totalTrees,

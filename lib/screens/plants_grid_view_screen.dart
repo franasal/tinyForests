@@ -7,6 +7,7 @@ import 'package:tinyforests/widgets/builderitems.dart';
 
 class PlantsGridScreen extends StatelessWidget {
   final Map<String, PlantData> allPlants;
+  final String pageTittle;
 
   // Define the order of plant types
   final List<String> plantTypeOrder = [
@@ -16,7 +17,9 @@ class PlantsGridScreen extends StatelessWidget {
     'Bodendecker'
   ];
 
-  PlantsGridScreen({Key? key, required this.allPlants}) : super(key: key);
+  PlantsGridScreen(
+      {Key? key, required this.allPlants, required this.pageTittle})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class PlantsGridScreen extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        title: const Text('Plants List'),
+        title: Text(pageTittle),
       ),
       body: ListView(
         children: sortedPlantTypes.expand((plantType) {

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/screens/debu_screen.dart';
+import 'package:tinyforests/screens/drag_drop_screen.dart';
 import 'package:tinyforests/screens/info_app_screen.dart';
 import 'package:tinyforests/screens/map_screen.dart';
 import 'package:tinyforests/screens/plants_grid_view_screen.dart';
@@ -38,10 +39,14 @@ class MyApp extends StatelessWidget {
             mapScreen: (context) => const ForestMaps(),
             debugScreen: (context) => DebugScreen(data: allPlants),
             impressumScreen: (context) => const Impressum(),
-
+            dragAndDropScreen: (context) => PlantsGridScreenDraggable(
+                  allPlants: allPlants,
+                  pageTittle: "Grid Draggagle Pflanzen",
+                ),
             guideScreen: (context) => PlantsGridScreen(
-                  allPlants:
-                      allPlants, // Passing plants data from the datamodels/plants_data.dart file to the tree grid screen
+                  allPlants: allPlants,
+                  pageTittle:
+                      "Alle Pflanzen", // Passing plants data from the datamodels/plants_data.dart file to the tree grid screen
                 ),
             plantsScreen: (context) => PlantsListView(
                   allPlants:

@@ -15,7 +15,7 @@ class PlantsListView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Plants List'),
+        title: const Text('Alle Pflanzen'),
       ),
       body: ListView.builder(
         itemCount: plants.length, // The number of items in the list

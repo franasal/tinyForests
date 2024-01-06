@@ -9,6 +9,7 @@ import 'package:tinyforests/utils/utils.dart';
 //TODO replace the text widget with nicer visualizations and add more infomration to each forest
 
 class ForestDetailWidget extends StatelessWidget {
+  final String forestName;
   final String image;
   final int yearPlanted;
   final Map<String, PlantData> listPlanted;
@@ -21,6 +22,7 @@ class ForestDetailWidget extends StatelessWidget {
     required this.yearPlanted,
     required this.totalTrees,
     required this.listPlanted,
+    required this.forestName,
   });
 
   @override
@@ -67,7 +69,7 @@ class ForestDetailWidget extends StatelessWidget {
                 if (groupedTrees[plantType] != null)
                   plantsGridView(groupedTrees[plantType]!),
               ];
-            }).toList(),
+            }),
           ]),
         ),
       ],
