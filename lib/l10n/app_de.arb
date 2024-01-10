@@ -30,7 +30,11 @@
 "gridSizeDialogTitle": "Rastergröße",
 "gridSizeDialogContent": "Wähle die Anzahl der Zeilen und Spalten aus:",
 "gridSizeRows": "Zeilen",
-"gridSizeColumns": "Spalten"
+"gridSizeColumns": "Spalten",
+"forestSizeLabel": "Walddimension: {forestSize} m.",
+"totalTreesLabel": "Gesamtgepflanzte Bäume: {totalTrees}",
+"yearPlantedLabel": "Pflanzjahr: {plantedYear}",
+"yearPlannedLabel": "Geplant: {plannedYear}"
 
 
 }

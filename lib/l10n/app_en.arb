@@ -93,6 +93,30 @@
 "gridSizeRows": "Rows",
 "@gridSizeRows": {"description": "Label for Rows in the Grid Size dialog"},
 "gridSizeColumns": "Columns",
-"@gridSizeColumns": {"description": "Label for Columns in the Grid Size dialog"}
+"@gridSizeColumns": {"description": "Label for Columns in the Grid Size dialog"},
+"forestSizeLabel": "Forest size: {forestSize} m.",
+"@forestSizeLabel": {"description": "Label for displaying the size of the forest","placeholders": {
+            "forestSize": {"type": "int"}
+            }
+            },
+
+"totalTreesLabel": "Total planted trees {totalTrees}",
+"@totalTreesLabel": {"description": "Label for displaying the total number of planted trees","placeholders": {
+            "totalTrees": {"type": "int"}
+            }
+            },
+
+"yearPlantedLabel": "Year planted {plantedYear}",
+"@yearPlantedLabel": {"description": "Label for displaying the year the forest was planted","placeholders": {
+            "plantedYear": {"type": "int"}
+            }
+            },
+
+"yearPlannedLabel": "planned {plannedYear}",
+"@yearPlannedLabel": {"description": "Label indicating a planned forest","placeholders": {
+            "plannedYear": {"type": "int"}
+        }
+        }
+
 
 }

@@ -11,13 +11,11 @@ import 'package:tinyforests/widgets/builderitems.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ForestMaps extends StatefulWidget {
-  const ForestMaps({super.key});
+  const ForestMaps({Key? key}) : super(key: key);
 
   @override
   State<ForestMaps> createState() => _ForestMapsState();
 }
-
-// class _ForestMapsState extends State<ForestMaps> {
 
 class _ForestMapsState extends State<ForestMaps> {
   late MapController _mapController;
@@ -98,6 +96,9 @@ class _ForestMapsState extends State<ForestMaps> {
     _showNearbyForests();
   }
 
+  bool showPlanted = false;
+  bool showPlanned = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -165,14 +166,17 @@ class _ForestMapsState extends State<ForestMaps> {
     return markers;
   }
 
+  bool _isDrawerOpen =
+      false; // added to prevent multiple drawers open simultaneously
   void _showNearbyForests() {
-    if (_userLocation == null) {
+    if (_userLocation == null || _isDrawerOpen) {
       // Handle the case where user location is not available
       return;
     }
 
-    List<TinyForest> sortedForests =
-        List.from(tForest); // Replace with your actual list
+    _isDrawerOpen = true;
+
+    List<TinyForest> sortedForests = List.from(tForest);
 
     // Sort the list based on the distance to the user's location
     sortedForests.sort((forest1, forest2) {
@@ -194,35 +198,72 @@ class _ForestMapsState extends State<ForestMaps> {
     });
 
     showModalBottomSheet(
-      // ... (existing code)
+      showDragHandle: true,
       builder: (BuildContext context) {
-        return Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                AppLocalizations.of(context)!.nearbyForests,
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+        return StatefulBuilder(
+          builder: (BuildContext context, StateSetter setState) {
+            return Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            showPlanted = true;
+                            showPlanned = false;
+                          });
+                        },
+                        child: Text("Planted"),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            showPlanted = false;
+                            showPlanned = true;
+                          });
+                        },
+                        child: Text("Planned"),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            showPlanted = false;
+                            showPlanned = false;
+                          });
+                        },
+                        child: Text("All"),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: sortedForests.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        TinyForest forest = sortedForests[index];
+
+                        // Check the filter conditions
+                        if ((showPlanted && forest.planted) ||
+                            (showPlanned && !forest.planted) ||
+                            (!showPlanted && !showPlanned)) {
+                          return GestureDetector(
+                            onTap: () => _showForestDetails(forest),
+                            child: TinyForestCard(forest),
+                          );
+                        } else {
+                          return const SizedBox.shrink();
+                        }
+                      },
+                    ),
+                  ),
+                ],
               ),
-              const SizedBox(height: 10),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: sortedForests.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    TinyForest forest = sortedForests[index];
-                    return GestureDetector(
-                      onTap: () => _showForestDetails(forest),
-                      child: ForestCard(forest: forest),
-                    );
-                  },
-                ),
-              ),
-            ],
-          ),
+            );
+          },
         );
       },
       context: context,

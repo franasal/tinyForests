@@ -30,7 +30,12 @@
 "gridSizeDialogTitle": "Tamaño de la Cuadrícula",
 "gridSizeDialogContent": "Seleccione el Número de Filas y Columnas:",
 "gridSizeRows": "Filas",
-"gridSizeColumns": "Columnas"
+"gridSizeColumns": "Columnas",
+"forestSizeLabel": "Tamaño del bosque: {forestSize} m.",
+"totalTreesLabel": "Árboles plantados: {totalTrees}",
+"yearPlantedLabel": "Año de plantación: {plantedYear}",
+"yearPlannedLabel": "Planeado: {plannedYear}"
+
 
 
 }
