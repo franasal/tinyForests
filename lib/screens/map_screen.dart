@@ -217,7 +217,7 @@ class _ForestMapsState extends State<ForestMaps> {
                             showPlanned = false;
                           });
                         },
-                        child: Text("Planted"),
+                        child: Text(AppLocalizations.of(context)!.plannedLabel),
                       ),
                       ElevatedButton(
                         onPressed: () {
@@ -226,7 +226,7 @@ class _ForestMapsState extends State<ForestMaps> {
                             showPlanned = true;
                           });
                         },
-                        child: Text("Planned"),
+                        child: Text(AppLocalizations.of(context)!.plantedLabel),
                       ),
                       ElevatedButton(
                         onPressed: () {
@@ -235,7 +235,7 @@ class _ForestMapsState extends State<ForestMaps> {
                             showPlanned = false;
                           });
                         },
-                        child: Text("All"),
+                        child: Text(AppLocalizations.of(context)!.allLabel),
                       ),
                     ],
                   ),

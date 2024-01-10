@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tinyforests/datamodels/forests_data.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
-import 'package:tinyforests/screens/forest_detail_widget.dart';
 import 'package:tinyforests/screens/plant_detail_screen.dart';
 
 class PlantCard extends StatelessWidget {
@@ -242,7 +241,7 @@ class TinyForestCard extends StatelessWidget {
                   ),
                 ),
                 Tooltip(
-                  message: "status",
+                  message: (AppLocalizations.of(context)!.statusLabel),
                   child: Image.asset(
                     forest.planted
                         ? './images/icons/LocGree.png'

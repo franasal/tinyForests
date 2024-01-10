@@ -116,7 +116,17 @@
 "@yearPlannedLabel": {"description": "Label indicating a planned forest","placeholders": {
             "plannedYear": {"type": "int"}
         }
-        }
+        },
+
+        "plannedLabel": "Planned",
+"@plannedLabel": {"description": "Planned status label"},
+        "plantedLabel": "Planted",
+"@statusplantedLabelLabel": {"description": "Planted Status label"},
+        "statusLabel": "Status",
+"@statusLabel": {"description": "Status Label"},
+        "allLabel": "Status",
+"@allLabel": {"description": "All label"}
+        
 
 
 }

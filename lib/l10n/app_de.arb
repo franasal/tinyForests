@@ -34,7 +34,11 @@
 "forestSizeLabel": "Walddimension: {forestSize} m.",
 "totalTreesLabel": "Gesamtgepflanzte Bäume: {totalTrees}",
 "yearPlantedLabel": "Pflanzjahr: {plantedYear}",
-"yearPlannedLabel": "Geplant: {plannedYear}"
+"yearPlannedLabel": "Geplant: {plannedYear}",
+"plannedLabel": "Geplant",
+"plantedLabel": "Gepflanzt",
+"statusLabel": "Status",
+"allLabel": "Alle"
 
 
 }
