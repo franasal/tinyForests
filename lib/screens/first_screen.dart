@@ -53,7 +53,7 @@ class _Screen1State extends State<Screen1> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DetailScreen(
+                          builder: (context) => ForestDetailScreen(
                             //  details from the selected forest that are rendered in the forest_detail_screen.dart, this is now a place colder TODO: find a nicer visualization
                             forestName: tForest[index].forestName,
                             image: tForest[index].image,

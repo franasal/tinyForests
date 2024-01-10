@@ -4,6 +4,9 @@
 class PlantData {
   final String scientificName;
   final String commonName;
+  final String commonNameEn;
+  final String commonNameDe;
+  final String commonNameEs;
   String pathPicture;
   final String plantType;
   String distribution;
@@ -20,6 +23,9 @@ class PlantData {
   PlantData(
       {required this.scientificName,
       required this.commonName,
+      required this.commonNameEn,
+      required this.commonNameDe,
+      required this.commonNameEs,
       required this.distribution,
       required this.maxSizeMeters,
       required this.totalPlanted,
@@ -38,6 +44,9 @@ class PlantData {
     return 'PlantData(\n'
         '  scientificName: "$scientificName",\n'
         '  commonName: "$commonName",\n'
+        '  commonNameEn: "$commonNameEn",\n'
+        '  commonNameDe: "$commonNameDe",\n'
+        '  commonNameEs: "$commonNameEs",\n'
         '  distribution: "$distribution",\n'
         '  maxSizeMeters: "$maxSizeMeters",\n'
         '  totalPlanted: $totalPlanted,\n'
@@ -58,6 +67,9 @@ Map<String, PlantData> allPlants = {
   "Acer campestre": PlantData(
       scientificName: "Acer campestre",
       commonName: "Feldahorn",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. Asia",
       maxSizeMeters: "10-15",
       totalPlanted: 30,
@@ -73,6 +85,9 @@ Map<String, PlantData> allPlants = {
   "Acer monspessulanum": PlantData(
       scientificName: "Acer monspessulanum",
       commonName: "Felsenahorn",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "S. Europe, N. Africa, W. Asia",
       maxSizeMeters: "10",
       totalPlanted: 20,
@@ -89,6 +104,9 @@ Map<String, PlantData> allPlants = {
   "Acer platanoides": PlantData(
       scientificName: "Acer platanoides",
       commonName: "Spitz-Ahorn",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. Asia",
       maxSizeMeters: "20-25",
       totalPlanted: 20,
@@ -105,6 +123,9 @@ Map<String, PlantData> allPlants = {
   "Acer pseudoplatanus": PlantData(
       scientificName: "Acer pseudoplatanus",
       commonName: "Bergahorn",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. Asia",
       maxSizeMeters: "40",
       totalPlanted: 50,
@@ -121,6 +142,9 @@ Map<String, PlantData> allPlants = {
   "Alnus glutinosa": PlantData(
       scientificName: "Alnus glutinosa",
       commonName: "Schwarzerle",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "20-25",
       totalPlanted: 30,
@@ -137,6 +161,9 @@ Map<String, PlantData> allPlants = {
   "Amelanchier ovalis": PlantData(
       scientificName: "Amelanchier ovalis",
       commonName: "Gewöhnliche Felsenbirne",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "3-8",
       totalPlanted: 63,
@@ -152,6 +179,9 @@ Map<String, PlantData> allPlants = {
   "Anemone nemorosa": PlantData(
       scientificName: "Anemone nemorosa",
       commonName: "Buschwindröschen",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "0.1-0.3",
       totalPlanted: 25,
@@ -167,6 +197,9 @@ Map<String, PlantData> allPlants = {
   "Athyrium filix-femina": PlantData(
       scientificName: "Athyrium filix-femina",
       commonName: "Wald-Frauenfarn",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Temperate regions of N. Hemisphere",
       maxSizeMeters: "1",
       totalPlanted: 25,
@@ -182,6 +215,9 @@ Map<String, PlantData> allPlants = {
   "Berberis vulgaris": PlantData(
       scientificName: "Berberis vulgaris",
       commonName: "Gewöhnliche Berberitze",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "2-3",
       totalPlanted: 20,
@@ -197,6 +233,9 @@ Map<String, PlantData> allPlants = {
   "Betula pendula": PlantData(
       scientificName: "Betula pendula",
       commonName: "Hängebirke",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "15-25",
       totalPlanted: 71,
@@ -213,6 +252,9 @@ Map<String, PlantData> allPlants = {
   "Betula pubescens": PlantData(
       scientificName: "Betula pubescens",
       commonName: "Moor-Birke",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "15-25",
       totalPlanted: 25,
@@ -229,6 +271,9 @@ Map<String, PlantData> allPlants = {
   "Brachypodium sylvaticum": PlantData(
       scientificName: "Brachypodium sylvaticum",
       commonName: "Wald-Zwenke",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "1",
       totalPlanted: 25,
@@ -245,6 +290,9 @@ Map<String, PlantData> allPlants = {
   "Carex brizoides": PlantData(
       scientificName: "Carex brizoides",
       commonName: "Zittergras-Segge",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. Asia",
       maxSizeMeters: "0.3-0.6",
       totalPlanted: 25,
@@ -261,6 +309,9 @@ Map<String, PlantData> allPlants = {
   "Carpinus betulus": PlantData(
       scientificName: "Carpinus betulus",
       commonName: "Hainbuche",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. & C. Asia",
       maxSizeMeters: "15-25",
       totalPlanted: 31,
@@ -276,6 +327,9 @@ Map<String, PlantData> allPlants = {
   "Cornus sanguinea": PlantData(
       scientificName: "Cornus sanguinea",
       commonName: "Blutroter Hartriegel",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "1.5-3",
       totalPlanted: 20,
@@ -291,6 +345,9 @@ Map<String, PlantData> allPlants = {
   "Corylus avellana": PlantData(
       scientificName: "Corylus avellana",
       commonName: "Hasel",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "3-8",
       totalPlanted: 35,
@@ -306,6 +363,9 @@ Map<String, PlantData> allPlants = {
   "Crataegus laevigata agg": PlantData(
       scientificName: "Crataegus laevigata agg",
       commonName: "Zweigriffeliger Weißdorn",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. Asia",
       maxSizeMeters: "5-8",
       totalPlanted: 35,
@@ -322,6 +382,9 @@ Map<String, PlantData> allPlants = {
   "Crataegus monogyna": PlantData(
       scientificName: "Crataegus monogyna",
       commonName: "Weißdorn",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "5-10",
       totalPlanted: 20,
@@ -338,6 +401,9 @@ Map<String, PlantData> allPlants = {
   "Cytisus scoparius": PlantData(
       scientificName: "Cytisus scoparius",
       commonName: "Besen Ginster",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "ToBeDone",
       maxSizeMeters: "1-3",
       totalPlanted: 103,
@@ -353,6 +419,9 @@ Map<String, PlantData> allPlants = {
   "Euonymus europaeus": PlantData(
       scientificName: "Euonymus europaeus",
       commonName: "europ. Pfaffenhütchen",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "2-6",
       totalPlanted: 30,
@@ -369,6 +438,9 @@ Map<String, PlantData> allPlants = {
   "Fagus sylvatica": PlantData(
       scientificName: "Fagus sylvatica",
       commonName: "Buche",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. Asia",
       maxSizeMeters: "25-35",
       totalPlanted: 31,
@@ -385,6 +457,9 @@ Map<String, PlantData> allPlants = {
   "Frangula alnus": PlantData(
       scientificName: "Frangula alnus",
       commonName: "Faulbaum",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "2-6",
       totalPlanted: 20,
@@ -401,6 +476,9 @@ Map<String, PlantData> allPlants = {
   "Fraxinus excelsior": PlantData(
       scientificName: "Fraxinus excelsior",
       commonName: "Esche",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "25-35",
       totalPlanted: 50,
@@ -416,6 +494,9 @@ Map<String, PlantData> allPlants = {
   "Galium odoratum": PlantData(
       scientificName: "Galium odoratum",
       commonName: "Waldmeister",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "0.1-0.5",
       totalPlanted: 25,
@@ -432,6 +513,9 @@ Map<String, PlantData> allPlants = {
   "Galium sylvaticum": PlantData(
       scientificName: "Galium sylvaticum",
       commonName: "Wald-Labkraut",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. Asia",
       maxSizeMeters: "0.3-0.6",
       totalPlanted: 25,
@@ -447,6 +531,9 @@ Map<String, PlantData> allPlants = {
   "Ilex aquifolium": PlantData(
       scientificName: "Ilex aquifolium",
       commonName: "Stechpalme",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "10-25",
       totalPlanted: 35,
@@ -462,6 +549,9 @@ Map<String, PlantData> allPlants = {
   "Impatiens noli-tangere": PlantData(
       scientificName: "Impatiens noli-tangere",
       commonName: "Großes Springkraut",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. & C. Asia",
       maxSizeMeters: "0.1-0.4",
       totalPlanted: 25,
@@ -477,6 +567,9 @@ Map<String, PlantData> allPlants = {
   "Lamium galeobdolon": PlantData(
       scientificName: "Lamium galeobdolon",
       commonName: "Goldnessel",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "0.1-0.5",
       totalPlanted: 25,
@@ -493,6 +586,9 @@ Map<String, PlantData> allPlants = {
   "Larix decidua": PlantData(
       scientificName: "Larix decidua",
       commonName: "Polnische Lärche",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "ToBeDone",
       maxSizeMeters: "20-30",
       totalPlanted: 71,
@@ -508,6 +604,9 @@ Map<String, PlantData> allPlants = {
   "Lonicera periclymenum": PlantData(
       scientificName: "Lonicera periclymenum",
       commonName: "Wald-Geißblatt",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "3-6",
       totalPlanted: 35,
@@ -523,6 +622,9 @@ Map<String, PlantData> allPlants = {
   "Malus sylvestris": PlantData(
       scientificName: "Malus sylvestris",
       commonName: "Wild Apfel",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. & C. Asia",
       maxSizeMeters: "5-10",
       totalPlanted: 20,
@@ -539,6 +641,9 @@ Map<String, PlantData> allPlants = {
   "Oxalis acetosella": PlantData(
       scientificName: "Oxalis acetosella",
       commonName: "Sauerklee",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "0.1-0.2",
       totalPlanted: 25,
@@ -555,6 +660,9 @@ Map<String, PlantData> allPlants = {
   "Pinus sylvestris": PlantData(
       scientificName: "Pinus sylvestris",
       commonName: "Waldkiefer",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "20-35",
       totalPlanted: 71,
@@ -570,6 +678,9 @@ Map<String, PlantData> allPlants = {
   "Poa nemoralis": PlantData(
       scientificName: "Poa nemoralis",
       commonName: "Hain-Rispengras",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "0.2-0.6",
       totalPlanted: 25,
@@ -586,6 +697,9 @@ Map<String, PlantData> allPlants = {
   "Populus tremula": PlantData(
       scientificName: "Populus tremula",
       commonName: "Zitterpappel",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "20-30",
       totalPlanted: 55,
@@ -602,6 +716,9 @@ Map<String, PlantData> allPlants = {
   "Potentilla sterilis": PlantData(
       scientificName: "Potentilla sterilis",
       commonName: "Erdbeer-Fingerkraut",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. Asia",
       maxSizeMeters: "0.1-0.3",
       totalPlanted: 25,
@@ -618,6 +735,9 @@ Map<String, PlantData> allPlants = {
   "Prunus padus": PlantData(
       scientificName: "Prunus padus",
       commonName: "Traubenkirsche",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "ToBeDone",
       maxSizeMeters: "8-15",
       totalPlanted: 121,
@@ -634,6 +754,9 @@ Map<String, PlantData> allPlants = {
   "Prunus spinosa": PlantData(
       scientificName: "Prunus spinosa",
       commonName: "Schlehe",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "ToBeDone",
       maxSizeMeters: "2-4",
       totalPlanted: 103,
@@ -650,6 +773,9 @@ Map<String, PlantData> allPlants = {
   "Prunus avium": PlantData(
       scientificName: "Prunus avium",
       commonName: "Vogel-Kische",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "15-25",
       totalPlanted: 31,
@@ -666,6 +792,9 @@ Map<String, PlantData> allPlants = {
   "Prunus cerasifera": PlantData(
       scientificName: "Prunus cerasifera",
       commonName: "Kirschpflaume",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "S.E. Europe, W. Asia",
       maxSizeMeters: "2-6",
       totalPlanted: 25,
@@ -682,6 +811,9 @@ Map<String, PlantData> allPlants = {
   "Pyrus pyraster": PlantData(
       scientificName: "Pyrus pyraster",
       commonName: "Wild-Birne",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. & C. Asia",
       maxSizeMeters: "10-20",
       totalPlanted: 25,
@@ -697,6 +829,9 @@ Map<String, PlantData> allPlants = {
   "Pyrus pyraster agg": PlantData(
       scientificName: "Pyrus pyraster agg",
       commonName: "Wild Birne",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. & C. Asia",
       maxSizeMeters: "10-20",
       totalPlanted: 91,
@@ -713,6 +848,9 @@ Map<String, PlantData> allPlants = {
   "Quercus petraea": PlantData(
       scientificName: "Quercus petraea",
       commonName: "Traubeneiche",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. Asia",
       maxSizeMeters: "20-40",
       totalPlanted: 31,
@@ -729,6 +867,9 @@ Map<String, PlantData> allPlants = {
   "Quercus robur": PlantData(
       scientificName: "Quercus robur",
       commonName: "Stieleiche",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "20-40",
       totalPlanted: 31,
@@ -745,6 +886,9 @@ Map<String, PlantData> allPlants = {
   "Rhammus cathartica": PlantData(
       scientificName: "Rhammus cathartica",
       commonName: "Kreuzdorn",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "2-6",
       totalPlanted: 20,
@@ -761,6 +905,9 @@ Map<String, PlantData> allPlants = {
   "Rhamnus frangula": PlantData(
       scientificName: "Rhamnus frangula",
       commonName: "Faulbaum",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "2-6",
       totalPlanted: 63,
@@ -777,6 +924,9 @@ Map<String, PlantData> allPlants = {
   "Ribes rubrum": PlantData(
       scientificName: "Ribes rubrum",
       commonName: "Rote Johannisbeere",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "1-2",
       totalPlanted: 25,
@@ -792,6 +942,9 @@ Map<String, PlantData> allPlants = {
   "Rosa arvensis": PlantData(
       scientificName: "Rosa arvensis",
       commonName: "Feld-Rose",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "1-3",
       totalPlanted: 20,
@@ -807,6 +960,9 @@ Map<String, PlantData> allPlants = {
   "Rosa canina agg": PlantData(
       scientificName: "Rosa canina agg",
       commonName: "Hunds-Rose",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "1-3",
       totalPlanted: 83,
@@ -822,6 +978,9 @@ Map<String, PlantData> allPlants = {
   "Rubus caesius": PlantData(
       scientificName: "Rubus caesius",
       commonName: "Kratzbeere",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "0.5-1.5",
       totalPlanted: 30,
@@ -837,6 +996,9 @@ Map<String, PlantData> allPlants = {
   "Rubus idaeus": PlantData(
       scientificName: "Rubus idaeus",
       commonName: "Himbeere",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "1-2",
       totalPlanted: 35,
@@ -852,6 +1014,9 @@ Map<String, PlantData> allPlants = {
   "Rubus sect. Rubus": PlantData(
       scientificName: "Rubus sect. Rubus",
       commonName: "Brombeere",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "1-3",
       totalPlanted: 35,
@@ -868,6 +1033,9 @@ Map<String, PlantData> allPlants = {
   "Salix alba": PlantData(
       scientificName: "Salix alba",
       commonName: "Silberweide",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "10-25",
       totalPlanted: 15,
@@ -884,6 +1052,9 @@ Map<String, PlantData> allPlants = {
   "Salix aurita": PlantData(
       scientificName: "Salix aurita",
       commonName: "Ohr-Weide",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "1-4",
       totalPlanted: 15,
@@ -900,6 +1071,9 @@ Map<String, PlantData> allPlants = {
   "Salix caprea": PlantData(
       scientificName: "Salix caprea",
       commonName: "Salweide",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "4-10",
       totalPlanted: 55,
@@ -916,6 +1090,9 @@ Map<String, PlantData> allPlants = {
   "Salix purpurea": PlantData(
       scientificName: "Salix purpurea",
       commonName: "Purpur-Weide",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "2-6",
       totalPlanted: 20,
@@ -931,6 +1108,9 @@ Map<String, PlantData> allPlants = {
   "Sambucus nigra": PlantData(
       scientificName: "Sambucus nigra",
       commonName: "Schwarzer Holunder",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "ToBeDone",
       maxSizeMeters: "3-6",
       totalPlanted: 35,
@@ -947,6 +1127,9 @@ Map<String, PlantData> allPlants = {
   "Sambucus racemosa": PlantData(
       scientificName: "Sambucus racemosa",
       commonName: "Roter Holunder",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "2-4",
       totalPlanted: 30,
@@ -962,6 +1145,9 @@ Map<String, PlantData> allPlants = {
   "Sorbus aucuparia": PlantData(
       scientificName: "Sorbus aucuparia",
       commonName: "Eberesche",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "5-12",
       totalPlanted: 55,
@@ -978,6 +1164,9 @@ Map<String, PlantData> allPlants = {
   "Sorbus torminalis": PlantData(
       scientificName: "Sorbus torminalis",
       commonName: "Elsbeere",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "10-20",
       totalPlanted: 20,
@@ -994,6 +1183,9 @@ Map<String, PlantData> allPlants = {
   "Stellaria holostea": PlantData(
       scientificName: "Stellaria holostea",
       commonName: "Große Steinmiere",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "0.3-0.6",
       totalPlanted: 25,
@@ -1010,6 +1202,9 @@ Map<String, PlantData> allPlants = {
   "Taxus baccata": PlantData(
       scientificName: "Taxus baccata",
       commonName: "Europäische Eibe",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "15-20",
       totalPlanted: 20,
@@ -1026,6 +1221,9 @@ Map<String, PlantData> allPlants = {
   "Tilia cordata": PlantData(
       scientificName: "Tilia cordata",
       commonName: "Winterlinde",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. & C. Asia",
       maxSizeMeters: "20-30",
       totalPlanted: 20,
@@ -1042,6 +1240,9 @@ Map<String, PlantData> allPlants = {
   "Tilia platyphyllos": PlantData(
       scientificName: "Tilia platyphyllos",
       commonName: "Sommerlinde",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. & C. Asia",
       maxSizeMeters: "20-30",
       totalPlanted: 20,
@@ -1058,6 +1259,9 @@ Map<String, PlantData> allPlants = {
   "Tilia tomentosa": PlantData(
       scientificName: "Tilia tomentosa",
       commonName: "Silberlinde",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "S.E. Europe, W. Asia",
       maxSizeMeters: "20-30",
       totalPlanted: 25,
@@ -1074,6 +1278,9 @@ Map<String, PlantData> allPlants = {
   "Ulmus glabra": PlantData(
       scientificName: "Ulmus glabra",
       commonName: "Berg-Ulme",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. & C. Asia",
       maxSizeMeters: "25-35",
       totalPlanted: 71,
@@ -1090,6 +1297,9 @@ Map<String, PlantData> allPlants = {
   "Ulmus laevis": PlantData(
       scientificName: "Ulmus laevis",
       commonName: "Flatterulme",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, W. & C. Asia",
       maxSizeMeters: "25-35",
       totalPlanted: 20,
@@ -1105,6 +1315,9 @@ Map<String, PlantData> allPlants = {
   "Ulmus minor": PlantData(
       scientificName: "Ulmus minor",
       commonName: "Feldulme",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "20-30",
       totalPlanted: 71,
@@ -1120,6 +1333,9 @@ Map<String, PlantData> allPlants = {
   "Vaccinium corymbosum": PlantData(
       scientificName: "Vaccinium corymbosum",
       commonName: "Heidelbeere",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "E. North America",
       maxSizeMeters: "1-3",
       totalPlanted: 25,
@@ -1136,6 +1352,9 @@ Map<String, PlantData> allPlants = {
   "Viburnum opulus": PlantData(
       scientificName: "Viburnum opulus",
       commonName: "Schneeball",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "2-5",
       totalPlanted: 30,
@@ -1152,6 +1371,9 @@ Map<String, PlantData> allPlants = {
   "Viola reichenbachiana": PlantData(
       scientificName: "Viola reichenbachiana",
       commonName: "Wald-Veilchen",
+      commonNameEn: "Testing",
+      commonNameDe: "Test",
+      commonNameEs: "Prueba",
       distribution: "Europe, N. Africa, W. & C. Asia",
       maxSizeMeters: "0.1-0.2",
       totalPlanted: 25,

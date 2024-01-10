@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ForestGuide extends StatefulWidget {
   const ForestGuide({super.key});
@@ -15,10 +16,14 @@ class _ForestGuideState extends State<ForestGuide> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Guide'),
+        title: Text(
+          AppLocalizations.of(context)!.guideTitle,
+        ),
       ),
-      body: const Center(
-        child: Text("here comes a guide"),
+      body: Center(
+        child: Text(
+          AppLocalizations.of(context)!.guideSubTitle,
+        ),
       ),
       bottomNavigationBar: bottomNaviBar(context),
     );

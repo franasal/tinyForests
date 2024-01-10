@@ -2,8 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
+import 'package:tinyforests/screens/forest_detail_screen.dart';
 import 'package:tinyforests/screens/plants_grid_view_screen.dart';
 import 'package:tinyforests/utils/utils.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // screen for displaying details of a forest
 //TODO replace the text widget with nicer visualizations and add more infomration to each forest
@@ -42,18 +44,33 @@ class ForestDetailWidget extends StatelessWidget {
       children: [
         Expanded(
           child: ListView(shrinkWrap: true, children: [
-            Image.asset(
-              image,
-              width: 300,
-              height: 300,
+            GestureDetector(
+              onTap: () {
+                MaterialPageRoute(
+                    builder: (context) => ForestDetailScreen(
+                          image: 'image',
+                          yearPlanted: yearPlanted,
+                          totalTrees: totalTrees,
+                          listPlanted: listPlanted,
+                          forestName: forestName,
+                        ));
+              },
+              child: Image.asset(
+                image,
+                width: 300,
+                height: 300,
+              ),
             ), //  the forest image
             const SizedBox(height: 16),
             Text(
-              'Year Planted: $yearPlanted', // Displaying the year the forest was planted
+              AppLocalizations.of(context)!.yearPlanted(
+                  yearPlanted), // Displaying the year the forest was planted
               style: const TextStyle(fontSize: 18),
             ),
             Text(
-              'Number of Trees Planted: $totalTrees', // Displaying the total number of trees planted
+              AppLocalizations.of(context)!.totalTrees(yearPlanted),
+
+              /// Displaying the total number of trees planted
               style: const TextStyle(fontSize: 18),
             ),
             ...plantTypeOrder.expand((plantType) {

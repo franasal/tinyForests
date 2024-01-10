@@ -5,11 +5,12 @@ import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/screens/plants_grid_view_screen.dart';
 import 'package:tinyforests/utils/utils.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // screen for displaying details of a forest
 //TODO replace the text widget with nicer visualizations and add more infomration to each forest
 
-class DetailScreen extends StatelessWidget {
+class ForestDetailScreen extends StatelessWidget {
   final String image;
   final String forestName;
   final int yearPlanted;
@@ -17,7 +18,7 @@ class DetailScreen extends StatelessWidget {
   final int totalTrees;
 
   // constructor to receive details of the forest
-  const DetailScreen(
+  const ForestDetailScreen(
       {super.key,
       required this.image,
       required this.yearPlanted,
@@ -52,11 +53,15 @@ class DetailScreen extends StatelessWidget {
           ), //  the forest image
           const SizedBox(height: 16),
           Text(
-            'Year Planted: $yearPlanted', // Displaying the year the forest was planted
+            // AppLocalizations.of(context)!.plantsGridScreenTitle,
+            AppLocalizations.of(context)!
+                .yearPlanted(yearPlanted), // add automated translation
+
             style: const TextStyle(fontSize: 18),
           ),
           Text(
-            'Number of Trees Planted: $totalTrees', // Displaying the total number of trees planted
+            AppLocalizations.of(context)!.totalTrees(
+                totalTrees), // add automated translation Displaying the total number of trees planted
             style: const TextStyle(fontSize: 18),
           ),
 

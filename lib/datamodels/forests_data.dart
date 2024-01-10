@@ -5,6 +5,7 @@ import 'package:tinyforests/utils/utils.dart';
 class TinyForest {
   final String forestName;
   final String image;
+  final bool planted;
   final int yearPlanted;
   final int totalTrees;
   final int numberPlantedSpecies;
@@ -15,30 +16,9 @@ class TinyForest {
   TinyForest(
     this.forestName,
     this.image,
+    this.planted,
     this.yearPlanted,
     this.totalTrees,
-    this.numberPlantedSpecies,
-    this.listPlanted,
-    this.forestSize,
-    this.coordinates,
-  );
-}
-
-class PlannedTinyForest {
-  final String forestName;
-  final String image;
-  final int yearPlanned;
-  final int estimatedTotalTrees;
-  final int numberPlantedSpecies;
-  final Map<String, PlantData> listPlanted;
-  final int forestSize;
-  final Map<String, double> coordinates;
-
-  PlannedTinyForest(
-    this.forestName,
-    this.image,
-    this.yearPlanned,
-    this.estimatedTotalTrees,
     this.numberPlantedSpecies,
     this.listPlanted,
     this.forestSize,
@@ -53,6 +33,7 @@ List<TinyForest> tForest = [
   TinyForest(
     "Darmstadt",
     "./images/forests/default.jpeg",
+    true,
     2021,
     630,
     31,
@@ -95,6 +76,7 @@ List<TinyForest> tForest = [
   TinyForest(
     "Kinderhort Oderpiraten",
     "./images/forests/default.jpeg",
+    true,
     2021,
     360,
     24,
@@ -130,6 +112,7 @@ List<TinyForest> tForest = [
   TinyForest(
     "Kindergarten am Wurzelberg + Kita Kinderland (auf dem selben Gelände)",
     "./images/forests/default.jpeg",
+    true,
     2021,
     600,
     24,
@@ -165,6 +148,7 @@ List<TinyForest> tForest = [
   TinyForest(
     "Rozwarowo",
     "./images/forests/default.jpeg",
+    true,
     2021,
     4500,
     37,
@@ -213,6 +197,7 @@ List<TinyForest> tForest = [
   TinyForest(
     "Klinikum Herford",
     "./images/forests/default.jpeg",
+    true,
     2022,
     750,
     25,
@@ -249,6 +234,7 @@ List<TinyForest> tForest = [
   TinyForest(
     "Hanau",
     "./images/forests/default.jpeg",
+    true,
     2023,
     450,
     25,
@@ -285,6 +271,7 @@ List<TinyForest> tForest = [
   TinyForest(
     "Rüsselsheim",
     "./images/forests/default.jpeg",
+    true,
     2023,
     700,
     31,
@@ -327,6 +314,7 @@ List<TinyForest> tForest = [
   TinyForest(
     "HSBI-Bielefeld",
     "./images/forests/default.jpeg",
+    true,
     2024,
     600,
     16,
@@ -351,13 +339,10 @@ List<TinyForest> tForest = [
     200,
     {'lat': 52.0436944, 'lon': 8.49275},
   ),
-];
-
-// Lists with the Tiny Forests, with some basic info implements getRandomSubset for adding a subset of the listed trees
-List<TinyForest> plannedForest = [
   TinyForest(
     "Grießheim 3.0",
     "./images/forests/default.jpeg",
+    false,
     2024,
     630,
     31,
@@ -385,6 +370,7 @@ List<TinyForest> plannedForest = [
   TinyForest(
     "Mühlheim",
     "./images/forests/default.jpeg",
+    false,
     2024,
     360,
     24,
@@ -412,6 +398,7 @@ List<TinyForest> plannedForest = [
   TinyForest(
     "HSBI (Bielefeld)",
     "./images/forests/default.jpeg",
+    false,
     2024,
     600,
     24,

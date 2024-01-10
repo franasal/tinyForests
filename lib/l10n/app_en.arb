@@ -1,0 +1,98 @@
+{
+    "mainTitle": "Tiny Forests App",
+    "@mainTitle": {"description": "The main title"},
+    "plantsGridScreenTitle": "All Plants",
+    "@plantsGridScreenTitle": {"description": "Plants grid screen's title"},
+    "myLocation": "My location",
+    "@myLocation": {"description": "User's current location"},
+    "yearPlanted": "Year planted {yearplant}",
+    "@yearPlanted": {"description": "Year the forest was planted",
+        "placeholders": {
+            "yearplant": {"type": "int"}
+        }
+    },
+    "totalTrees": "Number of Trees Planted: {totalTreesPlanted}",
+    "@totalTrees": {"description": "Total number of trees planted",
+        "placeholders": {
+            "totalTreesPlanted": {"type": "int"}
+        }
+    },
+        "guideTitle": "Guide",
+    "@guideTitle": {"description": "Title for the guide"},
+        "guideSubTitle": "Guide's subtitle this is a placeholder",
+    "@guideSubTitle": {"description": "Subtitle for the guide",
+        "placeholders": {}
+    },
+    "floweringSeason": "Flowering Season: {flowSeasValue}",
+"@floweringSeason": {"description": "Flowering season of the plant",
+    "placeholders": {
+        "flowSeasValue": {"type": "String"}
+    }
+},
+"criticalEndanngered": "Critically Endangered",
+"@criticalEndanngered": {"description": "Plant is critically endangered"},
+"nearThreatened": "Near Threatened",
+"@nearThreatened": {"description": "Plant is near threatened"},
+"vulnerable": "Vulnerable",
+"@vulnerable": {"description": "Plant is vulnerable"},
+"plantType": "Plant Type {planTypeValue}",
+"@plantType": {"description": "Type of the plant",
+    "placeholders": {
+        "planTypeValue": {"type": "String"}
+    }
+},
+"mainTreeSpecies": "Main tree species",
+"@mainTreeSpecies": {"description": "Main tree species"},
+"adjacentTreeSp": "Adjacent tree species",
+"@adjacentTreeSp": {"description": "Adjacent tree species"},
+"bush": "Bush",
+"@bush": {"description": "Bush"},
+"grass": "Grass",
+"@grass": {"description": "Grass"},
+"height": "Height",
+"@height": {"description": "Height of the plant"},
+"allPlantsTitle": "All Plants List",
+"@allPlantsTitle": {"description": "Title for the list of all plants"},
+    "conservationStatus": "Conservation Status: {conservationValue}",
+    "@conservationStatus": {"description": "Conservation status of the plant",
+        "placeholders": {
+            "conservationValue": {"type": "String"}
+        }
+    },
+    "interestingFact": "Interesting Fact: {factValue}",
+    "@interestingFact": {"description": "Interesting fact about the plant",
+        "placeholders": {
+            "factValue": {"type": "String"}
+        }
+    },
+    "distribution": "Distribution: {distValue}",
+    "@distribution": {"description": "Distribution of the plant",
+        "placeholders": {
+            "distValue": {"type": "String"}
+        }
+
+},
+"nearbyForests": "Forests nearby",
+"@nearbyForests": {"description": "Forests nearby"},
+"zoomableGrid": "Zoomable grid",
+"@zoomableGrid": {"description": "Title for the Zoomable Grid widget"},
+"gridSize": "Grid size",
+"@gridSize": {"description": "Title for selecting grid size"},
+"selectNumberOfRows": "Select Number of Rows:",
+"@selectNumberOfRows": {"description": "Label for selecting the number of rows"},
+"selectNumberOfColumns": "Select Number of Columns:",
+"@selectNumberOfColumns": {"description": "Label for selecting the number of columns"},
+"cancel": "Cancel",
+"@cancel": {"description": "Label for cancel button"},
+"ok": "OK",
+"@ok": {"description": "Label for OK button"},
+"gridSizeDialogTitle": "Grid Size",
+"@gridSizeDialogTitle": {"description": "Title for the Grid Size dialog"},
+"gridSizeDialogContent": "Select Number of Rows and Columns:",
+"@gridSizeDialogContent": {"description": "Content for the Grid Size dialog"},
+"gridSizeRows": "Rows",
+"@gridSizeRows": {"description": "Label for Rows in the Grid Size dialog"},
+"gridSizeColumns": "Columns",
+"@gridSizeColumns": {"description": "Label for Columns in the Grid Size dialog"}
+
+}

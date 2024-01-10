@@ -1,151 +1,358 @@
-import 'package:flutter/material.dart';
-import 'package:tinyforests/widgets/builderitems.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/utils/utils.dart';
+import 'package:flutter/material.dart';
+import 'package:tinyforests/widgets/builderitems.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-/// Flutter code sample for [Draggable].
+class DragGridScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(AppLocalizations.of(context)!.zoomableGrid),
+        ),
+        body: Center(
+          child: ZoomableGrid(),
+        ),
+        bottomNavigationBar: bottomNaviBar(context),
+      ),
+    );
+  }
+}
 
-// void main() => runApp(const DraggableExampleApp());
+class ZoomableGrid extends StatefulWidget {
+  @override
+  _ZoomableGridState createState() => _ZoomableGridState();
+}
 
-// class DraggableExampleApp extends StatelessWidget {
-//   const DraggableExampleApp({super.key});
+class _ZoomableGridState extends State<ZoomableGrid> {
+  double scale = 1.0;
+  int numRows = 5; // Initial number of rows in the grid
+  int numCols = 5; // Initial number of columns in the grid
+  int maxNumber = 100;
+
+  @override
+  Widget build(BuildContext context) {
+    double rowHeight = MediaQuery.of(context).size.height * 0.8 / numRows;
+
+    return GestureDetector(
+      onScaleUpdate: (ScaleUpdateDetails details) {
+        setState(() {
+          scale = details.scale;
+        });
+      },
+      child: Transform.scale(
+        scale: scale,
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.8,
+          height: rowHeight * numRows,
+          color: Colors.brown,
+          child: CustomScrollView(
+            slivers: [
+              SliverGrid(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: numCols,
+                  crossAxisSpacing: 1.0,
+                  mainAxisSpacing: 1.0,
+                ),
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                    return Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white),
+                      ),
+                    );
+                  },
+                  childCount: numRows * numCols,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _showSizeDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(AppLocalizations.of(context)!.gridSizeDialogTitle),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(AppLocalizations.of(context)!.gridSizeDialogContent),
+              _buildNumberPicker(
+                  AppLocalizations.of(context)!.gridSizeRows, numRows),
+              Text(AppLocalizations.of(context)!.gridSizeColumns),
+              _buildNumberPicker(
+                  AppLocalizations.of(context)!.gridSizeColumns, numCols),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(AppLocalizations.of(context)!.cancel),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                _showForestDetails(context);
+              },
+              child: Text(AppLocalizations.of(context)!.ok),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildNumberPicker(String label, int value) {
+    return Row(
+      children: [
+        Expanded(
+          child: SizedBox(
+            height: 100.0,
+            child: CupertinoPicker(
+              itemExtent: 32.0,
+              scrollController:
+                  FixedExtentScrollController(initialItem: value - 1),
+              onSelectedItemChanged: (int index) {
+                setState(() {
+                  if (label == AppLocalizations.of(context)!.gridSizeRows) {
+                    numRows = index + 1;
+                  } else {
+                    numCols = index + 1;
+                  }
+                });
+              },
+              children: List.generate(
+                maxNumber,
+                (index) => Center(
+                  child: Text((index + 1).toString()),
+                ),
+              ),
+            ),
+          ),
+        ),
+        Text(' $label'),
+      ],
+    );
+  }
+
+  void _showBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          padding: EdgeInsets.all(16.0),
+          child: Text(
+            'Placeholder text in the bottom sheet',
+            style: TextStyle(fontSize: 18.0),
+          ),
+        );
+      },
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _showSizeDialog(context);
+    });
+  }
+}
+
+// import 'package:flutter/material.dart';
+// import 'package:tinyforests/widgets/builderitems.dart';
+// import 'package:tinyforests/datamodels/plants_data.dart';
+// import 'package:tinyforests/utils/utils.dart';
+
+// class GridScreen extends StatefulWidget {
+//   @override
+//   _GridScreenState createState() => _GridScreenState();
+// }
+
+// class _GridScreenState extends State<GridScreen> {
+//   int rows = 0;
+//   int columns = 0;
 
 //   @override
 //   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: Scaffold(
-//         body: const DraggableExample(),
-//         bottomNavigationBar: bottomNaviBar(context),
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Grid Screen'),
 //       ),
+//       body: Center(
+//         child: ElevatedButton(
+//           onPressed: () {
+//             _showGridSizeDialog(context);
+//           },
+//           child: Text('Set Grid Size'),
+//         ),
+//       ),
+//       bottomNavigationBar: bottomNaviBar(context),
 //     );
 //   }
-// }
 
-// class DraggableExample extends StatefulWidget {
-//   const DraggableExample({super.key});
-
-//   @override
-//   State<DraggableExample> createState() => _DraggableExampleState();
-// }
-
-// class _DraggableExampleState extends State<DraggableExample> {
-//   int acceptedData = 0;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Row(
-//       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//       children: <Widget>[
-//         Draggable<int>(
-//           // Data is the value this Draggable stores.
-//           data: 10,
-//           feedback: Container(
-//             color: Colors.deepOrange,
-//             height: 100,
-//             width: 100,
-//             child: const Icon(Icons.directions_run),
-//           ),
-//           childWhenDragging: Container(
-//             height: 100.0,
-//             width: 100.0,
-//             color: Colors.pinkAccent,
-//             child: const Center(
-//               child: Text('Child When Dragging'),
-//             ),
-//           ),
-//           child: TreeItemCard(plantData: plantData),
-//         ),
-//         DragTarget<int>(
-//           builder: (
-//             BuildContext context,
-//             List<dynamic> accepted,
-//             List<dynamic> rejected,
-//           ) {
-//             return Container(
-//               height: 100.0,
-//               width: 100.0,
-//               color: Colors.cyan,
-//               child: Center(
-//                 child: Text('Value is updated to: $acceptedData'),
-//               ),
-//             );
-//           },
-//           onAccept: (int data) {
-//             setState(() {
-//               acceptedData += data;
-//             });
-//           },
-//         ),
-//       ],
-//     );
-//   }
-// }
-
-//   void _showForestDetails(TinyForest forest) {
-//     showModalBottomSheet(
-//       backgroundColor: Colors.white,
-//       constraints: BoxConstraints.loose(Size(MediaQuery.of(context).size.width,
-//           MediaQuery.of(context).size.height * 0.65)),
-//       isScrollControlled: true,
-//       // constraints: BoxConstraints.expand(),
-//       showDragHandle: true,
+//   Future<void> _showGridSizeDialog(BuildContext context) async {
+//     return showDialog<void>(
 //       context: context,
 //       builder: (BuildContext context) {
-//         // Schedule the map movement after the build phase is completed
-//         Future.delayed(Duration.zero, () {
-//           _mapController.move(
-//             LatLng(
-//               forest.coordinates['lat'] ?? 0.0,
-//               forest.coordinates['lon'] ?? 0.0,
-//             ),
-//             15.0, // You can adjust the zoom level as needed
-//           );
-//         });
-
-//         return Padding(
-//           padding: const EdgeInsets.all(10.0),
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.stretch,
+//         return AlertDialog(
+//           title: Text('Set Grid Size'),
+//           content: Column(
 //             children: [
-//               Text(
-//                 forest.forestName,
-//                 style: const TextStyle(
-//                   fontSize: 20,
-//                   fontWeight: FontWeight.bold,
-//                 ),
+//               TextField(
+//                 decoration: InputDecoration(labelText: 'Rows (1-50)'),
+//                 keyboardType: TextInputType.number,
+//                 onChanged: (value) {
+//                   setState(() {
+//                     rows = int.tryParse(value) ?? 0;
+//                   });
+//                 },
 //               ),
-//               const SizedBox(height: 10),
-//               // Text('Year Planted: ${forest.yearPlanted}'),
-//               // Text('Total Trees: ${forest.totalTrees}'),
-//               Expanded(
-//                 ListView(
-//         children: sortedPlantTypes.expand((plantType) {
-//           return [
-//             Padding(
-//               padding: const EdgeInsets.all(8.0),
-//               child: Text(
-//                 plantType,
-//                 style:
-//                     const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-//               ),
-//             ),
-//             plantsGridView(groupedTrees[plantType]!),
-//           ];
-//         }).toList(),
-//       ),
-//                 ),
+//               TextField(
+//                 decoration: InputDecoration(labelText: 'Columns (1-100)'),
+//                 keyboardType: TextInputType.number,
+//                 onChanged: (value) {
+//                   setState(() {
+//                     columns = int.tryParse(value) ?? 0;
+//                   });
+//                 },
 //               ),
 //             ],
 //           ),
+//           actions: <Widget>[
+//             TextButton(
+//               onPressed: () {
+//                 Navigator.of(context).pop();
+//               },
+//               child: Text('Cancel'),
+//             ),
+//             TextButton(
+//               onPressed: () {
+//                 if (rows > 0 && rows <= 50 && columns > 0 && columns <= 100) {
+//                   Navigator.of(context).pop();
+//                   _navigateToGrid(rows, columns);
+//                 } else {
+//                   // Show an error message or handle invalid input
+//                 }
+//               },
+//               child: Text('Set'),
+//             ),
+//           ],
 //         );
 //       },
 //     );
 //   }
+
+//   void _navigateToGrid(int rows, int columns) {
+//     Navigator.push(
+//       context,
+//       MaterialPageRoute(
+//         builder: (context) => GridDisplay(rows: rows, columns: columns),
+//       ),
+//     );
+//   }
 // }
+
+// // ignore: must_be_immutable
+// class GridDisplay extends StatelessWidget {
+//   final int rows;
+//   final int columns;
+
+//   // Adjust the size of the droppedImages list based on the actual number of slots
+//   List<String> droppedImages;
+
+//   GridDisplay({super.key, required this.rows, required this.columns})
+//       : droppedImages = List.filled(rows * columns, '');
+
+//   @override
+//   Widget build(BuildContext context) {
+//     context:
+//     context;
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Grid Display'),
+//       ),
+//       body: Column(
+//         children: [
+//           Container(
+//             color: const Color.fromARGB(97, 76, 175, 79),
+//             child: GridView.builder(
+//               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                 crossAxisCount: columns,
+//               ),
+//               itemBuilder: (BuildContext context, int index) {
+//                 return DragTarget<Card>(
+//                   builder: (
+//                     BuildContext context,
+//                     List<dynamic> accepted,
+//                     List<dynamic> rejected,
+//                   ) {
+//                     bool isBeingDraggedOver = accepted.isNotEmpty;
+//                     String droppedImage = droppedImages[index];
+//                     return Container(
+//                       decoration: BoxDecoration(
+//                         border: Border.all(
+//                           color:
+//                               isBeingDraggedOver ? Colors.yellow : Colors.white,
+//                         ),
+//                       ),
+//                       child: droppedImage.isNotEmpty
+//                           ? Image.asset(droppedImage)
+//                           : null,
+//                     );
+//                   },
+//                   onAccept: (data) {
+//                     // Handle the accepted data
+//                   },
+//                 );
+//               },
+//               itemCount: rows * columns,
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+void _showForestDetails(BuildContext context) {
+  showModalBottomSheet(
+    backgroundColor: Colors.white,
+    constraints: BoxConstraints.loose(Size(MediaQuery.of(context).size.width,
+        MediaQuery.of(context).size.height * 0.65)),
+    isScrollControlled: true,
+    // constraints: BoxConstraints.expand(),
+    showDragHandle: true,
+    // constraints: BoxConstraints.expand(),
+    builder: (BuildContext context) {
+      return Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                  child: PlantsGridScreenDraggable(
+                      allPlants: allPlants, pageTitle: "pageTitle"))
+            ],
+          ));
+    },
+    context: context,
+  );
+}
 
 class PlantsGridScreenDraggable extends StatelessWidget {
   final Map<String, PlantData> allPlants;
-  final String pageTittle;
+  final String pageTitle;
 
   // Define the order of plant types
   final List<String> plantTypeOrder = [
@@ -156,7 +363,7 @@ class PlantsGridScreenDraggable extends StatelessWidget {
   ];
 
   PlantsGridScreenDraggable(
-      {super.key, required this.allPlants, required this.pageTittle});
+      {super.key, required this.allPlants, required this.pageTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -171,9 +378,6 @@ class PlantsGridScreenDraggable extends StatelessWidget {
 
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      appBar: AppBar(
-        title: Text(pageTittle),
-      ),
       body: ListView(
         children: sortedPlantTypes.expand((plantType) {
           return [
@@ -189,7 +393,6 @@ class PlantsGridScreenDraggable extends StatelessWidget {
           ];
         }).toList(),
       ),
-      bottomNavigationBar: bottomNaviBar(context),
     );
   }
 
@@ -220,9 +423,9 @@ GridView plantsGridView(Map<String, PlantData> someTrees) {
     itemBuilder: (BuildContext context, int index) {
       // Convert the map values to a list and get the PlantData instance
       PlantData plantData = orderedPlants.values.toList()[index];
-      return Draggable<int>(
+      return LongPressDraggable<String>(
         // Data is the value this Draggable stores.
-        data: 10,
+        data: plantData.pathPicture,
         feedback: Container(
           color: Colors.deepOrange,
           height: 100,

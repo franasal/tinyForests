@@ -2,12 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-// import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart'; // Import the Geolocator package
 import 'package:tinyforests/datamodels/forests_data.dart';
+import 'package:tinyforests/screens/cards.dart';
 import 'package:tinyforests/screens/forest_detail_widget.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ForestMaps extends StatefulWidget {
   const ForestMaps({super.key});
@@ -16,9 +17,10 @@ class ForestMaps extends StatefulWidget {
   State<ForestMaps> createState() => _ForestMapsState();
 }
 
+// class _ForestMapsState extends State<ForestMaps> {
+
 class _ForestMapsState extends State<ForestMaps> {
   late MapController _mapController;
-
   final LatLng _startLocation = const LatLng(53.8956, 14.7294);
   Position? _userLocation;
 
@@ -26,6 +28,14 @@ class _ForestMapsState extends State<ForestMaps> {
   void initState() {
     super.initState();
     _mapController = MapController();
+
+    // Fetch user location and show nearby forests on screen creation
+    _initializeLocationAndShowNearbyForests();
+  }
+
+  Future<void> _initializeLocationAndShowNearbyForests() async {
+    await _goUserLocation();
+    _showNearbyForests();
   }
 
   Future<void> _goUserLocation() async {
@@ -75,6 +85,17 @@ class _ForestMapsState extends State<ForestMaps> {
     } catch (e) {
       print('Error getting location: $e');
     }
+
+    // Center the map on the user's current location
+    if (_userLocation != null) {
+      _mapController.move(
+        LatLng(_userLocation!.latitude, _userLocation!.longitude),
+        15.0, // You can adjust the zoom level as needed
+      );
+    }
+
+    // Show nearby forests after centering the map
+    _showNearbyForests();
   }
 
   @override
@@ -82,11 +103,12 @@ class _ForestMapsState extends State<ForestMaps> {
     return Scaffold(
       body: Stack(
         children: [
-          // CurrentLocationLayer(),
           FlutterMap(
             mapController: _mapController,
             options: MapOptions(
-              initialCenter: _startLocation,
+              initialCenter: _userLocation != null
+                  ? LatLng(_userLocation!.latitude, _userLocation!.longitude)
+                  : _startLocation,
               initialZoom: 5.2,
             ),
             children: [
@@ -99,13 +121,12 @@ class _ForestMapsState extends State<ForestMaps> {
               ),
             ],
           ),
-          // CurrentLocationLayer(), TODO this not working
           Positioned(
             bottom: 16.0,
             right: 16.0,
             child: FloatingActionButton(
               onPressed: _goUserLocation,
-              tooltip: 'Go to Current Location',
+              tooltip: AppLocalizations.of(context)!.myLocation,
               child: const Icon(Icons.location_searching),
             ),
           ),
@@ -130,28 +151,9 @@ class _ForestMapsState extends State<ForestMaps> {
           child: GestureDetector(
             onTap: () => _showForestDetails(forest),
             child: Image.asset(
-              './images/icons/LocGree.png',
-              width: 10,
-              height: 10,
-            ),
-          ),
-        ),
-      );
-    }
-
-    for (TinyForest forest in plannedForest) {
-      markers.add(
-        Marker(
-          point: LatLng(
-            forest.coordinates['lat'] ?? 0.0,
-            forest.coordinates['lon'] ?? 0.0,
-          ),
-          width: 80,
-          height: 80,
-          child: GestureDetector(
-            onTap: () => _showForestDetails(forest),
-            child: Image.asset(
-              './images/icons/LocOrang.png',
+              forest.planted
+                  ? './images/icons/LocGree.png' // Use green icon for planted forests
+                  : './images/icons/LocOrang.png', // Use orange icon for planned forests
               width: 10,
               height: 10,
             ),
@@ -161,6 +163,70 @@ class _ForestMapsState extends State<ForestMaps> {
     }
 
     return markers;
+  }
+
+  void _showNearbyForests() {
+    if (_userLocation == null) {
+      // Handle the case where user location is not available
+      return;
+    }
+
+    List<TinyForest> sortedForests =
+        List.from(tForest); // Replace with your actual list
+
+    // Sort the list based on the distance to the user's location
+    sortedForests.sort((forest1, forest2) {
+      double distanceToUser1 = Geolocator.distanceBetween(
+        _userLocation!.latitude,
+        _userLocation!.longitude,
+        forest1.coordinates['lat'] ?? 0.0,
+        forest1.coordinates['lon'] ?? 0.0,
+      );
+
+      double distanceToUser2 = Geolocator.distanceBetween(
+        _userLocation!.latitude,
+        _userLocation!.longitude,
+        forest2.coordinates['lat'] ?? 0.0,
+        forest2.coordinates['lon'] ?? 0.0,
+      );
+
+      return distanceToUser1.compareTo(distanceToUser2);
+    });
+
+    showModalBottomSheet(
+      // ... (existing code)
+      builder: (BuildContext context) {
+        return Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                AppLocalizations.of(context)!.nearbyForests,
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 10),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: sortedForests.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    TinyForest forest = sortedForests[index];
+                    return GestureDetector(
+                      onTap: () => _showForestDetails(forest),
+                      child: ForestCard(forest: forest),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+      context: context,
+    );
   }
 
   void _showForestDetails(TinyForest forest) {
