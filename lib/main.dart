@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
             mapScreen: (context) => const ForestMaps(),
             debugScreen: (context) => DebugScreen(data: allPlants),
             impressumScreen: (context) => const Impressum(),
-            dragAndDropScreen: (context) => DragGridScreen(
+            dragAndDropScreen: (context) => ZoomableGrid(
                 // allPlants: allPlants,
                 // pageTitle: "Grid Draggagle Pflanzen",
                 ),

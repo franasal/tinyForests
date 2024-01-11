@@ -74,7 +74,7 @@
 },
 "nearbyForests": "Forests nearby",
 "@nearbyForests": {"description": "Forests nearby"},
-"zoomableGrid": "Zoomable grid",
+"zoomableGrid": "Planting",
 "@zoomableGrid": {"description": "Title for the Zoomable Grid widget"},
 "gridSize": "Grid size",
 "@gridSize": {"description": "Title for selecting grid size"},
@@ -94,7 +94,7 @@
 "@gridSizeRows": {"description": "Label for Rows in the Grid Size dialog"},
 "gridSizeColumns": "Columns",
 "@gridSizeColumns": {"description": "Label for Columns in the Grid Size dialog"},
-"forestSizeLabel": "Forest size: {forestSize} m.",
+"forestSizeLabel": "Forest size {forestSize} m.",
 "@forestSizeLabel": {"description": "Label for displaying the size of the forest","placeholders": {
             "forestSize": {"type": "int"}
             }
@@ -112,7 +112,7 @@
             }
             },
 
-"yearPlannedLabel": "planned {plannedYear}",
+"yearPlannedLabel": "Planned {plannedYear}",
 "@yearPlannedLabel": {"description": "Label indicating a planned forest","placeholders": {
             "plannedYear": {"type": "int"}
         }
@@ -124,7 +124,7 @@
 "@statusplantedLabelLabel": {"description": "Planted Status label"},
         "statusLabel": "Status",
 "@statusLabel": {"description": "Status Label"},
-        "allLabel": "Status",
+        "allLabel": "Show all",
 "@allLabel": {"description": "All label"}
         
 

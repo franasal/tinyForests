@@ -36,6 +36,50 @@ class _ForestMapsState extends State<ForestMaps> {
     _showNearbyForests();
   }
 
+  void _showLocationServiceDisabledDialog() {
+    // Implement a dialog or snackbar to inform the user
+    // that location services are disabled and encourage
+    // them to enable it in device settings.
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Location Services Disabled'),
+          content:
+              Text('Please enable location services in your device settings.'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showLocationPermissionDeniedDialog() {
+    // Implement a dialog or snackbar to inform the user
+    // that location permissions are denied and provide
+    // guidance on how to enable them.
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Location Permissions Denied'),
+          content: Text(
+              'Please grant location permissions in app settings to use this feature.'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   Future<void> _goUserLocation() async {
     bool serviceEnabled;
     LocationPermission permission;
@@ -46,16 +90,15 @@ class _ForestMapsState extends State<ForestMaps> {
       // Location services are not enabled, don't continue
       // accessing the position and request users of the
       // app to enable the location services.
-      return Future.error('Location services are disabled.');
+      _showLocationServiceDisabledDialog();
+      return;
     }
-
     permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.denied) {
-        // Permissions are denied, handle appropriately.
-        return Future.error('Location permissions are denied');
-      }
+      // Permissions are denied, handle appropriately.
+      // You can show a dialog or a snackbar to inform the user.
+      _showLocationPermissionDeniedDialog();
+      return;
     }
 
     if (permission == LocationPermission.deniedForever) {
@@ -90,6 +133,7 @@ class _ForestMapsState extends State<ForestMaps> {
         LatLng(_userLocation!.latitude, _userLocation!.longitude),
         15.0, // You can adjust the zoom level as needed
       );
+      _isDrawerOpen = false;
     }
 
     // Show nearby forests after centering the map
@@ -217,7 +261,7 @@ class _ForestMapsState extends State<ForestMaps> {
                             showPlanned = false;
                           });
                         },
-                        child: Text(AppLocalizations.of(context)!.plannedLabel),
+                        child: Text(AppLocalizations.of(context)!.plantedLabel),
                       ),
                       ElevatedButton(
                         onPressed: () {
@@ -226,7 +270,7 @@ class _ForestMapsState extends State<ForestMaps> {
                             showPlanned = true;
                           });
                         },
-                        child: Text(AppLocalizations.of(context)!.plantedLabel),
+                        child: Text(AppLocalizations.of(context)!.plannedLabel),
                       ),
                       ElevatedButton(
                         onPressed: () {
@@ -250,9 +294,11 @@ class _ForestMapsState extends State<ForestMaps> {
                         if ((showPlanted && forest.planted) ||
                             (showPlanned && !forest.planted) ||
                             (!showPlanted && !showPlanned)) {
-                          return GestureDetector(
-                            onTap: () => _showForestDetails(forest),
-                            child: TinyForestCard(forest),
+                          return TinyForestCard(
+                            forest,
+                            onPlantedIconClick: () {
+                              _showForestDetails(forest);
+                            },
                           );
                         } else {
                           return const SizedBox.shrink();

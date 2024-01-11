@@ -152,9 +152,11 @@ class ForestCard extends StatelessWidget {
   const ForestCard({
     super.key,
     required this.forest,
+    required this.onPlantedIconClick,
   });
 
   final TinyForest forest;
+  final VoidCallback onPlantedIconClick;
 
   @override
   Widget build(BuildContext context) {
@@ -174,7 +176,10 @@ class ForestCard extends StatelessWidget {
 
 class TinyForestCard extends StatelessWidget {
   final TinyForest forest;
-  const TinyForestCard(this.forest, {Key? key});
+  const TinyForestCard(this.forest,
+      {Key? key, required this.onPlantedIconClick});
+
+  final VoidCallback onPlantedIconClick;
 
   @override
   Widget build(BuildContext context) {
@@ -194,7 +199,12 @@ class TinyForestCard extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 50,
-                  child: Image.asset(forest.image),
+                  child: GestureDetector(
+                    onTap: () {
+                      onPlantedIconClick();
+                    },
+                    child: Image.asset(forest.image),
+                  ),
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -208,7 +218,7 @@ class TinyForestCard extends StatelessWidget {
                     Text(AppLocalizations.of(context)!
                         .totalTreesLabel(forest.totalTrees)),
                     Text(AppLocalizations.of(context)!
-                        .yearPlantedLabel(forest.yearPlanted)),
+                        .forestSizeLabel(forest.forestSize)),
                   ],
                 ),
               ],
@@ -241,7 +251,9 @@ class TinyForestCard extends StatelessWidget {
                   ),
                 ),
                 Tooltip(
-                  message: (AppLocalizations.of(context)!.statusLabel),
+                  message: (forest.planted
+                      ? AppLocalizations.of(context)!.plantedLabel
+                      : AppLocalizations.of(context)!.plannedLabel),
                   child: Image.asset(
                     forest.planted
                         ? './images/icons/LocGree.png'
