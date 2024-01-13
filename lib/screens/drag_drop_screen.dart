@@ -145,14 +145,6 @@ class _GridScreenState extends State<GridScreen> {
     Map<String, Map<String, PlantData>> groupedTrees =
         groupTreesByType(allPlants);
 
-    // var size = MediaQuery.of(context).size;
-    // var width = size.width;
-    // var height = size.height;
-    // var childAspectRatio = (height / widget.numRows) / (width / widget.numCols);
-
-    List<String> sortedPlantTypes = plantTypeOrder
-        .where((plantType) => groupedTrees.containsKey(plantType))
-        .toList();
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.zoomableGrid),
@@ -178,96 +170,79 @@ class _GridScreenState extends State<GridScreen> {
                 scale: scale,
                 child: Transform.translate(
                   offset: offset,
-                  child: Expanded(
-                    child: GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: widget.numCols,
-                        // mainAxisExtent: MediaQuery.of(context).size.width,
-                        crossAxisSpacing: 1.0,
-                        mainAxisSpacing: 1.0,
-                        childAspectRatio: 1, // Maintain square cells
-
-                        // mainAxisExtent: MediaQuery.of(context).size.height,
-                      ),
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) {
-                        final int gridSize = widget.numCols;
-                        final int row = index ~/ gridSize;
-                        final int col = index % gridSize;
-                        return DragTarget<Widget>(
-                          builder: (BuildContext context,
-                              List<Widget?> candidateData, rejectedData) {
-                            Widget? droppedItem = gridItems[index];
-
-                            return Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.green),
-                                color: candidateData.isNotEmpty
-                                    ? Colors.grey
-                                    : Colors.white,
-                              ),
-                              child: droppedItem != null
-                                  ? gridItems[index]
-                                  : const Text("."),
-                            );
-                          },
-                          onWillAccept: (data) {
-                            return true;
-                          },
-                          onAccept: (data) {
-                            setState(() {
-                              if (data.toString() == 'Hauptbaumart' ||
-                                  data.toString() == 'Nebenbaumart') {
-                                // Check if the space is available for a big item
-                                if (col < gridSize - 1 && row < gridSize - 1) {
-                                  // Ensure that the next column and next row are also empty
-                                  if (gridItems[index + 1] == null &&
-                                      gridItems[index + gridSize] == null &&
-                                      gridItems[index + gridSize + 1] == null) {
-                                    gridItems[index] = data;
-                                    gridItems[index + 1] = data;
-                                    gridItems[index + gridSize] = data;
-                                    gridItems[index + gridSize + 1] = data;
-                                  }
-                                }
-                              } else {
-                                gridItems[index] = data;
-                              }
-                            });
-                          },
-                        );
-                      },
-                      itemCount: widget.numRows * widget.numCols,
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: widget.numCols,
+                      crossAxisSpacing: 1.0,
+                      mainAxisSpacing: 1.0,
+                      childAspectRatio: 1,
                     ),
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      return DragTarget<Widget>(
+                        builder: (BuildContext context,
+                            List<Widget?> candidateData, rejectedData) {
+                          Widget? droppedItem = gridItems[index];
+
+                          return Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.green),
+                              color: candidateData.isNotEmpty
+                                  ? Colors.grey
+                                  : Colors.white,
+                            ),
+                            child: droppedItem != null
+                                ? gridItems[index]
+                                : const Text("."),
+                          );
+                        },
+                        onWillAccept: (data) {
+                          return true;
+                        },
+                        onAccept: (data) {
+                          setState(() {
+                            gridItems[index] = data;
+                          });
+                        },
+                      );
+                    },
+                    itemCount: widget.numRows * widget.numCols,
                   ),
                 ),
               ),
             ),
           ),
           Container(
-              color: Colors.white60,
-              height: 10.w,
-              child: Text("forest design - drag and drop testing ")),
+            color: Colors.white60,
+            height: 10.w,
+            child: Text("forest design - drag and drop testing "),
+          ),
           SizedBox(
             width: 10.w,
           ),
           Expanded(
             flex: 1,
             child: ListView(
-              children: sortedPlantTypes.expand((plantType) {
-                return [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      plantType,
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
+              children: [
+                for (String plantType in plantTypeOrder)
+                  if (groupedTrees.containsKey(plantType))
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            plantType,
+                            style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        plantsGridView(groupedTrees[plantType]!),
+                      ],
                     ),
-                  ),
-                  plantsGridView(groupedTrees[plantType]!),
-                ];
-              }).toList(),
+              ],
             ),
           ),
         ],
@@ -310,13 +285,12 @@ GridView plantsGridView(Map<String, PlantData> someTrees) {
         ),
 
         childWhenDragging: Container(),
-        data: Text(plantData.plantType),
-        // data: Container(
-        //   color: Colors.deepOrange,
-        //   height: 80,
-        //   width: 80,
-        //   child: Image.asset(plantData.pathPicture),
-        // ),
+        data: Container(
+          color: Colors.deepOrange,
+          height: 80,
+          width: 80,
+          child: Image.asset(plantData.pathPicture),
+        ),
 
         child: TreeItemCard(plantData: plantData, statusColor: Colors.white),
       );
