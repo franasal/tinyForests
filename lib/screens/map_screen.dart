@@ -9,6 +9,7 @@ import 'package:tinyforests/screens/cards.dart';
 import 'package:tinyforests/screens/forest_detail_widget.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:app_settings/app_settings.dart';
 
 class ForestMaps extends StatefulWidget {
   const ForestMaps({Key? key}) : super(key: key);
@@ -37,9 +38,6 @@ class _ForestMapsState extends State<ForestMaps> {
   }
 
   void _showLocationServiceDisabledDialog() {
-    // Implement a dialog or snackbar to inform the user
-    // that location services are disabled and encourage
-    // them to enable it in device settings.
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -50,7 +48,15 @@ class _ForestMapsState extends State<ForestMaps> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text('OK'),
+              child: Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                // Open app settings when the button is clicked
+                AppSettings();
+                Navigator.pop(context);
+              },
+              child: Text('Take me to settings'),
             ),
           ],
         );
@@ -72,7 +78,15 @@ class _ForestMapsState extends State<ForestMaps> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text('OK'),
+              child: Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                // Open app settings when the button is clicked
+                AppSettings.openAppSettings();
+                Navigator.pop(context);
+              },
+              child: Text('Take me to settings'),
             ),
           ],
         );
