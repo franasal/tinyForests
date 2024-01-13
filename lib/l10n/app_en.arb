@@ -125,7 +125,9 @@
         "statusLabel": "Status",
 "@statusLabel": {"description": "Status Label"},
         "allLabel": "Show all",
-"@allLabel": {"description": "All label"}
+"@allLabel": {"description": "All label"},
+"createGrid": "Create Grid",
+"@createGrid": {"description": "Button label for creating a grid"}
         
 
 

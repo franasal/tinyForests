@@ -38,9 +38,9 @@
 "plannedLabel": "Planificado",
 "plantedLabel": "Plantado",
 "statusLabel": "Estado",
-"allLabel": "Mostrar todos"
-
-
-
+"allLabel": "Mostrar todos",
+"createGrid": "Crear Cuadrícula"
 
 }
+
+

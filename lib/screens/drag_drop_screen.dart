@@ -7,16 +7,118 @@ import 'package:tinyforests/widgets/builderitems.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ZoomableGrid extends StatefulWidget {
-  const ZoomableGrid({super.key});
-
   @override
-  ZoomableGridState createState() => ZoomableGridState(allPlants);
+  _ZoomableGridState createState() => _ZoomableGridState();
 }
 
-class ZoomableGridState extends State<ZoomableGrid> {
+class _ZoomableGridState extends State<ZoomableGrid> {
   double scale = 1.0;
   int numRows = 5; // Initial number of rows in the grid
   int numCols = 5; // Initial number of columns in the grid
+  int maxNumber = 100;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Select Grid Size'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: _buildNumberPicker(
+                      AppLocalizations.of(context)!.gridSizeRows,
+                      AppLocalizations.of(context)!.gridSizeRows,
+                      numRows),
+                ),
+                SizedBox(
+                  width: 5.w,
+                ),
+                Expanded(
+                  child: _buildNumberPicker(
+                      AppLocalizations.of(context)!.gridSizeColumns,
+                      AppLocalizations.of(context)!.gridSizeRows,
+                      numCols),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GridScreen(
+                      numRows: numRows,
+                      numCols: numCols,
+                    ),
+                  ),
+                );
+              },
+              child: Text(AppLocalizations.of(context)!.createGrid),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: bottomNaviBar(context),
+    );
+  }
+
+  Widget _buildNumberPicker(String label, String rowsLab, int value) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 100.0,
+          child: CupertinoPicker(
+            itemExtent: 32.0,
+            scrollController:
+                FixedExtentScrollController(initialItem: value - 1),
+            onSelectedItemChanged: (int index) {
+              setState(() {
+                if (label == AppLocalizations.of(context)!.gridSizeRows) {
+                  numRows = index + 1;
+                } else {
+                  numCols = index + 1;
+                }
+              });
+            },
+            children: List.generate(
+              maxNumber,
+              (index) => Center(
+                child: Text((index + 1).toString()),
+              ),
+            ),
+          ),
+        ),
+        Text(' $label'),
+      ],
+    );
+  }
+}
+
+class GridScreen extends StatefulWidget {
+  final int numRows;
+  final int numCols;
+
+  const GridScreen({super.key, required this.numRows, required this.numCols});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _GridScreenState createState() => _GridScreenState();
+}
+
+class _GridScreenState extends State<GridScreen> {
+  double scale = 1.0;
+  Offset offset = Offset.zero;
+  Offset initialFocalPoint = Offset.zero;
+  Offset sessionOffset = Offset.zero;
+  double initialScale = 1.0;
+
   int maxNumber = 100;
 
   // Define the order of plant types
@@ -27,24 +129,30 @@ class ZoomableGridState extends State<ZoomableGrid> {
     'Bodendecker'
   ];
 
-  ZoomableGridState(this.allPlants);
+  late List<Widget?> gridItems;
 
-  final Map<String, PlantData> allPlants;
+  @override
+  void initState() {
+    super.initState();
+    gridItems = List.filled(
+      widget.numCols * widget.numRows,
+      Container(), // Initialize with an empty Container()
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    List<Widget?> gridItems = List.filled(numCols * numRows, null);
-
-    bool _isDropped = false;
-
     Map<String, Map<String, PlantData>> groupedTrees =
         groupTreesByType(allPlants);
 
-    // Sort the keys of groupedTrees based on plantTypeOrder
+    // var size = MediaQuery.of(context).size;
+    // var width = size.width;
+    // var height = size.height;
+    // var childAspectRatio = (height / widget.numRows) / (width / widget.numCols);
+
     List<String> sortedPlantTypes = plantTypeOrder
         .where((plantType) => groupedTrees.containsKey(plantType))
         .toList();
-
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.zoomableGrid),
@@ -53,78 +161,97 @@ class ZoomableGridState extends State<ZoomableGrid> {
         children: [
           Expanded(
             flex: 2,
-            child: Center(
-              child: GestureDetector(
-                onScaleUpdate: (ScaleUpdateDetails details) {
-                  setState(() {
-                    scale = details.scale;
-                  });
-                },
-                child: Transform.scale(
-                  scale: scale,
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.8,
-                    height: 400,
-                    color: Colors.lightGreen,
-                    child: CustomScrollView(
-                      slivers: [
-                        SliverGrid(
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: numCols,
-                            crossAxisSpacing: 1.0,
-                            mainAxisSpacing: 1.0,
-                          ),
-                          delegate: SliverChildBuilderDelegate(
-                            (context, index) {
-                              return Builder(
-                                builder: (BuildContext context) {
-                                  return DragTarget<Widget>(
-                                    builder: (BuildContext context,
-                                        List<Widget?> candidateData,
-                                        rejectedData) {
-                                      return Container(
-                                        decoration: BoxDecoration(
-                                          border:
-                                              Border.all(color: Colors.white),
-                                          color: candidateData.isNotEmpty
-                                              ? Colors
-                                                  .grey // Change color when dragging over
-                                              : Colors.white,
-                                        ),
-                                        child: Center(
-                                          child: _isDropped
-                                              ? gridItems[index]
-                                              : const Text("."),
-                                        ),
-                                      );
-                                    },
-                                    onWillAccept: (data) {
-                                      // Return true if the data being dragged can be accepted here
-                                      return true;
-                                    },
-                                    onAccept: (data) {
-                                      setState(() {
-                                        print(data);
-                                        gridItems[index] = data;
-                                        _isDropped = true;
-                                      });
-                                    },
-                                  );
-                                },
-                              );
-                            },
-                            childCount: numRows * numCols,
-                          ),
-                        ),
-                      ],
+            child: GestureDetector(
+              onScaleStart: (details) {
+                initialFocalPoint = details.focalPoint;
+                sessionOffset = offset;
+                initialScale = scale;
+              },
+              onScaleUpdate: (details) {
+                setState(() {
+                  scale = initialScale * details.scale;
+                  offset =
+                      sessionOffset + (details.focalPoint - initialFocalPoint);
+                });
+              },
+              child: Transform.scale(
+                scale: scale,
+                child: Transform.translate(
+                  offset: offset,
+                  child: Expanded(
+                    child: GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: widget.numCols,
+                        // mainAxisExtent: MediaQuery.of(context).size.width,
+                        crossAxisSpacing: 1.0,
+                        mainAxisSpacing: 1.0,
+                        childAspectRatio: 1, // Maintain square cells
+
+                        // mainAxisExtent: MediaQuery.of(context).size.height,
+                      ),
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        final int gridSize = widget.numCols;
+                        final int row = index ~/ gridSize;
+                        final int col = index % gridSize;
+                        return DragTarget<Widget>(
+                          builder: (BuildContext context,
+                              List<Widget?> candidateData, rejectedData) {
+                            Widget? droppedItem = gridItems[index];
+
+                            return Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.green),
+                                color: candidateData.isNotEmpty
+                                    ? Colors.grey
+                                    : Colors.white,
+                              ),
+                              child: droppedItem != null
+                                  ? gridItems[index]
+                                  : const Text("."),
+                            );
+                          },
+                          onWillAccept: (data) {
+                            return true;
+                          },
+                          onAccept: (data) {
+                            setState(() {
+                              if (data.toString() == 'Hauptbaumart' ||
+                                  data.toString() == 'Nebenbaumart') {
+                                // Check if the space is available for a big item
+                                if (col < gridSize - 1 && row < gridSize - 1) {
+                                  // Ensure that the next column and next row are also empty
+                                  if (gridItems[index + 1] == null &&
+                                      gridItems[index + gridSize] == null &&
+                                      gridItems[index + gridSize + 1] == null) {
+                                    gridItems[index] = data;
+                                    gridItems[index + 1] = data;
+                                    gridItems[index + gridSize] = data;
+                                    gridItems[index + gridSize + 1] = data;
+                                  }
+                                }
+                              } else {
+                                gridItems[index] = data;
+                              }
+                            });
+                          },
+                        );
+                      },
+                      itemCount: widget.numRows * widget.numCols,
                     ),
                   ),
                 ),
               ),
             ),
           ),
-          Text("forest design - drag and drop testing "),
+          Container(
+              color: Colors.white60,
+              height: 10.w,
+              child: Text("forest design - drag and drop testing ")),
+          SizedBox(
+            width: 10.w,
+          ),
           Expanded(
             flex: 1,
             child: ListView(
@@ -147,83 +274,6 @@ class ZoomableGridState extends State<ZoomableGrid> {
       ),
       bottomNavigationBar: bottomNaviBar(context),
     );
-  }
-
-  void _showSizeDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(AppLocalizations.of(context)!.gridSizeDialogTitle),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(AppLocalizations.of(context)!.gridSizeDialogContent),
-              _buildNumberPicker(AppLocalizations.of(context)!.gridSizeRows,
-                  AppLocalizations.of(context)!.gridSizeRows, numRows),
-              Text(AppLocalizations.of(context)!.gridSizeColumns),
-              _buildNumberPicker(AppLocalizations.of(context)!.gridSizeColumns,
-                  AppLocalizations.of(context)!.gridSizeRows, numCols),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text(AppLocalizations.of(context)!.cancel),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text(AppLocalizations.of(context)!.ok),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  Widget _buildNumberPicker(String label, String rowsLab, int value) {
-    return Row(
-      children: [
-        Expanded(
-          child: SizedBox(
-            height: 100.0,
-            child: CupertinoPicker(
-              itemExtent: 32.0,
-              scrollController:
-                  FixedExtentScrollController(initialItem: value - 1),
-              onSelectedItemChanged: (int index) {
-                setState(() {
-                  if (label == rowsLab) {
-                    numRows = index + 1;
-                  } else {
-                    numCols = index + 1;
-                  }
-                });
-              },
-              children: List.generate(
-                maxNumber,
-                (index) => Center(
-                  child: Text((index + 1).toString()),
-                ),
-              ),
-            ),
-          ),
-        ),
-        Text(' $label'),
-      ],
-    );
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _showSizeDialog(context);
-    });
   }
 }
 
@@ -260,12 +310,13 @@ GridView plantsGridView(Map<String, PlantData> someTrees) {
         ),
 
         childWhenDragging: Container(),
-        data: Container(
-          color: Colors.deepOrange,
-          height: 80,
-          width: 80,
-          child: Image.asset(plantData.pathPicture),
-        ),
+        data: Text(plantData.plantType),
+        // data: Container(
+        //   color: Colors.deepOrange,
+        //   height: 80,
+        //   width: 80,
+        //   child: Image.asset(plantData.pathPicture),
+        // ),
 
         child: TreeItemCard(plantData: plantData, statusColor: Colors.white),
       );

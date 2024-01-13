@@ -38,7 +38,8 @@
 "plannedLabel": "Geplant",
 "plantedLabel": "Gepflanzt",
 "statusLabel": "Status",
-"allLabel": "Alle Wälder"
+"allLabel": "Alle Wälder",
+"createGrid": "Gitter erstellen"
 
 
 }
