@@ -39,6 +39,69 @@ class _ForestMapsState extends State<ForestMaps> {
     _showNearbyForests();
   }
 
+  Future<void> _goUserLocation() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    // Test if location services are enabled.
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      // Location services are not enabled, request user to enable them.
+      _showLocationServiceDisabledDialog();
+      return;
+    }
+
+    // Check location permissions.
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      // Permissions are denied, request permission from the user.
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        // User denied location permission, handle it appropriately.
+        _showLocationPermissionDeniedDialog();
+        return;
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      // Permissions are denied forever, handle appropriately.
+      return Future.error(
+          'Location permissions are permanently denied, we cannot request permissions.');
+    }
+
+    // When we reach here, permissions are granted, and we can
+    // continue accessing the position of the device.
+    try {
+      Position locationData = await Geolocator.getCurrentPosition();
+      setState(() {
+        _userLocation = locationData;
+      });
+
+      // Use null-aware operator to handle nullable values
+      _mapController.move(
+        LatLng(
+          locationData.latitude,
+          locationData.longitude,
+        ),
+        5,
+      );
+    } catch (e) {
+      print('Error getting location: $e');
+    }
+
+    // Center the map on the user's current location
+    if (_userLocation != null) {
+      _mapController.move(
+        LatLng(_userLocation!.latitude, _userLocation!.longitude),
+        15.0, // You can adjust the zoom level as needed
+      );
+      _isDrawerOpen = false;
+    }
+
+    // Show nearby forests after centering the map
+    _showNearbyForests();
+  }
+
   void _showLocationServiceDisabledDialog() {
     showDialog(
       context: context,
@@ -94,66 +157,6 @@ class _ForestMapsState extends State<ForestMaps> {
         );
       },
     );
-  }
-
-  Future<void> _goUserLocation() async {
-    bool serviceEnabled;
-    LocationPermission permission;
-
-    // Test if location services are enabled.
-    serviceEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!serviceEnabled) {
-      // Location services are not enabled, don't continue
-      // accessing the position and request users of the
-      // app to enable the location services.
-      _showLocationServiceDisabledDialog();
-      return;
-    }
-    permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      // Permissions are denied, handle appropriately.
-      // You can show a dialog or a snackbar to inform the user.
-      _showLocationPermissionDeniedDialog();
-      return;
-    }
-
-    if (permission == LocationPermission.deniedForever) {
-      // Permissions are denied forever, handle appropriately.
-      return Future.error(
-          'Location permissions are permanently denied, we cannot request permissions.');
-    }
-
-    // When we reach here, permissions are granted, and we can
-    // continue accessing the position of the device.
-    try {
-      Position locationData = await Geolocator.getCurrentPosition();
-      setState(() {
-        _userLocation = locationData;
-      });
-
-      // Use null-aware operator to handle nullable values
-      _mapController.move(
-        LatLng(
-          locationData.latitude,
-          locationData.longitude,
-        ),
-        5,
-      );
-    } catch (e) {
-      print('Error getting location: $e');
-    }
-
-    // Center the map on the user's current location
-    if (_userLocation != null) {
-      _mapController.move(
-        LatLng(_userLocation!.latitude, _userLocation!.longitude),
-        15.0, // You can adjust the zoom level as needed
-      );
-      _isDrawerOpen = false;
-    }
-
-    // Show nearby forests after centering the map
-    _showNearbyForests();
   }
 
   bool showPlanted = false;
