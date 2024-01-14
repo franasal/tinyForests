@@ -11,7 +11,6 @@ import 'package:tinyforests/screens/plants_grid_view_screen.dart';
 import 'package:tinyforests/screens/plants_list_view.dart';
 import 'package:tinyforests/variables.dart';
 import 'package:tinyforests/l10n/l10n.dart';
-import 'package:tinyforests/screens/first_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // entry point of the application, like the main() function at the end of old python programs
@@ -45,7 +44,6 @@ class MyApp extends StatelessWidget {
               const ForestMaps(), // set the initial screen of the app with the forests overview
           routes: {
             // defining named routes for navigation these are imported from in the variables.dart file
-            startScreen: (context) => const Screen1(),
             mapScreen: (context) => const ForestMaps(),
             debugScreen: (context) => DebugScreen(data: allPlants),
             impressumScreen: (context) => const Impressum(),

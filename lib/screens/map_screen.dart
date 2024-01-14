@@ -5,8 +5,10 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart'; // Import the Geolocator package
 import 'package:tinyforests/datamodels/forests_data.dart';
+import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/screens/cards.dart';
-import 'package:tinyforests/screens/forest_detail_widget.dart';
+import 'package:tinyforests/screens/plants_grid_view_screen.dart';
+import 'package:tinyforests/utils/utils.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:app_settings/app_settings.dart';
@@ -330,7 +332,17 @@ class _ForestMapsState extends State<ForestMaps> {
     );
   }
 
+  // Define the order of plant types
+  List<String> plantTypeOrder = [
+    'Hauptbaumart',
+    'Nebenbaumart',
+    'Strauch',
+    'Bodendecker'
+  ];
+
   void _showForestDetails(TinyForest forest) {
+    Map<String, Map<String, PlantData>> groupedTrees =
+        groupTreesByType(forest.listPlanted);
     showModalBottomSheet(
       backgroundColor: Colors.white,
       constraints: BoxConstraints.loose(Size(MediaQuery.of(context).size.width,
@@ -367,13 +379,40 @@ class _ForestMapsState extends State<ForestMaps> {
               // Text('Year Planted: ${forest.yearPlanted}'),
               // Text('Total Trees: ${forest.totalTrees}'),
               Expanded(
-                child: ForestDetailWidget(
-                  forestName: forest.forestName,
-                  image: forest.image,
-                  yearPlanted: forest.yearPlanted,
-                  totalTrees: forest.totalTrees,
-                  listPlanted: forest.listPlanted,
-                ),
+                child: ListView(shrinkWrap: true, children: [
+                  Image.asset(
+                    forest.image,
+                    width: 300,
+                    height: 300,
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    AppLocalizations.of(context)!.yearPlanted(forest
+                        .yearPlanted), // Displaying the year the forest was planted
+                    style: const TextStyle(fontSize: 18),
+                  ),
+                  Text(
+                    AppLocalizations.of(context)!.totalTrees(forest.totalTrees),
+
+                    /// Displaying the total number of trees planted
+                    style: const TextStyle(fontSize: 18),
+                  ),
+                  ...plantTypeOrder.expand((plantType) {
+                    return [
+                      const SizedBox(height: 16),
+                      Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Text(
+                          plantType,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      if (groupedTrees[plantType] != null)
+                        plantsGridView(groupedTrees[plantType]!),
+                    ];
+                  }),
+                ]),
               ),
             ],
           ),
