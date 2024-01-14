@@ -86,7 +86,7 @@
 "@cancel": {"description": "Label for cancel button"},
 "ok": "OK",
 "@ok": {"description": "Label for OK button"},
-"gridSizeDialogTitle": "Grid Size",
+"gridSizeDialogTitle": "Select Grid Size",
 "@gridSizeDialogTitle": {"description": "Title for the Grid Size dialog"},
 "gridSizeDialogContent": "Select Number of Rows and Columns:",
 "@gridSizeDialogContent": {"description": "Content for the Grid Size dialog"},

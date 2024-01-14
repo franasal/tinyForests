@@ -38,6 +38,7 @@ flutter:
   - images/
   - images/forests/
   - images/plants/
+  - images/plantTypes/
   - images/icons/
   - lib/
   - lib/datamodels/

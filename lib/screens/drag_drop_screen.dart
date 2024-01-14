@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
+import 'package:tinyforests/screens/plants_grid_view_screen.dart';
 import 'package:tinyforests/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
@@ -21,12 +22,16 @@ class _ZoomableGridState extends State<ZoomableGrid> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Select Grid Size'),
+        title: Text(AppLocalizations.of(context)!.gridSize),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(AppLocalizations.of(context)!.gridSizeDialogContent),
+            SizedBox(
+              width: 25.w,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -185,16 +190,21 @@ class _GridScreenState extends State<GridScreen> {
                             List<Widget?> candidateData, rejectedData) {
                           Widget? droppedItem = gridItems[index];
 
-                          return Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.green),
-                              color: candidateData.isNotEmpty
-                                  ? Colors.grey
-                                  : Colors.white,
+                          return GestureDetector(
+                            onLongPress: () {
+                              _removeItemClicked(context, index);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.green),
+                                color: candidateData.isNotEmpty
+                                    ? Colors.grey
+                                    : Colors.white,
+                              ),
+                              child: droppedItem != null
+                                  ? gridItems[index]
+                                  : const Text("."),
                             ),
-                            child: droppedItem != null
-                                ? gridItems[index]
-                                : const Text("."),
                           );
                         },
                         onWillAccept: (data) {
@@ -239,7 +249,7 @@ class _GridScreenState extends State<GridScreen> {
                             ),
                           ),
                         ),
-                        plantsGridView(groupedTrees[plantType]!),
+                        plantsGridViewDraggable(groupedTrees[plantType]!),
                       ],
                     ),
               ],
@@ -250,10 +260,39 @@ class _GridScreenState extends State<GridScreen> {
       bottomNavigationBar: bottomNaviBar(context),
     );
   }
+
+  void _removeItemClicked(BuildContext context, int index) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Info'),
+          content: Text('Are you sure you want to remove this item?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  gridItems[index] = Container(); // Reset to an empty space
+                });
+                Navigator.of(context).pop();
+              },
+              child: Text('Yes'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('No'),
+            ),
+          ],
+        );
+      },
+    );
+  }
 }
 
 // function to create a GridView of tree items in each row
-GridView plantsGridView(Map<String, PlantData> someTrees) {
+GridView plantsGridViewDraggable(Map<String, PlantData> someTrees) {
   Map<String, PlantData> orderedPlants = {};
 
   // Sort the subset Map by totalPlanted in descending order
@@ -285,74 +324,230 @@ GridView plantsGridView(Map<String, PlantData> someTrees) {
         ),
 
         childWhenDragging: Container(),
-        data: Container(
-          color: Colors.deepOrange,
-          height: 80,
-          width: 80,
-          child: Image.asset(plantData.pathPicture),
-        ),
+        data: CustomClickableWidget(plantType: plantData.plantType),
 
-        child: TreeItemCard(plantData: plantData, statusColor: Colors.white),
+        child: TreeItemCard(
+          plantData: plantData,
+        ),
       );
     },
   );
 }
 
-// custom widget for displaying a thumbnail, the common and scientific name of a plant
-class TreeItemCard extends StatelessWidget {
-  final PlantData plantData;
-  final Color statusColor;
+class CustomClickableWidget extends StatelessWidget {
+  final String plantType;
 
-  const TreeItemCard(
-      {Key? key, required this.plantData, required this.statusColor})
-      : super(key: key);
+  CustomClickableWidget({
+    required this.plantType,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: statusColor,
-      elevation: 2.0,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            height: 22.w,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                // picture from images/trees todo; change folder name to /plants
-                image: AssetImage(plantData.pathPicture),
+    // Map plantType to the corresponding image path
 
-                fit: BoxFit.cover,
+    Map<String, String> plantTypeImageMap = {
+      'Hauptbaumart': 'images/plantTypes/Hauptbaum.png',
+      'Nebenbaumart': 'images/plantTypes/Nebenbaum.png',
+      'Strauch': 'images/plantTypes/Strauch.png',
+      'Bodendecker': 'images/plantTypes/Bodendecker.png',
+    };
+
+    // Check if the plantType is in the plantTypeOrder list
+    if (plantTypeImageMap.keys.contains(plantType)) {
+      String imagePath =
+          plantTypeImageMap[plantType] ?? ''; // Get the image path
+
+      return InkWell(
+        onTap: () {
+          // Show RenderBox with options when clicked
+          _showOptions(context);
+        },
+        child: Image.asset(imagePath), // Display the clickable picture
+      );
+    } else {
+      return Text('Invalid plant type');
+    }
+  }
+
+  void _showInfoPopup(BuildContext context) {
+    // Show a small popup text for onInfoClicked
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Info'),
+          content: Text('This is the info popup for $plantType.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Close'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _onCustomClicked(BuildContext context) {
+    // Show a small popup text for onInfoClicked
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Info'),
+          content: Text('This is the info popup for $plantType.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Close'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showOptions(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Options for $plantType'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ElevatedButton(
+                onPressed: () => _showInfoPopup(context),
+                child: Text('Info'),
               ),
-            ),
+              ElevatedButton(
+                onPressed: () => _onCustomClicked(context),
+                child: Text('Remove Item'),
+              ),
+              ElevatedButton(
+                onPressed: () => _onCustomClicked(context),
+                child: Text('Custom'),
+              ),
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  plantData.commonName,
-                  style: const TextStyle(
-                      fontSize: 14.0, fontWeight: FontWeight.bold),
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1, //  the number of lines to show
-                ),
-                Text(
-                  plantData.scientificName,
-                  style: const TextStyle(
-                    fontSize: 9.0,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
+
+
+
+// class CustomClickablePicture extends StatelessWidget {
+//   final String plantType;
+//   final Function(String) onInfoClicked;
+//   final Function(String) onRemoveClicked;
+//   final Function(String) onCustomClicked;
+
+//   // Constructor to initialize the widget with required callbacks
+//   CustomClickablePicture({
+//     required this.plantType,
+//     required this.onInfoClicked,
+//     required this.onRemoveClicked,
+//     required this.onCustomClicked,
+//   });
+
+//   @override
+//   Widget build(BuildContext context) {
+//     // Check if the plantType matches any of the predefined types
+//     if (plantTypeOrder.contains(plantType)) {
+//       // Return a clickable picture with options
+//       return GestureDetector(
+//         onTap: () {
+//           // Open RenderBox with options when clicked
+//           _showOptions(context);
+//         },
+//         child: Image.asset(
+//           _getImagePath(plantType),
+//           // Adjust width and height as needed
+//           width: 100,
+//           height: 100,
+//           // Other image properties
+//         ),
+//       );
+//     } else {
+//       // Return a default widget if plantType doesn't match
+//       return Text('Invalid plant type');
+//     }
+//   }
+
+//   // Method to show the RenderBox with options
+//   void _showOptions(BuildContext context) {
+//     // Implement the RenderBox with options (info, remove item, custom)
+//     // Use onInfoClicked, onRemoveClicked, onCustomClicked callbacks as needed
+//     // You can use showDialog or another widget to display the options
+//     // Example:
+//     showDialog(
+//       context: context,
+//       builder: (BuildContext context) {
+//         return AlertDialog(
+//           title: Text('Options for $plantType'),
+//           content: Column(
+//             mainAxisSize: MainAxisSize.min,
+//             children: [
+//               ElevatedButton(
+//                 onPressed: () => _showInfoPopup(),
+//                 child: Text('Info'),
+//               ),
+//               ElevatedButton(
+//                 onPressed: () => onRemoveClicked(plantType),
+//                 child: Text('Remove Item'),
+//               ),
+//               ElevatedButton(
+//                 onPressed: () => onCustomClicked(plantType),
+//                 child: Text('Custom'),
+//               ),
+//             ],
+//           ),
+//         );
+//       },
+//     );
+//   }
+
+//   // Method to get the image path based on plantType
+//   String _getImagePath(String plantType) {
+//     // Add your logic to determine the image path based on plantType
+//     // Example: return 'assets/$plantType.png';
+//     return '';
+//   }
+
+// void _showInfoPopup(BuildContext context, ) {
+//     // Show a small popup text for onInfoClicked
+//     showDialog(
+//       context: context,
+//       builder: (BuildContext context) {
+//         return AlertDialog(
+//           title: Text('Info'),
+//           content: Text('This is the info popup for $plantType.'),
+//           actions: [
+//             TextButton(
+//               onPressed: () {
+//                 Navigator.of(context).pop();
+//               },
+//               child: Text('Close'),
+//             ),
+//           ],
+//         );
+//       },
+//     );
+//   }
+//   // Predefined plant types
+//   static const plantTypeOrder = [
+//     'Hauptbaumart',
+//     'Nebenbaumart',
+//     'Strauch',
+//     'Bodendecker',
+//   ];
+// }
+
+
+
