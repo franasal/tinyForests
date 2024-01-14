@@ -39,7 +39,13 @@
 "plantedLabel": "Plantado",
 "statusLabel": "Estado",
 "allLabel": "Mostrar todos",
-"createGrid": "Crear Cuadrícula"
+"createGrid": "Crear Cuadrícula",
+"explainDragDrop": "TinyForest diseño - prueba de `drag and drop` - presiona largo para arrastrar y soltar o eliminar",
+"close": "Cerrar",
+"remvoe": "Eliminar",
+"placeholderText": "Este botón te llevará a otro contenido increíble",
+"infoPopUp": "'Esta es la ventana emergente de información para {plantType}'."
+
 
 }
 

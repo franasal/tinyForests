@@ -39,7 +39,13 @@
 "plantedLabel": "Gepflanzt",
 "statusLabel": "Status",
 "allLabel": "Alle Wälder",
-"createGrid": "Gitter erstellen"
+"createGrid": "Gitter erstellen",
+"explainDragDrop": "Waldgestaltung - Drag-and-Drop-Test - lange drücken zum Ziehen und Ablegen oder zum Löschen",
+"close": "Schließen",
+"remvoe": "Entfernen",
+"placeholderText": "Dieser Button führt dich zu anderem fantastischem Inhalt",
+"infoPopUp": "'Dies ist das Info-Popup für {plantType}'."
+
 
 
 }

@@ -228,7 +228,8 @@ class _GridScreenState extends State<GridScreen> {
           Container(
             color: Colors.white60,
             height: 10.w,
-            child: Text("forest design - drag and drop testing "),
+            child: Text(AppLocalizations.of(context)!
+                .explainDragDrop), // Text(AppLocalizations.of(context)!.zoomableGrid),
           ),
           SizedBox(
             width: 10.w,
@@ -279,10 +280,11 @@ class _GridScreenState extends State<GridScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Options'),
+          title: Text(plantData!.commonName),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              Text(plantData.plantType),
               ElevatedButton(
                 onPressed: () {
                   setState(() {
@@ -290,7 +292,8 @@ class _GridScreenState extends State<GridScreen> {
                   });
                   Navigator.of(context).pop();
                 },
-                child: Text('Remove Item'),
+                child: Text(AppLocalizations.of(context)!
+                    .remvoe), // Text(AppLocalizations.of(context)!.zoomableGrid),
               ),
               ElevatedButton(
                 onPressed: () => _showInfoPopup(context, plantData),
@@ -314,13 +317,15 @@ class _GridScreenState extends State<GridScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Info'),
-          content: Text('This is the info popup for $plantData.plantType.'),
+          content: Text(
+              AppLocalizations.of(context)!.infoPopUp(plantData!.plantType)),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Close'),
+              child: Text(AppLocalizations.of(context)!
+                  .close), // Text(AppLocalizations.of(context)!.zoomableGrid),
             ),
           ],
         );
@@ -334,14 +339,16 @@ class _GridScreenState extends State<GridScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Info'),
-          content: Text('This is the info popup for $plantData.plantType.'),
+          title: Text(
+              'Custom'), // Text(AppLocalizations.of(context)!.zoomableGrid),
+          content: Text(AppLocalizations.of(context)!.placeholderText),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Close'),
+              child: Text(AppLocalizations.of(context)!
+                  .close), //Text(AppLocalizations.of(context)!.close),
             ),
           ],
         );
@@ -422,7 +429,7 @@ class CustomClickableWidget extends StatelessWidget {
 
       return Image.asset(imagePath); // Display the clickable picture
     } else {
-      return Text('Invalid plant type');
+      return const Text('Invalid plant type');
     }
   }
 }

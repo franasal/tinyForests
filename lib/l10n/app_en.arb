@@ -127,7 +127,19 @@
         "allLabel": "Show all",
 "@allLabel": {"description": "All label"},
 "createGrid": "Create Grid",
-"@createGrid": {"description": "Button label for creating a grid"}
+"@createGrid": {"description": "Button label for creating a grid"},
+"explainDragDrop": "Forest design - drag and drop testing - press long to drag and drop or delete",
+"@explainDragDrop": {"description": "Explanation for drag and drop testing"},
+"close": "Close",
+"@close": {"description": "Label for closing"},
+"remvoe": "Remove",
+"@remvoe": {"description": "Label for removing"},
+"placeholderText": "This button will take you to other awesome content",
+"@placeholderText": {"description": "Placeholder text for a button"},
+"infoPopUp": "'This is the info popup for {plantType}.'",
+"@infoPopUp": {"description": "Information popup template with a placeholder for plantType",
+"plantType": {"String": "int"}}
+
         
 
 
