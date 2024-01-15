@@ -1,7 +1,7 @@
 name: tinyforests
 description: A new Flutter project.
 publish_to: 'none'
-version: 0.1.2+9
+version: 0.1.2+10
 
 environment:
   sdk: '>=3.1.5 <4.0.0'
@@ -23,6 +23,9 @@ dependencies:
     sdk: flutter
   intl: any
   app_settings: ^5.1.1
+  circular_menu: ^2.0.1
+  font_awesome_flutter: ^10.6.0
+  vector_math: ^2.1.4
 
 dev_dependencies:
   flutter_test:

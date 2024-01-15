@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/cupertino.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
@@ -6,9 +8,11 @@ import 'package:tinyforests/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:circular_menu/circular_menu.dart';
 
 class ZoomableGrid extends StatefulWidget {
   @override
+  // ignore: library_private_types_in_public_api
   _ZoomableGridState createState() => _ZoomableGridState();
 }
 
@@ -52,7 +56,7 @@ class _ZoomableGridState extends State<ZoomableGrid> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -191,10 +195,12 @@ class _GridScreenState extends State<GridScreen> {
                           Widget? droppedItem = gridItems[index];
 
                           return GestureDetector(
-                            onLongPress: () {
+                            onTap: () {
                               PlantData? plantData =
                                   getPlantTypeFromIndex(index);
-                              _showOptions(context, index, plantData);
+                              if (droppedItem != null) {
+                                _showOptions2(context, index, plantData);
+                              }
                             },
                             child: Container(
                               decoration: BoxDecoration(
@@ -275,6 +281,55 @@ class _GridScreenState extends State<GridScreen> {
     return null;
   }
 
+  void _showOptions2(BuildContext context, int index, PlantData? plantData) {
+    // Get the position of the current widget in the screen coordinates
+    final RenderBox renderBox = context.findRenderObject() as RenderBox;
+    final Offset widgetPosition = renderBox.localToGlobal(Offset.zero);
+
+    final Alignment alignment = Alignment(
+      (widgetPosition.dx / MediaQuery.of(context).size.width) * 2 - 1,
+      (widgetPosition.dy / MediaQuery.of(context).size.height) * 2 - 1,
+    );
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return CircularMenu(
+          alignment: alignment,
+          radius: 60,
+          startingAngleInRadian: 1,
+          endingAngleInRadian: 3.14 * 3,
+          toggleButtonColor: Colors.greenAccent,
+          items: [
+            MyCircularMenuItem(
+              tooltip: "compost",
+              icon: Icons.compost,
+              color: Colors.green,
+              onTap: () {
+                setState(
+                  () {
+                    gridItems[index] = Container(); // Reset to an empty space
+                  },
+                );
+                Navigator.of(context).pop();
+              },
+            ),
+            CircularMenuItem(
+              icon: Icons.info,
+              color: Colors.green,
+              onTap: () => _showInfoPopup(context, plantData),
+            ),
+            CircularMenuItem(
+              icon: Icons.settings,
+              color: Colors.green,
+              onTap: () => _onCustomClicked(context, plantData),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   void _showOptions(BuildContext context, int index, PlantData? plantData) {
     showDialog(
       context: context,
@@ -316,9 +371,12 @@ class _GridScreenState extends State<GridScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Info'),
+          title: Text(plantData!.commonName),
           content: Text(
-              AppLocalizations.of(context)!.infoPopUp(plantData!.plantType)),
+              AppLocalizations.of(context)!.infoPopUp(plantData.commonName),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+              )),
           actions: [
             TextButton(
               onPressed: () {
@@ -354,82 +412,5 @@ class _GridScreenState extends State<GridScreen> {
         );
       },
     );
-  }
-}
-
-// function to create a GridView of tree items in each row
-GridView plantsGridViewDraggable(Map<String, PlantData> someTrees) {
-  Map<String, PlantData> orderedPlants = {};
-
-  // Sort the subset Map by totalPlanted in descending order
-  orderedPlants = Map.fromEntries(someTrees.entries.toList()
-    ..sort((a, b) => b.value.totalPlanted.compareTo(a.value.totalPlanted)));
-
-  return GridView.builder(
-    physics:
-        const NeverScrollableScrollPhysics(), // Disable GridView scrolling to fix stuck behaviour
-    scrollDirection: Axis.vertical,
-    shrinkWrap: true,
-    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-      crossAxisCount: 3,
-      crossAxisSpacing: 8.0,
-      mainAxisSpacing: 8.0,
-      childAspectRatio: 0.80,
-    ),
-    itemCount: orderedPlants.length,
-    itemBuilder: (BuildContext context, int index) {
-      // Convert the map values to a list and get the PlantData instance
-      PlantData plantData = orderedPlants.values.toList()[index];
-      return LongPressDraggable<Widget>(
-        // Data is the value this Draggable stores.
-        feedback: Container(
-          color: Colors.deepOrange,
-          height: 80,
-          width: 80,
-          child: Image.asset(plantData.pathPicture),
-        ),
-
-        childWhenDragging: Container(),
-        data: CustomClickableWidget(plantData: plantData),
-
-        child: TreeItemCard(
-          plantData: plantData,
-        ),
-      );
-    },
-  );
-}
-
-class CustomClickableWidget extends StatelessWidget {
-  final PlantData plantData;
-
-  CustomClickableWidget({
-    required this.plantData,
-  });
-
-  PlantData getPlantType() {
-    return plantData;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // Map plantType to the corresponding image path
-
-    Map<String, String> plantTypeImageMap = {
-      'Hauptbaumart': 'images/plantTypes/Hauptbaum.png',
-      'Nebenbaumart': 'images/plantTypes/Nebenbaum.png',
-      'Strauch': 'images/plantTypes/Strauch.png',
-      'Bodendecker': 'images/plantTypes/Bodendecker.png',
-    };
-
-    // Check if the plantType is in the plantTypeOrder list
-    if (plantTypeImageMap.keys.contains(plantData.plantType)) {
-      String imagePath =
-          plantTypeImageMap[plantData.plantType] ?? ''; // Get the image path
-
-      return Image.asset(imagePath); // Display the clickable picture
-    } else {
-      return const Text('Invalid plant type');
-    }
   }
 }

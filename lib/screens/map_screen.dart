@@ -107,13 +107,15 @@ class _ForestMapsState extends State<ForestMaps> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Location Services Disabled'),
-          content:
-              Text('Please enable location services in your device settings.'),
+          title: const Text('Location Services Disabled'),
+          content: const Text(
+              'Please enable location services in your device settings.'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text('Cancel'),
+              child: Text(
+                AppLocalizations.of(context)!.cancel,
+              ),
             ),
             TextButton(
               onPressed: () {
@@ -121,7 +123,7 @@ class _ForestMapsState extends State<ForestMaps> {
                 AppSettings();
                 Navigator.pop(context);
               },
-              child: Text('Take me to settings'),
+              child: const Text('Take me to settings'),
             ),
           ],
         );
@@ -137,13 +139,15 @@ class _ForestMapsState extends State<ForestMaps> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Location Permissions Denied'),
-          content: Text(
+          title: const Text('Location Permissions Denied'),
+          content: const Text(
               'Please grant location permissions in app settings to use this feature.'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text('Cancel'),
+              child: Text(
+                AppLocalizations.of(context)!.cancel,
+              ),
             ),
             TextButton(
               onPressed: () {
@@ -151,7 +155,7 @@ class _ForestMapsState extends State<ForestMaps> {
                 AppSettings.openAppSettings();
                 Navigator.pop(context);
               },
-              child: Text('Take me to settings'),
+              child: const Text('Take me to settings'),
             ),
           ],
         );
@@ -280,7 +284,13 @@ class _ForestMapsState extends State<ForestMaps> {
                             showPlanned = false;
                           });
                         },
-                        child: Text(AppLocalizations.of(context)!.plantedLabel),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              showPlanted ? Colors.lightGreenAccent : null,
+                        ),
+                        child: Text(
+                          AppLocalizations.of(context)!.plantedLabel,
+                        ),
                       ),
                       ElevatedButton(
                         onPressed: () {
@@ -289,7 +299,13 @@ class _ForestMapsState extends State<ForestMaps> {
                             showPlanned = true;
                           });
                         },
-                        child: Text(AppLocalizations.of(context)!.plannedLabel),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              showPlanned ? Colors.lightGreenAccent : null,
+                        ),
+                        child: Text(
+                          AppLocalizations.of(context)!.plannedLabel,
+                        ),
                       ),
                       ElevatedButton(
                         onPressed: () {
@@ -298,7 +314,14 @@ class _ForestMapsState extends State<ForestMaps> {
                             showPlanned = false;
                           });
                         },
-                        child: Text(AppLocalizations.of(context)!.allLabel),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: !showPlanted && !showPlanned
+                              ? Colors.lightGreenAccent
+                              : null,
+                        ),
+                        child: Text(
+                          AppLocalizations.of(context)!.allLabel,
+                        ),
                       ),
                     ],
                   ),

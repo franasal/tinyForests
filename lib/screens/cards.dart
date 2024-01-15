@@ -87,13 +87,13 @@ class PlantCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Tooltip(
-                  message:
-                      AppLocalizations.of(context)!.plantType(plant.plantType),
+                  triggerMode: TooltipTriggerMode.tap,
+                  message: plant.plantType,
                   child: Icon(
                     plant.plantType == 'Hauptbaumart'
-                        ? Icons.nature
+                        ? Icons.park
                         : plant.plantType == 'Nebenbaumart'
-                            ? Icons.park
+                            ? Icons.forest
                             : plant.plantType == 'Strauch'
                                 ? Icons.local_florist
                                 : Icons.grass,
@@ -101,6 +101,7 @@ class PlantCard extends StatelessWidget {
                   ),
                 ),
                 Tooltip(
+                  triggerMode: TooltipTriggerMode.tap,
                   message: AppLocalizations.of(context)!
                       .height, // Explanation for the icon
                   child: const Icon(
@@ -116,6 +117,7 @@ class PlantCard extends StatelessWidget {
                   ),
                 ),
                 Tooltip(
+                  triggerMode: TooltipTriggerMode.tap,
                   message: AppLocalizations.of(context)!.conservationStatus(
                       plant.conservationStatus), // Explanation for the icon
                   child: Icon(
@@ -130,6 +132,7 @@ class PlantCard extends StatelessWidget {
                   ),
                 ),
                 Tooltip(
+                  triggerMode: TooltipTriggerMode.tap,
                   message: AppLocalizations.of(context)!.floweringSeason(
                       plant.floweringSeason), // Explanation for the icon
                   child: Icon(
@@ -176,6 +179,7 @@ class ForestCard extends StatelessWidget {
 
 class TinyForestCard extends StatelessWidget {
   final TinyForest forest;
+  // ignore: use_key_in_widget_constructors
   const TinyForestCard(this.forest,
       {Key? key, required this.onPlantedIconClick});
 
@@ -251,6 +255,7 @@ class TinyForestCard extends StatelessWidget {
                   ),
                 ),
                 Tooltip(
+                  triggerMode: TooltipTriggerMode.tap,
                   message: (forest.planted
                       ? AppLocalizations.of(context)!.plantedLabel
                       : AppLocalizations.of(context)!.plannedLabel),

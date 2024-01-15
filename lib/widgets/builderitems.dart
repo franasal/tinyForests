@@ -1,5 +1,7 @@
+import 'package:circular_menu/circular_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/variables.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
@@ -67,7 +69,7 @@ ConvexAppBar bottomNaviBar(BuildContext context) {
       // Bottom navigation bar items with icons and labels
       const TabItem(
         icon: Icon(
-          Icons.home_filled,
+          Icons.grid_on_outlined,
           color: Color.fromARGB(200, 44, 148, 49),
         ),
         title: 'Home',
@@ -90,7 +92,7 @@ ConvexAppBar bottomNaviBar(BuildContext context) {
       ),
       const TabItem(
         icon: Icon(
-          Icons.grid_on_outlined,
+          Icons.forest,
           color: Color.fromARGB(200, 44, 148, 49),
         ),
         title: 'Guide',
@@ -178,4 +180,65 @@ ConvexAppBar bottomNaviBar(BuildContext context) {
       }
     },
   );
+}
+
+class CustomClickableWidget extends StatelessWidget {
+  final PlantData plantData;
+
+  CustomClickableWidget({
+    required this.plantData,
+  });
+
+  PlantData getPlantType() {
+    return plantData;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // Map plantType to the corresponding image path
+
+    Map<String, String> plantTypeImageMap = {
+      'Hauptbaumart': 'images/plantTypes/Hauptbaum.png',
+      'Nebenbaumart': 'images/plantTypes/Nebenbaum.png',
+      'Strauch': 'images/plantTypes/Strauch.png',
+      'Bodendecker': 'images/plantTypes/Bodendecker.png',
+    };
+
+    // Check if the plantType is in the plantTypeOrder list
+    if (plantTypeImageMap.keys.contains(plantData.plantType)) {
+      String imagePath =
+          plantTypeImageMap[plantData.plantType] ?? ''; // Get the image path
+
+      return Image.asset(imagePath); // Display the clickable picture
+    } else {
+      return const Text('Invalid plant type');
+    }
+  }
+}
+
+class MyCircularMenuItem extends CircularMenuItem {
+  final String tooltip;
+
+  MyCircularMenuItem({
+    required VoidCallback onTap,
+    required IconData icon,
+    Color? color,
+    required this.tooltip,
+  }) : super(
+          onTap: onTap,
+          icon: icon,
+          color: color,
+        );
+
+  @override
+  Widget build(BuildContext context) {
+    Widget result = super.build(context);
+    if (tooltip.isNotEmpty) {
+      result = Tooltip(
+        message: tooltip,
+        child: result,
+      );
+    }
+    return result;
+  }
 }

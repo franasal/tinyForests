@@ -97,12 +97,16 @@ class TreeItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return bds.Badge(
       position: bds.BadgePosition.custom(top: 10, end: 12),
-      badgeContent: Text(plantData.totalPlanted.toString()),
-      badgeStyle: const bds.BadgeStyle(
-        borderSide: BorderSide(color: Colors.grey, width: 2),
+      badgeContent: Text(
+        style: TextStyle(color: Colors.white),
+        plantData.totalPlanted.toString(),
+        selectionColor: Colors.white,
+      ),
+      badgeStyle: bds.BadgeStyle(
         shape: bds.BadgeShape.square,
-        badgeColor: Colors.white,
+        badgeColor: Colors.green,
         padding: EdgeInsets.all(5),
+        borderRadius: BorderRadius.circular(4),
       ),
       child: InkWell(
         onTap: () {
@@ -161,4 +165,47 @@ class TreeItemCard extends StatelessWidget {
       ),
     );
   }
+}
+
+// function to create a GridView of tree items in each row
+GridView plantsGridViewDraggable(Map<String, PlantData> someTrees) {
+  Map<String, PlantData> orderedPlants = {};
+
+  // Sort the subset Map by totalPlanted in descending order
+  orderedPlants = Map.fromEntries(someTrees.entries.toList()
+    ..sort((a, b) => b.value.totalPlanted.compareTo(a.value.totalPlanted)));
+
+  return GridView.builder(
+    physics:
+        const NeverScrollableScrollPhysics(), // Disable GridView scrolling to fix stuck behaviour
+    scrollDirection: Axis.vertical,
+    shrinkWrap: true,
+    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      crossAxisCount: 3,
+      crossAxisSpacing: 8.0,
+      mainAxisSpacing: 8.0,
+      childAspectRatio: 0.80,
+    ),
+    itemCount: orderedPlants.length,
+    itemBuilder: (BuildContext context, int index) {
+      // Convert the map values to a list and get the PlantData instance
+      PlantData plantData = orderedPlants.values.toList()[index];
+      return LongPressDraggable<Widget>(
+        // Data is the value this Draggable stores.
+        feedback: Container(
+          color: Colors.deepOrange,
+          height: 80,
+          width: 80,
+          child: Image.asset(plantData.pathPicture),
+        ),
+
+        childWhenDragging: Container(),
+        data: CustomClickableWidget(plantData: plantData),
+
+        child: TreeItemCard(
+          plantData: plantData,
+        ),
+      );
+    },
+  );
 }
