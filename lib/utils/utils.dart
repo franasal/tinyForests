@@ -9,7 +9,7 @@ Map<String, PlantData> getPlantsSubset(Map<String, int> plantQuantities) {
   for (String plantName in plantQuantities.keys) {
     if (allPlants.containsKey(plantName)) {
       PlantData plantData = allPlants[plantName]!;
-      plantData.totalPlanted = plantQuantities[plantName]!;
+      plantData.localPlanted = plantQuantities[plantName]!;
       subset[plantName] = plantData;
     }
   }

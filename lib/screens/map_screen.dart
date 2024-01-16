@@ -435,7 +435,7 @@ class _ForestMapsState extends State<ForestMaps> {
                         ),
                       ),
                       if (groupedTrees[plantType] != null)
-                        plantsGridView(groupedTrees[plantType]!),
+                        plantsGridView(groupedTrees[plantType]!, local: true),
                     ];
                   }),
                 ]),

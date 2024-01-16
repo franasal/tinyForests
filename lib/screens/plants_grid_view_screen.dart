@@ -60,16 +60,16 @@ class PlantsGridScreen extends StatelessWidget {
 }
 
 // function to create a GridView of tree items in each row
-GridView plantsGridView(Map<String, PlantData> someTrees) {
+GridView plantsGridView(Map<String, PlantData> someTrees,
+    {bool local = false}) {
   Map<String, PlantData> orderedPlants = {};
 
-  // Sort the subset Map by totalPlanted in descending order
+  // Sort the subset Map by the chosen field in descending order
   orderedPlants = Map.fromEntries(someTrees.entries.toList()
     ..sort((a, b) => b.value.totalPlanted.compareTo(a.value.totalPlanted)));
 
   return GridView.builder(
-    physics:
-        const NeverScrollableScrollPhysics(), // Disable GridView scrolling to fix stuck behaviour
+    physics: const NeverScrollableScrollPhysics(),
     scrollDirection: Axis.vertical,
     shrinkWrap: true,
     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -80,9 +80,11 @@ GridView plantsGridView(Map<String, PlantData> someTrees) {
     ),
     itemCount: orderedPlants.length,
     itemBuilder: (BuildContext context, int index) {
-      // Convert the map values to a list and get the PlantData instance
       PlantData plantData = orderedPlants.values.toList()[index];
-      return TreeItemCard(plantData: plantData);
+      return TreeItemCard(
+        plantData: plantData,
+        useLocalPlanted: local,
+      );
     },
   );
 }
@@ -90,8 +92,13 @@ GridView plantsGridView(Map<String, PlantData> someTrees) {
 // custom widget for displaying a thumbnail, the common and scientific name of a plant
 class TreeItemCard extends StatelessWidget {
   final PlantData plantData;
+  final bool useLocalPlanted; // New parameter
 
-  const TreeItemCard({Key? key, required this.plantData}) : super(key: key);
+  const TreeItemCard({
+    Key? key,
+    required this.plantData,
+    this.useLocalPlanted = false, // Default to false if not provided
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +106,9 @@ class TreeItemCard extends StatelessWidget {
       position: bds.BadgePosition.custom(top: 10, end: 12),
       badgeContent: Text(
         style: TextStyle(color: Colors.white),
-        plantData.totalPlanted.toString(),
+        useLocalPlanted
+            ? plantData.localPlanted.toString()
+            : plantData.totalPlanted.toString(), // Use localPlanted if true
         selectionColor: Colors.white,
       ),
       badgeStyle: bds.BadgeStyle(
