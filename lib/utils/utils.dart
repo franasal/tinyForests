@@ -11,24 +11,36 @@ Map<String, PlantData> getPlantsSubset(Map<String, int> plantQuantities) {
       PlantData plantData = allPlants[plantName]!;
       plantData.localPlanted = plantQuantities[plantName]!;
       subset[plantName] = plantData;
+      print(plantData);
     }
   }
   return subset;
 }
 
-Map<String, Map<String, PlantData>> groupTreesByType(
-    Map<String, PlantData> plantsMap) {
+Map<String, Map<String, PlantData>> groupTreesByType<T>(
+    Map<String, T> plantsMap) {
   Map<String, Map<String, PlantData>> groupedTrees = {};
 
   plantsMap.forEach((key, plantData) {
-    String plantType = plantData.plantType;
+    String plantType = allPlants[key]!.plantType;
 
-    if (!groupedTrees.containsKey(plantType)) {
-      groupedTrees[plantType] = {};
+    if (plantData is PlantData) {
+      if (!groupedTrees.containsKey(plantType)) {
+        groupedTrees[plantType] = {};
+      }
+      groupedTrees[plantType]![key] = plantData;
+    } else if (plantData is int) {
+      PlantData? existingPlant = allPlants[key];
+
+      existingPlant?.localPlanted = plantsMap[key] as int;
+      if (!groupedTrees.containsKey(plantType)) {
+        groupedTrees[plantType] = {};
+      }
+      groupedTrees[plantType]![key] = existingPlant!;
     }
-
-    groupedTrees[plantType]![key] = plantData;
   });
+
+  print(groupedTrees);
 
   return groupedTrees;
 }

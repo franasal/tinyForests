@@ -1,6 +1,4 @@
 // class to hold all the forests and their characteristics.
-import 'package:tinyforests/datamodels/plants_data.dart';
-import 'package:tinyforests/utils/utils.dart';
 
 class TinyForest {
   final String forestName;
@@ -9,7 +7,7 @@ class TinyForest {
   final int yearPlanted;
   final int totalTrees;
   final int numberPlantedSpecies;
-  final Map<String, PlantData> listPlanted;
+  final Map<String, int> listPlanted;
   final int forestSize;
   final Map<String, double> coordinates;
 
@@ -37,7 +35,7 @@ List<TinyForest> tForest = [
     2021,
     630,
     31,
-    getPlantsSubset({
+    {
       'Acer monspessulanum': 20,
       'Acer platanoides': 20,
       'Acer pseudoplatanus': 42,
@@ -54,12 +52,12 @@ List<TinyForest> tForest = [
       'Prunus avium': 20,
       'Prunus padus': 20,
       'Prunus spinosa': 20,
-      'Pyrus pyraster agg.': 20,
-      'Quercus patrea': 42,
+      'Pyrus pyraster agg': 20,
+      'Quercus petraea': 42,
       'Quercus robur': 42,
       'Rhammus cathartica': 20,
-      'Ribes rubrum s. str.': 20,
-      'Rosa canina agg.': 20,
+      'Ribes rubrum': 20,
+      'Rosa canina agg': 20,
       'Rubus idaeus': 20,
       'Salix purpurea': 20,
       'Sambucus nigra': 20,
@@ -69,7 +67,7 @@ List<TinyForest> tForest = [
       'Tilia cordata': 20,
       'Tilia platyphyllos': 20,
       'Ulmus laevis': 20
-    }),
+    },
     250,
     {'lat': 51.1197008, 'lon': 8.3955619},
   ),
@@ -80,7 +78,7 @@ List<TinyForest> tForest = [
     2021,
     360,
     24,
-    getPlantsSubset({
+    {
       'Acer campestre': 15,
       'Acer platanoides': 15,
       'Acer pseudoplatanus': 15,
@@ -105,7 +103,7 @@ List<TinyForest> tForest = [
       'Tilia tomentosa': 15,
       'Ulmus laevis': 15,
       'Ulmus minor': 15
-    }),
+    },
     150,
     {'lat': 52.3251111, 'lon': 14.5436667},
   ),
@@ -116,7 +114,7 @@ List<TinyForest> tForest = [
     2021,
     600,
     24,
-    getPlantsSubset({
+    {
       'Acer campestre': 25,
       'Acer platanoides': 25,
       'Acer pseudoplatanus': 25,
@@ -141,7 +139,7 @@ List<TinyForest> tForest = [
       'Tilia tomentosa': 25,
       'Ulmus laevis': 25,
       'Ulmus minor': 25
-    }),
+    },
     150,
     {'lat': 52.3049722, 'lon': 13.2405556},
   ),
@@ -152,7 +150,7 @@ List<TinyForest> tForest = [
     2021,
     4500,
     37,
-    getPlantsSubset({
+    {
       'Acer campestre': 71,
       'Acer pseudoplatanus': 143,
       'Amelanchier ovalis': 63,
@@ -167,19 +165,19 @@ List<TinyForest> tForest = [
       'Fagus sylvatica': 143,
       'Frangula alnus': 63,
       'Fraxinus excelsior': 143,
-      'Larix decidua var. polonica': 71,
+      'Larix decidua': 71,
       'Malus sylvestris': 71,
       'Pinus sylvestris': 71,
       'Prunus avium': 71,
       'Prunus padus': 71,
       'Prunus spinosa': 63,
-      'Pyrus pyraster agg.': 71,
+      'Pyrus pyraster agg': 71,
       'Quercus petraea': 143,
       'Quercus robur': 143,
       'Rhammus cathartica': 63,
       'Rhamnus frangula': 63,
-      'Ribes rubrum s. str.': 63,
-      'Rosa canina agg.': 63,
+      'Ribes rubrum': 63,
+      'Rosa canina agg': 63,
       'Rubus idaeus': 63,
       'Salix purpurea': 63,
       'Sambucus nigra': 71,
@@ -190,7 +188,7 @@ List<TinyForest> tForest = [
       'Ulmus laevis': 71,
       'Ulmus minor': 71,
       'Viburnum opulus': 63
-    }),
+    },
     1500,
     {'lat': 53.8951667, 'lon': 14.7248611},
   ),
@@ -201,7 +199,7 @@ List<TinyForest> tForest = [
     2022,
     750,
     25,
-    getPlantsSubset({
+    {
       'Acer campestre': 30,
       'Acer platanoides': 30,
       'Acer pseudoplatanus': 50,
@@ -218,7 +216,7 @@ List<TinyForest> tForest = [
       'Prunus padus': 30,
       'Prunus spinosa': 20,
       'Rhammus cathartica': 20,
-      'Ribes rubrum s. str.': 20,
+      'Ribes rubrum': 20,
       'Rosa arvensis': 20,
       'Rubus idaeus': 20,
       'Sambucus nigra': 20,
@@ -227,7 +225,7 @@ List<TinyForest> tForest = [
       'Tilia cordata': 35,
       'Tilia platyphyllos': 35,
       'Ulmus laevis': 35
-    }),
+    },
     250,
     {'lat': 52.1278877, 'lon': 8.7015054},
   ),
@@ -238,7 +236,7 @@ List<TinyForest> tForest = [
     2023,
     450,
     25,
-    getPlantsSubset({
+    {
       'Anemone nemorosa': 25,
       'Athyrium filix-femina': 25,
       'Carpinus betulus': 20,
@@ -264,7 +262,7 @@ List<TinyForest> tForest = [
       'Vaccinium corymbosum': 25,
       'Viburnum opulus': 30,
       'Viola reichenbachiana': 25
-    }),
+    },
     150,
     {'lat': 50.1263611, 'lon': 8.9208333},
   ),
@@ -275,7 +273,7 @@ List<TinyForest> tForest = [
     2023,
     700,
     31,
-    getPlantsSubset({
+    {
       'Acer monspessulanum': 20,
       'Acer platanoides': 20,
       'Acer pseudoplatanus': 50,
@@ -292,12 +290,12 @@ List<TinyForest> tForest = [
       'Prunus avium': 20,
       'Prunus padus': 20,
       'Prunus spinosa': 20,
-      'Pyrus pyraster agg.': 20,
-      'Quercus patrea': 50,
+      'Pyrus pyraster agg': 20,
+      'Quercus petraea': 50,
       'Quercus robur': 50,
       'Rhammus cathartica': 20,
-      'Ribes rubrum s. str.': 20,
-      'Rosa canina agg.': 20,
+      'Ribes rubrum': 20,
+      'Rosa canina agg': 20,
       'Rubus idaeus': 20,
       'Salix purpurea': 20,
       'Sambucus nigra': 20,
@@ -307,7 +305,7 @@ List<TinyForest> tForest = [
       'Tilia cordata': 20,
       'Tilia platyphyllos': 20,
       'Ulmus laevis': 20
-    }),
+    },
     250,
     {'lat': 49.9806389, 'lon': 8.4376111},
   ),
@@ -318,10 +316,10 @@ List<TinyForest> tForest = [
     2024,
     600,
     16,
-    getPlantsSubset({
+    {
       'Carpinus betulus': 31,
       'Corylus avellana': 35,
-      'Crataegus laevigata agg.': 35,
+      'Crataegus laevigata agg': 35,
       'Fagus sylvatica': 31,
       'Ilex aquifolium': 35,
       'Lonicera periclymenum': 35,
@@ -335,7 +333,7 @@ List<TinyForest> tForest = [
       'Salix caprea': 55,
       'Sambucus nigra': 35,
       'Sorbus aucuparia': 55
-    }),
+    },
     200,
     {'lat': 52.0436944, 'lon': 8.49275},
   ),
@@ -346,7 +344,7 @@ List<TinyForest> tForest = [
     2024,
     0,
     31,
-    getPlantsSubset({}),
+    {},
     250,
     {'lat': 49.8513056, 'lon': 8.5536667},
   ),
@@ -357,7 +355,7 @@ List<TinyForest> tForest = [
     2024,
     0,
     24,
-    getPlantsSubset({}),
+    {},
     150,
     {'lat': 50.1243056, 'lon': 8.8404167},
   ),
@@ -368,7 +366,7 @@ List<TinyForest> tForest = [
     2024,
     0,
     24,
-    getPlantsSubset({}),
+    {},
     150,
     {'lat': 52.0436944, 'lon': 8.49275},
   ),
