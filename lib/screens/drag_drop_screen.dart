@@ -198,8 +198,9 @@ class _GridScreenState extends State<GridScreen> {
                             onTap: () {
                               PlantData? plantData =
                                   getPlantTypeFromIndex(index);
-                              if (droppedItem != null) {
-                                _showOptions2(context, index, plantData);
+                              if (droppedItem != null &&
+                                  droppedItem is! Container) {
+                                _showOptions(context, index, plantData);
                               }
                             },
                             child: Container(
@@ -211,7 +212,7 @@ class _GridScreenState extends State<GridScreen> {
                               ),
                               child: droppedItem != null
                                   ? gridItems[index]
-                                  : const Text("."),
+                                  : SizedBox.shrink(),
                             ),
                           );
                         },
@@ -281,7 +282,7 @@ class _GridScreenState extends State<GridScreen> {
     return null;
   }
 
-  void _showOptions2(BuildContext context, int index, PlantData? plantData) {
+  void _showOptions(BuildContext context, int index, PlantData? plantData) {
     // Get the position of the current widget in the screen coordinates
     final RenderBox renderBox = context.findRenderObject() as RenderBox;
     final Offset widgetPosition = renderBox.localToGlobal(Offset.zero);
@@ -325,41 +326,6 @@ class _GridScreenState extends State<GridScreen> {
               onTap: () => _onCustomClicked(context, plantData),
             ),
           ],
-        );
-      },
-    );
-  }
-
-  void _showOptions(BuildContext context, int index, PlantData? plantData) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(plantData!.commonName),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(plantData.plantType),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    gridItems[index] = Container(); // Reset to an empty space
-                  });
-                  Navigator.of(context).pop();
-                },
-                child: Text(AppLocalizations.of(context)!
-                    .remvoe), // Text(AppLocalizations.of(context)!.zoomableGrid),
-              ),
-              ElevatedButton(
-                onPressed: () => _showInfoPopup(context, plantData),
-                child: Text('Info'),
-              ),
-              ElevatedButton(
-                onPressed: () => _onCustomClicked(context, plantData),
-                child: Text('Custom'),
-              ),
-            ],
-          ),
         );
       },
     );
