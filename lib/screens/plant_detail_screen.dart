@@ -30,9 +30,7 @@ class PlantDetailsScreen extends StatelessWidget {
           //  title section defined in the bottom displaying common name, scientific name, and an image
           buildCustomTitleSection(
             context,
-            plantData.commonName,
-            plantData.scientificName,
-            plantData.pathPicture,
+            plantData,
           ), // the following text fields are placeholders to show an example of what information this screen shows, TODO make it a nicer visualization
           ListTile(
             title: Text(AppLocalizations.of(context)!
@@ -55,8 +53,7 @@ class PlantDetailsScreen extends StatelessWidget {
 }
 
 // Custom function to build a title section with a title, subtitle, and image using a container
-Widget buildCustomTitleSection(
-    BuildContext context, String title, String subtitle, String pathPicture) {
+Widget buildCustomTitleSection(BuildContext context, PlantData plantData) {
   return Container(
     padding: const EdgeInsets.all(15),
     child: Row(
@@ -68,7 +65,7 @@ Widget buildCustomTitleSection(
               Container(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Text(
-                  title,
+                  plantData.commonName,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
@@ -76,7 +73,7 @@ Widget buildCustomTitleSection(
                 ),
               ),
               Text(
-                subtitle,
+                plantData.scientificName,
                 style: const TextStyle(
                   color: Color.fromARGB(255, 148, 148, 148),
                 ),
@@ -90,14 +87,14 @@ Widget buildCustomTitleSection(
               context,
               MaterialPageRoute(
                 builder: (context) =>
-                    FullSizeImageScreen(imagePath: pathPicture),
+                    FullSizeImageScreen(imagePath: plantData.pathPicture),
               ),
             );
           },
           child: Hero(
-            tag: pathPicture,
+            tag: plantData.pathPicture,
             child: Image.asset(
-              pathPicture,
+              plantData.pathPicture,
               height: 120,
               width: 120,
             ),

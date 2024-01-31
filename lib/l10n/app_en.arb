@@ -138,7 +138,11 @@
 "@placeholderText": {"description": "Placeholder text for a button"},
 "infoPopUp": "'This is the info popup for {plantType}.'",
 "@infoPopUp": {"description": "Information popup template with a placeholder for plantType",
-"plantType": {"String": "int"}}
+"plantType": {"String": "int"}},
+"forestListTittle": "'Tiny Forests' nearby you",
+"@forestListTittle": {"description": "'Tiny Forests' nearby you"}
+
+
 
         
 

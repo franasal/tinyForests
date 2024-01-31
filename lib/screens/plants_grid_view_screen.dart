@@ -133,16 +133,19 @@ class TreeItemCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 90.0,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                    // picture from images/trees todo; change folder name to /plants
-                    image: AssetImage(plantData.pathPicture),
+              Hero(
+                tag: plantData.commonName,
+                child: Container(
+                  height: 90.0,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                      // picture from images/trees todo; change folder name to /plants
+                      image: AssetImage(plantData.pathPicture),
 
-                    fit: BoxFit.cover,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),

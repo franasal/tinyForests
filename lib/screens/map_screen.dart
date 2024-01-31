@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart'; // Import the Geolocator package
+import 'package:sizer/sizer.dart';
 import 'package:tinyforests/datamodels/forests_data.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/screens/cards.dart';
@@ -178,6 +179,18 @@ class _ForestMapsState extends State<ForestMaps> {
                   ? LatLng(_userLocation!.latitude, _userLocation!.longitude)
                   : _startLocation,
               initialZoom: 5.2,
+              interactionOptions: const InteractionOptions(
+                enableMultiFingerGestureRace: true,
+                flags:
+                    // InteractiveFlag.doubleTapDragZoom |
+                    // InteractiveFlag.doubleTapZoom |
+                    InteractiveFlag.drag |
+                        // InteractiveFlag.flingAnimation |
+                        InteractiveFlag.pinchZoom |
+                        InteractiveFlag.rotate,
+
+                // InteractiveFlag.scrollWheelZoom,
+              ),
             ),
             children: [
               TileLayer(
@@ -274,6 +287,16 @@ class _ForestMapsState extends State<ForestMaps> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  Center(
+                    child: Text(AppLocalizations.of(context)!.forestListTittle,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold,
+                          color: const Color.fromARGB(255, 52, 128, 54),
+                        )),
+                  ),
+                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [

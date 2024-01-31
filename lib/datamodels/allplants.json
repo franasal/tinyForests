@@ -617,7 +617,7 @@
       "pathPicture": "./images/plants/Quercus robur.jpeg",
       "plantType": "Nebenbaumart"
     },
-    "Rhammus cathartica": {
+    "Rhamnus cathartica": {
       "scientificName": "Rhammus cathartica",
       "commonName": "Kreuzdorn",
       "distribution": "Europe, N. Africa, W. & C. Asia",
@@ -628,7 +628,7 @@
       "leafType": "Deciduous.",
       "floweringSeason": "May to June.",
       "conservationStatus": "Least Concern",
-      "pathPicture": "images/plants/Rhammus cathartica.jpeg",
+      "pathPicture": "images/plants/Rhamnus cathartica.jpeg",
       "plantType": "Strauch"
     },
     "Rhamnus frangula": {

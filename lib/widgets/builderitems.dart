@@ -198,10 +198,10 @@ class CustomClickableWidget extends StatelessWidget {
     // Map plantType to the corresponding image path
 
     Map<String, String> plantTypeImageMap = {
-      'Hauptbaumart': 'images/plantTypes/Hauptbaum.png',
-      'Nebenbaumart': 'images/plantTypes/Nebenbaum.png',
-      'Strauch': 'images/plantTypes/Strauch.png',
-      'Bodendecker': 'images/plantTypes/Bodendecker.png',
+      'Hauptbaumart': 'images/plantTypes/Hauptbaum.jpeg',
+      'Nebenbaumart': 'images/plantTypes/Nebenbaum.jpeg',
+      'Strauch': 'images/plantTypes/Strauch.jpeg',
+      'Bodendecker': 'images/plantTypes/Bodendecker.jpeg',
     };
 
     // Check if the plantType is in the plantTypeOrder list

@@ -44,7 +44,8 @@
 "close": "Schließen",
 "remvoe": "Entfernen",
 "placeholderText": "Dieser Button führt dich zu anderem fantastischem Inhalt",
-"infoPopUp": "'Dies ist das Info-Popup für {plantType}'."
+"infoPopUp": "'Dies ist das Info-Popup für {plantType}'.",
+"forestListTittle": "'Tiny Forests' in deiner Nähe"
 
 
 

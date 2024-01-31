@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
             // defining named routes for navigation these are imported from in the variables.dart file
             mapScreen: (context) => const ForestMaps(),
             debugScreen: (context) => DebugScreen(data: allPlants),
-            impressumScreen: (context) => const Impressum(),
+            impressumScreen: (context) => Impressum(),
             dragAndDropScreen: (context) => ZoomableGrid(
                 // allPlants: allPlants,
                 // pageTitle: "Grid Draggagle Pflanzen",
