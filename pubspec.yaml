@@ -38,6 +38,7 @@ flutter:
   uses-material-design: true
   assets:
 # !!!Einrückung beachten!!!
+  - australia.json
   - images/
   - images/forests/
   - images/plants/

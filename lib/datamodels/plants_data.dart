@@ -931,8 +931,8 @@ Map<String, PlantData> allPlants = {
           "Pedunculate oak is a long-lived species with significant cultural and ecological importance.",
       pathPicture: "./images/plants/Quercus robur.jpeg",
       plantType: "Nebenbaumart"),
-  "Rhammus cathartica": PlantData(
-      scientificName: "Rhammus cathartica",
+  "Rhamnus cathartica": PlantData(
+      scientificName: "Rhamnus cathartica",
       commonName: "Kreuzdorn",
       commonNameEn: "Testing",
       commonNameDe: "Test",
@@ -949,7 +949,7 @@ Map<String, PlantData> allPlants = {
       conservationStatus: "Least Concern",
       interestingFact:
           "Common buckthorn is the larval host for the brimstone butterfly.",
-      pathPicture: "images/plants/Rhammus cathartica.jpeg",
+      pathPicture: "images/plants/Rhamnus cathartica.jpeg",
       plantType: "Strauch"),
   "Rhamnus frangula": PlantData(
       scientificName: "Rhamnus frangula",
