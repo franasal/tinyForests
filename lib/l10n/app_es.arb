@@ -45,7 +45,12 @@
 "remvoe": "Eliminar",
 "placeholderText": "Este botón te llevará a otro contenido increíble",
 "infoPopUp": "'Esta es la ventana emergente de información para {plantType}'.",
-"forestListTittle": "'Tiny Forests' cerca de ti"
+"forestListTittle": "cerca de ti",
+"native": "Nativo",
+"introduced": "Introducido",
+"dataFrom": "datos de https://powo.science.kew.org/",
+"openMaps": "Presiona para abrir Mapas"
+
 
 
 }

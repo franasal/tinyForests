@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:tinyforests/datamodels/plants_data.dart'; //  tree data model
 import 'package:tinyforests/screens/plant_full_size_screen.dart';
-// import 'package:tinyforests/utils/utils.dart';
+import 'package:tinyforests/utils/utils.dart';
 import 'package:tinyforests/widgets/builderitems.dart'; // custom widgets
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tinyforests/widgets/interactive_map.dart';
 
 // This screen is for displaying details of a specific tree, right now is just plain text
 class PlantDetailsScreen extends StatelessWidget {
@@ -23,7 +25,10 @@ class PlantDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-            '${plantData.commonName}, Details'), // showing the common name in the app bar as tittle TODO big language automation
+          plantData.commonName,
+          style: TextStyle(
+              fontSize: 40, color: Colors.green, fontWeight: FontWeight.bold),
+        ), // showing the common name in the app bar as tittle TODO big language automation
       ),
       body: ListView(
         children: [
@@ -43,6 +48,28 @@ class PlantDetailsScreen extends StatelessWidget {
             title: Text(AppLocalizations.of(context)!.distribution(plantData
                 .distribution)), // distribution information will have a map or a picture of their distribution
           ),
+          Center(
+            child: Container(
+                height: 280,
+                child: DistributionMap(
+                  plantName: plantData.scientificName,
+                  natives: AppLocalizations.of(context)!.native,
+                  introduced: AppLocalizations.of(context)!.introduced,
+                )),
+          ),
+          Text(AppLocalizations.of(context)!.dataFrom),
+          SizedBox(
+            height: 18.sp,
+          ),
+
+          Center(
+            child: formatCountryList(
+                context,
+                plantData.scientificName,
+                AppLocalizations.of(context)!.introduced,
+                AppLocalizations.of(context)!.native),
+          ),
+
           // more details from the Plant class will be shown here.
         ],
       ),

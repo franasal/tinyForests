@@ -45,7 +45,14 @@
 "remvoe": "Entfernen",
 "placeholderText": "Dieser Button führt dich zu anderem fantastischem Inhalt",
 "infoPopUp": "'Dies ist das Info-Popup für {plantType}'.",
-"forestListTittle": "'Tiny Forests' in deiner Nähe"
+"forestListTittle": "in deiner Nähe",
+"native": "Einheimisch",
+"introduced": "Eingeführt",
+"dataFrom": "Daten von https://powo.science.kew.org/",
+"openMaps": "Zum Öffnen in Maps gedrückt halten"
+
+
+
 
 
 

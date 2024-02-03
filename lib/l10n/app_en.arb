@@ -139,8 +139,18 @@
 "infoPopUp": "'This is the info popup for {plantType}.'",
 "@infoPopUp": {"description": "Information popup template with a placeholder for plantType",
 "plantType": {"String": "int"}},
-"forestListTittle": "'Tiny Forests' nearby you",
-"@forestListTittle": {"description": "'Tiny Forests' nearby you"}
+"forestListTittle": "nearby you",
+"@forestListTittle": {"description": "'Tiny Forests' nearby you"},
+"native": "Native",
+"@native": {"description": "Label indicating native status"},
+"introduced": "Introduced",
+"@introduced": {"description": "Label indicating introduced status"},
+"@remvoe": {"description": "Label for removing"},
+"dataFrom": "data from https://powo.science.kew.org/",
+"@dataFrom": {"description": "Information about data source from https://powo.science.kew.org/"},
+"openMaps": "Hold to open in Maps",
+"@openMaps": {"description": "tooltip to open in maps"}
+
 
 
 

@@ -145,7 +145,7 @@ List<TinyForest> tForest = [
   ),
   TinyForest(
     "Rozwarowo",
-    "./images/forests/default.jpeg",
+    "./images/forests/rozwarowo.png",
     true,
     2021,
     4500,

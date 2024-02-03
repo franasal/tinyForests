@@ -13,6 +13,7 @@ import 'package:tinyforests/utils/utils.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:app_settings/app_settings.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ForestMaps extends StatefulWidget {
   const ForestMaps({Key? key}) : super(key: key);
@@ -94,7 +95,7 @@ class _ForestMapsState extends State<ForestMaps> {
     if (_userLocation != null) {
       _mapController.move(
         LatLng(_userLocation!.latitude, _userLocation!.longitude),
-        15.0, // You can adjust the zoom level as needed
+        5.2, // You can adjust the zoom level as needed
       );
       _isDrawerOpen = false;
     }
@@ -206,9 +207,13 @@ class _ForestMapsState extends State<ForestMaps> {
             bottom: 16.0,
             right: 16.0,
             child: FloatingActionButton(
+              backgroundColor: Color.fromARGB(255, 41, 110, 43),
               onPressed: _goUserLocation,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(100)),
               tooltip: AppLocalizations.of(context)!.myLocation,
-              child: const Icon(Icons.location_searching),
+              child: const Icon(Icons.location_searching_rounded,
+                  color: Colors.white),
             ),
           ),
         ],
@@ -288,15 +293,28 @@ class _ForestMapsState extends State<ForestMaps> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Center(
-                    child: Text(AppLocalizations.of(context)!.forestListTittle,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.bold,
-                          color: const Color.fromARGB(255, 52, 128, 54),
-                        )),
+                    child: RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                          text: 'Tiny Forests ',
+                          style: TextStyle(
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 52, 128, 54),
+                              fontStyle: FontStyle.italic),
+                          children: [
+                            TextSpan(
+                              text: AppLocalizations.of(context)!
+                                  .forestListTittle,
+                              style: TextStyle(
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.bold,
+                                color: const Color.fromARGB(255, 52, 128, 54),
+                              ),
+                            ),
+                          ]),
+                    ),
                   ),
-                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -408,7 +426,7 @@ class _ForestMapsState extends State<ForestMaps> {
               forest.coordinates['lat'] ?? 0.0,
               forest.coordinates['lon'] ?? 0.0,
             ),
-            15.0, // You can adjust the zoom level as needed
+            10.0, // You can adjust the zoom level as needed
           );
         });
 
@@ -435,16 +453,46 @@ class _ForestMapsState extends State<ForestMaps> {
                     height: 300,
                   ),
                   const SizedBox(height: 16),
-                  Text(
-                    AppLocalizations.of(context)!.yearPlanted(forest
-                        .yearPlanted), // Displaying the year the forest was planted
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                  Text(
-                    AppLocalizations.of(context)!.totalTrees(forest.totalTrees),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Text(
+                              AppLocalizations.of(context)!.yearPlanted(forest
+                                  .yearPlanted), // Displaying the year the forest was planted
+                              style: const TextStyle(fontSize: 18),
+                            ),
+                            Text(
+                              AppLocalizations.of(context)!
+                                  .totalTrees(forest.totalTrees),
 
-                    /// Displaying the total number of trees planted
-                    style: const TextStyle(fontSize: 18),
+                              /// Displaying the total number of trees planted
+                              style: const TextStyle(fontSize: 18),
+                            ),
+                          ],
+                        ),
+                      ),
+                      InkWell(
+                        onLongPress: () => _launchMapsUrl(
+                            forest.coordinates["lat"]!,
+                            forest.coordinates["lon"]!),
+                        child: Tooltip(
+                          triggerMode: TooltipTriggerMode.tap,
+                          message: (AppLocalizations.of(context)!.openMaps),
+                          child: Image.asset(
+                            forest.planted
+                                ? './images/icons/LocGree.png'
+                                : './images/icons/LocOrang.png',
+                            width: 30,
+                            height: 30,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 15,
+                      ),
+                    ],
                   ),
                   ...plantTypeOrder.expand((plantType) {
                     return [
@@ -453,7 +501,7 @@ class _ForestMapsState extends State<ForestMaps> {
                         padding: const EdgeInsets.all(4.0),
                         child: Text(
                           plantType,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -468,5 +516,14 @@ class _ForestMapsState extends State<ForestMaps> {
         );
       },
     );
+  }
+}
+
+Future<void> _launchMapsUrl(double lat, double lon) async {
+  final _url =
+      Uri.parse('https://www.google.com/maps/search/?api=1&query=$lat,$lon');
+
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not launch $_url');
   }
 }

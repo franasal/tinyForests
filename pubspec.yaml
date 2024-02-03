@@ -1,7 +1,7 @@
 name: tinyforests
 description: A new Flutter project.
 publish_to: 'none'
-version: 0.1.2+11
+version: 0.1.2+13
 
 environment:
   sdk: '>=3.1.5 <4.0.0'
@@ -24,9 +24,10 @@ dependencies:
   app_settings: ^5.1.1
   circular_menu: ^2.0.1
   dependency_validator: ^3.2.3
-  google_maps_flutter: ^2.5.3
   syncfusion_flutter_maps: ^24.1.47
   syncfusion_localizations: ^24.1.47
+  countries_world_map: ^1.1.1
+  url_launcher: ^6.2.4
 
 dev_dependencies:
   flutter_test:
@@ -38,7 +39,7 @@ flutter:
   uses-material-design: true
   assets:
 # !!!Einrückung beachten!!!
-  - australia.json
+  - assets/
   - images/
   - images/forests/
   - images/plants/
