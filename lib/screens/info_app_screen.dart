@@ -1,8 +1,10 @@
 // a placeholder screen for future development,
 
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Impressum extends StatefulWidget {
   const Impressum({super.key});
@@ -11,44 +13,97 @@ class Impressum extends StatefulWidget {
   State<Impressum> createState() => _ImpressumState();
 }
 
-final Uri _url = Uri.parse('https://www.miya-forest.de/impressum');
+final Uri _url_impressum = Uri.parse('https://www.miya-forest.de/impressum');
+final Uri _url_buyCoffee = Uri.parse('https://ko-fi.com/vgndevs');
 
 class _ImpressumState extends State<Impressum> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Impressum'),
+        title: const Text('Info'),
       ),
       body: Center(
-        child: Column(
-          children: [
-            InkWell(
-              child: Image.asset(
-                'images/iconStart.png',
-                width: 58,
-                height: 58,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              InkWell(
+                child: Image.asset(
+                  'images/iconStart.png',
+                  width: 58,
+                  height: 58,
+                ),
+                onTap: () => _launchUrl(_url_impressum),
               ),
-              onTap: () => _launchUrl(),
-            ),
-            Text("Hier kommt impressum"),
-            IconButton(
-              icon: Icon(Icons.info),
-              onPressed: () {
-                showLicensePage(
-                    context: context,
-                    applicationName: "Tiny Forests",
-                    applicationIcon: Padding(
-                      padding: const EdgeInsets.all(12),
-                      child: Image.asset(
-                        'images/iconStart.png',
-                        width: 48,
-                        height: 48,
-                      ),
-                    ));
-              },
-            )
-          ],
+              SizedBox(
+                height: 18.sp,
+              ),
+              Icon(Icons.arrow_upward),
+              Text(
+                AppLocalizations.of(context)!.clickImpressum,
+              ),
+              SizedBox(
+                height: 18.sp,
+              ),
+              Text(
+                AppLocalizations.of(context)!.donate,
+              ),
+              InkWell(
+                child: Icon(Icons.volunteer_activism, size: 12.sp),
+                onTap: () => _launchUrl(_url_buyCoffee),
+              ),
+              Text(
+                AppLocalizations.of(context)!.sources,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 16.sp, height: 5.sp),
+              ),
+              Text(
+                "Source1",
+              ),
+              Text(
+                "Source2",
+              ),
+              Text(
+                "Source3",
+              ),
+              Text(
+                "Source4",
+              ),
+              Text(
+                AppLocalizations.of(context)!.dataPrivacy,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 16.sp, height: 5.sp),
+              ),
+              Text(
+                AppLocalizations.of(context)!.licences,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 16.sp, height: 5.sp),
+              ),
+              Text(
+                "Click on the Info Icon to \nopen the Licences page",
+              ),
+              Icon(Icons.arrow_downward),
+              IconButton(
+                icon: Icon(Icons.info),
+                onPressed: () {
+                  showLicensePage(
+                      context: context,
+                      applicationName: "Tiny Forests",
+                      applicationIcon: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Image.asset(
+                          'images/iconStart.png',
+                          width: 48,
+                          height: 48,
+                        ),
+                      ));
+                },
+              ),
+              SizedBox(
+                height: 28.sp,
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: bottomNaviBar(context),
@@ -56,9 +111,9 @@ class _ImpressumState extends State<Impressum> {
   }
 }
 
-Future<void> _launchUrl() async {
-  if (!await launchUrl(_url)) {
-    throw Exception('Could not launch $_url');
+Future<void> _launchUrl(url) async {
+  if (!await launchUrl(url)) {
+    throw Exception('Could not launch $url');
   }
 }
 //

@@ -159,7 +159,12 @@ ConvexAppBar bottomNaviBar(BuildContext context) {
                       (route) => false,
                     );
                   },
-                  child: const Text("Impressum Page"),
+                  child: const Row(
+                    children: [
+                      Icon(Icons.info),
+                      Text("  Info "),
+                    ],
+                  ),
                 ),
               ),
               PopupMenuItem(
@@ -171,7 +176,12 @@ ConvexAppBar bottomNaviBar(BuildContext context) {
                       (route) => false,
                     );
                   },
-                  child: const Text("Debug Page"),
+                  child: const Row(
+                    children: [
+                      Icon(Icons.hot_tub_rounded),
+                      Text("  Test area "),
+                    ],
+                  ),
                 ),
               ),
             ],

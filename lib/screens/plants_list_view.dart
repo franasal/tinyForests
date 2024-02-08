@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
-import 'package:tinyforests/screens/cards.dart';
+import 'package:tinyforests/widgets/cards.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

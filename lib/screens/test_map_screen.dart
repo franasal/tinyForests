@@ -3,16 +3,16 @@ import 'package:syncfusion_flutter_maps/maps.dart';
 import 'package:tinyforests/datamodels/plant_distribution.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
 
-class DebugScreen extends StatefulWidget {
+class TestMapScreen extends StatefulWidget {
   final String plantName;
 
-  DebugScreen({required this.plantName});
+  TestMapScreen({required this.plantName});
 
   @override
-  _DebugScreenState createState() => _DebugScreenState();
+  _TestMapScreenState createState() => _TestMapScreenState();
 }
 
-class _DebugScreenState extends State<DebugScreen> {
+class _TestMapScreenState extends State<TestMapScreen> {
   late MapShapeSource dataSource;
   late MapZoomPanBehavior _zoomPanBehavior;
   late List<Model> data;

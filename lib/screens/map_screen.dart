@@ -7,7 +7,7 @@ import 'package:geolocator/geolocator.dart'; // Import the Geolocator package
 import 'package:sizer/sizer.dart';
 import 'package:tinyforests/datamodels/forests_data.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
-import 'package:tinyforests/screens/cards.dart';
+import 'package:tinyforests/widgets/cards.dart';
 import 'package:tinyforests/screens/plants_grid_view_screen.dart';
 import 'package:tinyforests/utils/utils.dart';
 import 'package:tinyforests/widgets/builderitems.dart';

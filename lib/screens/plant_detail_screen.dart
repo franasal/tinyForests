@@ -63,11 +63,14 @@ class PlantDetailsScreen extends StatelessWidget {
           ),
 
           Center(
-            child: formatCountryList(
-                context,
-                plantData.scientificName,
-                AppLocalizations.of(context)!.introduced,
-                AppLocalizations.of(context)!.native),
+            child: Container(
+              padding: const EdgeInsets.all(10.0),
+              child: formatCountryList(
+                  context,
+                  plantData.scientificName,
+                  AppLocalizations.of(context)!.introduced,
+                  AppLocalizations.of(context)!.native),
+            ),
           ),
 
           // more details from the Plant class will be shown here.

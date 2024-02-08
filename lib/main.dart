@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
-import 'package:tinyforests/screens/debu_screen.dart';
-import 'package:tinyforests/screens/drag_drop_screen.dart';
 import 'package:tinyforests/screens/info_app_screen.dart';
 import 'package:tinyforests/screens/map_screen.dart';
 import 'package:tinyforests/screens/plants_grid_view_screen.dart';
 import 'package:tinyforests/screens/plants_list_view.dart';
+import 'package:tinyforests/screens/test_drag_drop_screen.dart';
+import 'package:tinyforests/screens/tests_screen.dart';
 import 'package:tinyforests/variables.dart';
 import 'package:tinyforests/l10n/l10n.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -45,9 +45,7 @@ class MyApp extends StatelessWidget {
           routes: {
             // defining named routes for navigation these are imported from in the variables.dart file
             mapScreen: (context) => const ForestMaps(),
-            debugScreen: (context) => DebugScreen(
-                  plantName: 'Galium sylvaticum',
-                ),
+            debugScreen: (context) => TestScreens(),
             impressumScreen: (context) => Impressum(),
             dragAndDropScreen: (context) => ZoomableGrid(
                 // allPlants: allPlants,

@@ -4,8 +4,8 @@
     "myLocation": "Mein Standort",
     "yearPlanted": "Pflanzjahr {yearplant}",
     "totalTrees": "Anzahl der gepflanzten Bäume: {totalTreesPlanted}",
-    "guideTitle": "Leitfaden",
-    "guideSubTitle": "Untertitel des Leitfadens dies ist ein Platzhalter",
+    "testingTitle": "Test Screen",
+    "testingSubTitle": "Testbereich für Featuresentwicklung",
     "conservationStatus": "Schutzstatus: {conservationValue}",
     "interestingFact": "Interesanter Fakt: {factValue}",
     "distribution": "Verteilung: {distValue}",
@@ -49,7 +49,14 @@
 "native": "Einheimisch",
 "introduced": "Eingeführt",
 "dataFrom": "Daten von https://powo.science.kew.org/",
-"openMaps": "Zum Öffnen in Maps gedrückt halten"
+"openMaps": "Zum Öffnen in Maps gedrückt halten",
+"donate": "Herzlich willkommen bei Tiny Forest, der Bildungs-App von Miya-Forests.de! Unsere erste Version wurde freiwillig von VGN-devs entwickelt und bietet wesentliche Funktionen. Wir möchten die App mit umfassenden Bildungsressourcen zu jedem Tiny Forest bereichern, inklusive Pflanzenidentifikationshinweisen und Integration in Bürgerwissenschaftsprojekte. Bitte unterstütze uns mit einer Spende, um die App weiterzuentwickeln. Du kannst uns über die Miya-Spendenplattform oder direkt über Buy Me a Coffee unterstützen. Danke für Deine Unterstützung auf unserer Reise zu einer grüneren Zukunft!",
+"sources": "Quellen",
+"dataPrivacy": "Datenschutz",
+"licences": "Lizenzen",
+"clickImpressum": "Klicke auf das App-Symbol, \num die Impressum-Seite zu öffnen",
+"test1": "Hallo, dies ist der erste Test der Tiny Forests App.\nDer Zweck dieses Tests besteht darin, die allgemeinen Benachrichtigungen der App zu überprüfen. Im Wesentlichen wird es mir mitteilen, wie viele Testergeräte bereits auf die Verwendung dieser Funktion aktualisiert wurden, die ein Hauptbestandteil sein wird, um die Benutzer über neue Pflanzaktionen zu informieren.\n",
+"test1b": "\nBitte klicken Sie auf die Email Icon oben, um mir eine Feedback-E-Mail zu senden und diesen Test abzuschließen. Das ist alles! Dieser Bildschirm verschwindet, und Sie müssen vorerst nichts weiter tun.\nVielen Dank für Ihre Hilfe während der Entwicklung dieser App.\n\nPacho"
 
 
 
