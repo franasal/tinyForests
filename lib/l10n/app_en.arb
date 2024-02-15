@@ -23,12 +23,8 @@
     "@testingSubTitle": {"description": "Subtitle for the guide",
         "placeholders": {}
     },
-    "floweringSeason": "Flowering Season: {flowSeasValue}",
-"@floweringSeason": {"description": "Flowering season of the plant",
-    "placeholders": {
-        "flowSeasValue": {"type": "String"}
-    }
-},
+    "floweringSeason": "Flowering Season:",
+"@floweringSeason": {"description": "Flowering season of the plant"},
 "criticalEndanngered": "Critically Endangered",
 "@criticalEndanngered": {"description": "Plant is critically endangered"},
 "nearThreatened": "Near Threatened",
@@ -53,25 +49,12 @@
 "@height": {"description": "Height of the plant"},
 "allPlantsTitle": "All Plants List",
 "@allPlantsTitle": {"description": "Title for the list of all plants"},
-    "conservationStatus": "Conservation Status: {conservationValue}",
-    "@conservationStatus": {"description": "Conservation status of the plant",
-        "placeholders": {
-            "conservationValue": {"type": "String"}
-        }
-    },
-    "interestingFact": "Interesting Fact: {factValue}",
-    "@interestingFact": {"description": "Interesting fact about the plant",
-        "placeholders": {
-            "factValue": {"type": "String"}
-        }
-    },
-    "distribution": "Distribution: {distValue}",
-    "@distribution": {"description": "Distribution of the plant",
-        "placeholders": {
-            "distValue": {"type": "String"}
-        }
-
-},
+    "conservationStatus": "Conservation Status:",
+    "@conservationStatus": {"description": "Conservation status of the plant"},
+    "interestingFact": "Interesting Fact:",
+    "@interestingFact": {"description": "Interesting fact about the plant"},
+    "distribution": "Distribution:",
+    "@distribution": {"description": "Distribution of the plant"},
 "nearbyForests": "Forests nearby",
 "@nearbyForests": {"description": "Forests nearby"},
 "zoomableGrid": "Planting",
@@ -146,11 +129,11 @@
 "introduced": "Introduced",
 "@introduced": {"description": "Label indicating introduced status"},
 "@remvoe": {"description": "Label for removing"},
-"dataFrom": "data from https://powo.science.kew.org/",
+"dataFrom": "Plants data from https://powo.science.kew.org/",
 "@dataFrom": {"description": "Information about data source from https://powo.science.kew.org/"},
 "openMaps": "Hold to open in Maps",
 "@openMaps": {"description": "tooltip to open in maps"},
-"donate": "Welcome to Tiny Forest, the educational app developed for the Miya-Forests.de project. Our first version was created volunteerly by VGN-devs and offers essential features. Our vision extends beyond the basics; we aim to enrich the app with comprehensive educational resources for every Tiny Forest, including plant identification tips and integration into citizen science projects. If you share our passion and would like to contribute to further development of this app, especially in its early stages as we secure sustainable resources, please consider donating. You can support us through the Miya donation platform with the message 'for app development' or directly through Buy Me a Coffee. Your generosity fuels our mission to create a powerful tool for environmental education and conservation. Thank you for being part of our journey towards a greener future!",
+"donate": "Thanks for using Tiny Forest, the educational app for the Miya-Forests.de project. This first version, made by volunteer work, offers essential features. Our vision is to enhance the app with educational resources for every existing and planned Tiny Forest, including plant identification tips and integration into citizen science projects. If you'd like to contribute to the app's development, please consider donating through the Miya donation platform with the message 'for app development' or directly through Buy Me a Coffee. Your generosity fuels our mission for environmental education and conservation. Thank you for being part of our journey towards a greener future!",
 "@donate": {"description": "Information and appeal for donations"},
 "sources": "Sources",
 "@sources": {"description": "Label for sources"},
@@ -163,7 +146,9 @@
 "test1": "Hi, this is the first test of the Tiny Forests App.\n\nThe purpose of this test is to check the general notifications of the app. Basically, it will tell me how many tester phones the app has already been updated to use this feature, which will be a main part to inform the users about new planting actions.",
 "@test1": {"description": "Instructions test1" },
 "test1b": "\nPlease click on the Email icon to send a predefined feedback email and complete this test. That's it! This screen will disappear, and you won't need to do anything else for now.\nThanks a lot for your help during the development of this app.\nPacho",
-"@test1b": {"description": "Instructions test1b" }
+"@test1b": {"description": "Instructions test1b" },
+"eventsPage":"Upcoming planting actions!",
+"@eventsPage": {"description": "Title events page"}
 
         
 

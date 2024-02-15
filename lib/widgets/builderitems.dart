@@ -69,7 +69,7 @@ ConvexAppBar bottomNaviBar(BuildContext context) {
       // Bottom navigation bar items with icons and labels
       const TabItem(
         icon: Icon(
-          Icons.grid_on_outlined,
+          Icons.campaign,
           color: Color.fromARGB(200, 44, 148, 49),
         ),
         title: 'Home',
@@ -111,7 +111,7 @@ ConvexAppBar bottomNaviBar(BuildContext context) {
         case 0:
           Navigator.pushNamedAndRemoveUntil(
             context,
-            dragAndDropScreen,
+            announcementsScreen,
             (route) => false,
           );
           break;
@@ -132,7 +132,7 @@ ConvexAppBar bottomNaviBar(BuildContext context) {
         case 3:
           Navigator.pushNamedAndRemoveUntil(
             context,
-            guideScreen,
+            testsScreen,
             (route) => false,
           );
           break;

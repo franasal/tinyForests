@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
+// import 'package:tinyforests/screens/event_detail_screen.dart';
 import 'package:tinyforests/screens/info_app_screen.dart';
 import 'package:tinyforests/screens/map_screen.dart';
+import 'package:tinyforests/screens/planned_plantings.dart';
 import 'package:tinyforests/screens/plants_grid_view_screen.dart';
 import 'package:tinyforests/screens/plants_list_view.dart';
 import 'package:tinyforests/screens/test_drag_drop_screen.dart';
@@ -47,11 +49,12 @@ class MyApp extends StatelessWidget {
             mapScreen: (context) => const ForestMaps(),
             debugScreen: (context) => TestScreens(),
             impressumScreen: (context) => Impressum(),
+            announcementsScreen: (context) => PlannedPlantings(),
             dragAndDropScreen: (context) => ZoomableGrid(
                 // allPlants: allPlants,
                 // pageTitle: "Grid Draggagle Pflanzen",
                 ),
-            guideScreen: (context) => PlantsGridScreen(
+            testsScreen: (context) => PlantsGridScreen(
                   allPlants: allPlants,
                   pageTitle:
                       AppLocalizations.of(context)!.plantsGridScreenTitle,

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:tinyforests/datamodels/forests_data.dart';
+import 'package:tinyforests/datamodels/forests_Treesdata.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
+import 'package:tinyforests/screens/event_detail_screen.dart';
 import 'package:tinyforests/screens/plant_detail_screen.dart';
 
 class PlantCard extends StatelessWidget {
@@ -118,8 +119,7 @@ class PlantCard extends StatelessWidget {
                 ),
                 Tooltip(
                   triggerMode: TooltipTriggerMode.tap,
-                  message: AppLocalizations.of(context)!.conservationStatus(
-                      plant.conservationStatus), // Explanation for the icon
+                  message: plant.conservationStatus, // Explanation for the icon
                   child: Icon(
                     Icons.eco,
                     color: plant.conservationStatus == 'Critically Endangered'
@@ -133,8 +133,7 @@ class PlantCard extends StatelessWidget {
                 ),
                 Tooltip(
                   triggerMode: TooltipTriggerMode.tap,
-                  message: AppLocalizations.of(context)!.floweringSeason(
-                      plant.floweringSeason), // Explanation for the icon
+                  message: plant.floweringSeason, // Explanation for the icon
                   child: Icon(
                     Icons.wb_sunny,
                     color: plant.floweringSeason == 'summer'
@@ -146,32 +145,6 @@ class PlantCard extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class ForestCard extends StatelessWidget {
-  const ForestCard({
-    super.key,
-    required this.forest,
-    required this.onPlantedIconClick,
-  });
-
-  final TinyForest forest;
-  final VoidCallback onPlantedIconClick;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: ListTile(
-        leading: Image.asset(
-          forest.image,
-          width: 50,
-          height: 50,
-        ),
-        title: Text(forest.forestName),
-        // Add more details as needed
       ),
     );
   }
@@ -201,14 +174,14 @@ class TinyForestCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(
-                  radius: 50,
-                  child: GestureDetector(
-                    onTap: () {
-                      onPlantedIconClick();
-                    },
-                    child: Image.asset(forest.image),
-                  ),
+                GestureDetector(
+                  onTap: () {
+                    onPlantedIconClick();
+                  },
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(forest.image,
+                          height: 100, width: 100, fit: BoxFit.cover)),
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -270,6 +243,58 @@ class TinyForestCard extends StatelessWidget {
               ],
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class Announcements extends StatelessWidget {
+  final Map<String, dynamic> forestData;
+
+  Announcements(this.forestData);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 4,
+      margin: EdgeInsets.all(10),
+      child: InkWell(
+        onTap: () {
+          // Add navigation or any other action on card tap
+        },
+        child: Padding(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                forestData['Projektname'],
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 5),
+              Text('Standort: ${forestData['Standort'] ?? 'Unknown'}'),
+              SizedBox(height: 5),
+              Text('Bundesland: ${forestData['Bundesland'] ?? 'Unknown'}'),
+              SizedBox(height: 5),
+              Text(AppLocalizations.of(context)!
+                  .yearPlannedLabel(forestData['Pflanzjahr'] ?? 'Unknown')),
+              SizedBox(height: 5),
+              Text('Fläche in qm: ${forestData['Fläche in qm'] ?? 'Unknown'}'),
+              SizedBox(height: 5),
+              if (forestData['Koordinaten'] != null)
+                TextButton.icon(
+                  onPressed: () {
+                    // Add action to open map with coordinates
+                  },
+                  icon: Icon(Icons.location_on),
+                  label: Text('View on Map'),
+                ),
+            ],
+          ),
         ),
       ),
     );

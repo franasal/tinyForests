@@ -27,7 +27,9 @@ class PlantDetailsScreen extends StatelessWidget {
         title: Text(
           plantData.commonName,
           style: TextStyle(
-              fontSize: 40, color: Colors.green, fontWeight: FontWeight.bold),
+              fontSize: 40,
+              color: const Color.fromARGB(255, 31, 71, 32),
+              fontWeight: FontWeight.bold),
         ), // showing the common name in the app bar as tittle TODO big language automation
       ),
       body: ListView(
@@ -38,15 +40,39 @@ class PlantDetailsScreen extends StatelessWidget {
             plantData,
           ), // the following text fields are placeholders to show an example of what information this screen shows, TODO make it a nicer visualization
           ListTile(
-            title: Text(AppLocalizations.of(context)!
-                .conservationStatus(plantData.conservationStatus)),
+            title: Text(
+              AppLocalizations.of(context)!.conservationStatus,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontSize: 12.sp, // Adjust the font size as needed
+              ),
+            ),
           ),
           ListTile(
-              title: Text(AppLocalizations.of(context)!
-                  .interestingFact(plantData.interestingFact))),
+            title: Text(plantData.conservationStatus),
+          ),
           ListTile(
-            title: Text(AppLocalizations.of(context)!.distribution(plantData
-                .distribution)), // distribution information will have a map or a picture of their distribution
+              title: Text(
+            AppLocalizations.of(context)!.interestingFact,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontSize: 12.sp, // Adjust the font size as needed
+            ),
+          )),
+          ListTile(
+            title: Text(plantData.interestingFact),
+          ),
+          ListTile(
+            title: Text(
+              AppLocalizations.of(context)!.distribution,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontSize: 12.sp, // Adjust the font size as needed
+              ),
+            ), // distribution information will have a map or a picture of their distribution
           ),
           Center(
             child: Container(
@@ -57,7 +83,6 @@ class PlantDetailsScreen extends StatelessWidget {
                   introduced: AppLocalizations.of(context)!.introduced,
                 )),
           ),
-          Text(AppLocalizations.of(context)!.dataFrom),
           SizedBox(
             height: 18.sp,
           ),
@@ -95,17 +120,12 @@ Widget buildCustomTitleSection(BuildContext context, PlantData plantData) {
               Container(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Text(
-                  plantData.commonName,
+                  plantData.scientificName,
                   style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
+                    fontSize: 20,
+                    color: Color.fromARGB(255, 148, 148, 148),
+                    fontStyle: FontStyle.italic,
                   ),
-                ),
-              ),
-              Text(
-                plantData.scientificName,
-                style: const TextStyle(
-                  color: Color.fromARGB(255, 148, 148, 148),
                 ),
               ),
             ],

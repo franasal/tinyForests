@@ -4,6 +4,15 @@ import 'package:tinyforests/datamodels/plant_distribution.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:flutter/material.dart';
 
+// filter forests by year
+List<Map<String, dynamic>> filterForestsByYear(
+    Map<String, Map<String, dynamic>> forestsDB, int thresholdYear) {
+  return forestsDB.values
+      .where((forest) =>
+          forest['Pflanzjahr'] != null && forest['Pflanzjahr'] > thresholdYear)
+      .toList();
+}
+
 Map<String, PlantData> getPlantsSubset(Map<String, int> plantQuantities) {
   Map<String, PlantData> subset = {};
 
@@ -43,7 +52,7 @@ Map<String, Map<String, PlantData>> groupTreesByType<T>(
   return groupedTrees;
 }
 
-RichText formatCountryList(
+Container formatCountryList(
     BuildContext context, String plantName, String introduced, String natives) {
   List<String> nativeCountries = [];
   List<String> introducedCountries = [];
@@ -60,27 +69,28 @@ RichText formatCountryList(
       introducedCountries.add(country);
     }
   }
-  return RichText(
-    text: TextSpan(
-      style: DefaultTextStyle.of(context).style,
-      children: <TextSpan>[
-        TextSpan(
-          text: '$natives:\n\n',
+  return Container(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      // style: DefaultTextStyle.of(context).style,
+      children: [
+        Text(
+          '$natives:\n\n',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.black,
             fontSize: 12.sp, // Adjust the font size as needed
           ),
         ),
-        TextSpan(
-          text: '${nativeCountries.join(', ')}\n',
+        Text(
+          '${nativeCountries.join(', ')}\n',
           style: TextStyle(
             color: Colors.black,
             fontSize: 12.sp, // Adjust the font size as needed
           ),
         ),
-        TextSpan(
-          text: '\n\n$introduced:\n\n',
+        Text(
+          '\n\n$introduced:\n\n',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.black,
@@ -88,8 +98,8 @@ RichText formatCountryList(
             fontSize: 12.sp, // Adjust the font size as needed
           ),
         ),
-        TextSpan(
-          text: '${introducedCountries.join(',')}\n',
+        Text(
+          '${introducedCountries.join(', ')}\n',
           style: TextStyle(
             color: Colors.black,
             fontSize: 12.sp, // Adjust the font size as needed

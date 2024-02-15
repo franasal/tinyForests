@@ -5,7 +5,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart'; // Import the Geolocator package
 import 'package:sizer/sizer.dart';
-import 'package:tinyforests/datamodels/forests_data.dart';
+import 'package:tinyforests/datamodels/forests_Treesdata.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/widgets/cards.dart';
 import 'package:tinyforests/screens/plants_grid_view_screen.dart';

@@ -39,27 +39,36 @@ class _ImpressumState extends State<Impressum> {
                 height: 18.sp,
               ),
               Icon(Icons.arrow_upward),
-              Text(
-                AppLocalizations.of(context)!.clickImpressum,
+              Container(
+                padding: EdgeInsets.all(20),
+                child: Text(
+                  AppLocalizations.of(context)!.clickImpressum,
+                ),
               ),
               SizedBox(
                 height: 18.sp,
               ),
-              Text(
-                AppLocalizations.of(context)!.donate,
+              Container(
+                padding: EdgeInsets.all(20),
+                child: Text(
+                  AppLocalizations.of(context)!.donate,
+                ),
               ),
               InkWell(
                 child: Icon(Icons.volunteer_activism, size: 12.sp),
                 onTap: () => _launchUrl(_url_buyCoffee),
               ),
-              Text(
-                AppLocalizations.of(context)!.sources,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, fontSize: 16.sp, height: 5.sp),
+              Container(
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 5),
+                child: Text(
+                  AppLocalizations.of(context)!.sources,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16.sp,
+                  ),
+                ),
               ),
-              Text(
-                "Source1",
-              ),
+              Text(AppLocalizations.of(context)!.dataFrom),
               Text(
                 "Source2",
               ),
@@ -77,7 +86,7 @@ class _ImpressumState extends State<Impressum> {
               Text(
                 AppLocalizations.of(context)!.licences,
                 style: TextStyle(
-                    fontWeight: FontWeight.bold, fontSize: 16.sp, height: 5.sp),
+                    fontWeight: FontWeight.bold, fontSize: 16.sp, height: 2.sp),
               ),
               Text(
                 "Click on the Info Icon to \nopen the Licences page",

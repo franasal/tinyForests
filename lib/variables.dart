@@ -1,8 +1,9 @@
 // routes to implement
 
 const startScreen = '/start/';
+const announcementsScreen = '/announcements';
 const mapScreen = '/map/';
-const guideScreen = '/guide/';
+const testsScreen = '/guide/';
 const plantsScreen = '/plants/';
 const plantDetailsScreen = '/plantdetails/';
 const plantsListView = '/plantslistview/';

@@ -1,15 +1,15 @@
 {
     "mainTitle": "Aplicación Bosques Pequeños",
-    "plantsGridScreenTitle": "Todas las Plantas",
+    "plantsGridScreenTitle": "Total de plantas sembradas",
     "myLocation": "Mi ubicación",
     "yearPlanted": "Año de plantación {yearplant}",
-    "totalTrees": "Número de Árboles Plantados: {totalTreesPlanted}",
+    "totalTrees": "Número de Plantas Sembradas: {totalTreesPlanted}",
     "testingTitle": "Area de Pruebas",
     "testingSubTitle": "Subtítulo de la guía esto es una pagina de prueba",
-    "conservationStatus": "Estado de Conservación: {conservationValue}",
-    "interestingFact": "Dato Interesante: {factValue}",
-    "distribution": "Distribución: {distValue}",
-    "floweringSeason": "Época de Floración: {flowSeasValue}",
+    "conservationStatus": "Estado de Conservación:",
+    "interestingFact": "Dato Interesante:",
+    "distribution": "Distribución:",
+    "floweringSeason": "Época de Floración:",
     "criticalEndanngered": "En Peligro Crítico",
     "nearThreatened": "Cerca de la Amenaza",
     "vulnerable": "Vulnerable",
@@ -48,15 +48,17 @@
 "forestListTittle": "cerca de ti",
 "native": "Nativo",
 "introduced": "Introducido",
-"dataFrom": "datos de https://powo.science.kew.org/",
+"dataFrom": "datos de las plantas https://powo.science.kew.org/",
 "openMaps": "Presiona para abrir Mapas",
-"donate": "Bienvenidx a Tiny Forest, la aplicación educativa desarrollada para el proyecto Miya-Forests.de. Nuestra primera versión fue creada voluntariamente por VGN-devs y ofrece características esenciales. Nuestra visión va más allá de lo básico; queremos enriquecer la aplicación con recursos educativos completos para cada Tiny Forest, incluidos consejos de identificación de plantas e integración en proyectos de ciencia ciudadana. Si compartes nuestra pasión y te gustaría contribuir al desarrollo adicional de esta aplicación, especialmente en sus etapas iniciales mientras aseguramos recursos sostenibles, por favor considera hacer una donación. Puedes apoyarnos a través de la plataforma de donaciones de Miya con el mensaje 'para el desarrollo de la aplicación' o directamente a través de Buy Me a Coffee. Tu generosidad impulsa nuestra misión de crear una herramienta poderosa para la educación y conservación ambiental. ¡Gracias por ser parte de nuestro viaje hacia un futuro más verde!",
+"donate": "Gracias por usar Tiny Forest, la aplicación educativa para el proyecto Miya-Forests.de. Esta primera versión, realizada por trabajo voluntario, ofrece funciones esenciales. Nuestra visión es mejorar la aplicación con recursos educativos para cada Tiny Forest existente y planificado, incluidos consejos de identificación de plantas e integración en proyectos de ciencia ciudadana. Si deseas contribuir al desarrollo de la aplicación, considera hacer una donación a través de la plataforma de donaciones Miya con el mensaje 'para el desarrollo de la aplicación' o directamente a través de Buy Me a Coffee. Tu generosidad impulsa nuestra misión de educación y conservación ambiental. ¡Gracias por ser parte de nuestro viaje hacia un futuro más verde!",
 "sources": "Fuentes",
 "dataPrivacy": "Privacidad de datos",
 "licences": "Licencias",
 "clickImpressum": "Haz clic en el icono de la aplicación para ver la página de Imprint",
 "test1": "Hola, este es el primer test de la aplicación Tiny Forests.\nEl propósito de este test es comprobar las notificaciones generales de la aplicación. Básicamente, me dirá cuántos teléfonos de prueba ya han sido actualizados para utilizar esta función, que será una parte principal para informar a los usuarios sobre nuevas acciones de plantación.\n",
-"test1b": "Por favor, haz clic en el icono de Email para enviarme un correo electrónico predefinido y completar este test. ¡Eso es todo! Esta pantalla desaparecerá y no necesitarás hacer nada más por ahora.\nMuchas gracias por tu ayuda durante el desarrollo de esta aplicación.\n\nPacho"
+"test1b": "Por favor, haz clic en el icono de Email para enviarme un correo electrónico predefinido y completar este test. ¡Eso es todo! Esta pantalla desaparecerá y no necesitarás hacer nada más por ahora.\nMuchas gracias por tu ayuda durante el desarrollo de esta aplicación.\n\nPacho",
+"eventsPage": "¡Próximas acciones de Miya-TinyForest"
+
 
 
 
