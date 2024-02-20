@@ -1,4 +1,5 @@
 // Imports
+import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sizer/sizer.dart';
@@ -11,6 +12,7 @@ import 'package:tinyforests/screens/plants_grid_view_screen.dart';
 import 'package:tinyforests/screens/plants_list_view.dart';
 import 'package:tinyforests/screens/test_drag_drop_screen.dart';
 import 'package:tinyforests/screens/tests_screen.dart';
+import 'package:tinyforests/utils/utils.dart';
 import 'package:tinyforests/variables.dart';
 import 'package:tinyforests/l10n/l10n.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -23,6 +25,7 @@ void main() {
 // the main application class
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   // build method for creating the app's interface
   @override
   Widget build(BuildContext context) {
@@ -41,9 +44,11 @@ class MyApp extends StatelessWidget {
             GlobalMaterialLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
+            CountryLocalizations.delegate,
           ],
-          home:
-              const ForestMaps(), // set the initial screen of the app with the forests overview
+          home: const ForestMaps(),
+
+          // set the initial screen of the app with the forests overview
           routes: {
             // defining named routes for navigation these are imported from in the variables.dart file
             mapScreen: (context) => const ForestMaps(),
@@ -55,13 +60,15 @@ class MyApp extends StatelessWidget {
                 // pageTitle: "Grid Draggagle Pflanzen",
                 ),
             testsScreen: (context) => PlantsGridScreen(
-                  allPlants: allPlants,
+                  allPlants: getAllPlantsByLanguage(
+                      AppLocalizations.of(context)!.localeName),
                   pageTitle:
                       AppLocalizations.of(context)!.plantsGridScreenTitle,
                 ),
             plantsScreen: (context) => PlantsListView(
-                  allPlants:
-                      allPlants, // Passing plants data from the datamodels/plants_data.dart file to the tree grid screen
+                  allPlants: getAllPlantsByLanguage(AppLocalizations.of(
+                          context)!
+                      .localeName), // Passing plants data from the datamodels/plants_data.dart file to the tree grid screen
                 ),
           },
         );

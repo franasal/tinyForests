@@ -4,27 +4,23 @@ import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/screens/plant_detail_screen.dart';
 import 'package:tinyforests/utils/utils.dart';
 import 'package:tinyforests/widgets/builderitems.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PlantsGridScreen extends StatelessWidget {
   final Map<String, PlantData> allPlants;
   final String pageTitle;
-
-  // Define the order of plant types
-  final List<String> plantTypeOrder = [
-    'Hauptbaumart',
-    'Nebenbaumart',
-    'Strauch',
-    'Bodendecker'
-  ];
 
   PlantsGridScreen(
       {super.key, required this.allPlants, required this.pageTitle});
 
   @override
   Widget build(BuildContext context) {
+    List<String> plantTypeOrder =
+        getPlantTypeOrder(AppLocalizations.of(context)!.localeName);
+
     // groups the allPlants by plant type with the function defined at the bottom of this file
     Map<String, Map<String, PlantData>> groupedTrees =
-        groupTreesByType(allPlants);
+        groupTreesByType(allPlants, plantTypeOrder);
 
     // Sort the keys of groupedTrees based on plantTypeOrder
     List<String> sortedPlantTypes = plantTypeOrder
@@ -102,6 +98,10 @@ class TreeItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Map<String, PlantData> allPlants;
+
+    allPlants =
+        getAllPlantsByLanguage(AppLocalizations.of(context)!.localeName);
     return bds.Badge(
       position: bds.BadgePosition.custom(top: 10, end: 12),
       badgeContent: Text(

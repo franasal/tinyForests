@@ -2,7 +2,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Zichow': {
     'Projektname': 'Zichow',
     'Standort': 'Zichow',
-    'Koordinaten': ' https://maps.app.goo.gl/qdTvpswtfUMyxvm48 ',
+    'MapsURL': ' https://maps.app.goo.gl/qdTvpswtfUMyxvm48 ',
     'Bundesland': 'Brandenburg',
     'Land': 'Deutschland',
     'Pflanzjahr': 2020,
@@ -17,7 +17,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Darmstadt': {
     'Projektname': 'Darmstadt',
     'Standort': 'Darmstadt ',
-    'Koordinaten': 'https://goo.gl/maps/As9Z6TDkpbSS9M3e7',
+    'MapsURL': 'https://goo.gl/maps/As9Z6TDkpbSS9M3e7',
     'Bundesland': 'Hessen',
     'Land': 'Deutschland',
     'Pflanzjahr': 2021,
@@ -32,7 +32,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Kinderhort Oderpiraten': {
     'Projektname': 'Kinderhort Oderpiraten',
     'Standort': 'Frankfurt Oder ',
-    'Koordinaten': 'https://maps.app.goo.gl/aWchr4qH53hB2bZA6',
+    'MapsURL': 'https://maps.app.goo.gl/aWchr4qH53hB2bZA6',
     'Bundesland': 'Brandenburg',
     'Land': 'Deutschland',
     'Pflanzjahr': 2021,
@@ -48,7 +48,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
     'Projektname':
         'Kindergarten am Wurzelberg + Kita Kinderland (auf dem selben Gelände)',
     'Standort': 'Ludwigsfelde ',
-    'Koordinaten': 'https://maps.app.goo.gl/c29N783JrMNxU3cD6',
+    'MapsURL': 'https://maps.app.goo.gl/c29N783JrMNxU3cD6',
     'Bundesland': 'Brandenburg',
     'Land': 'Deutschland',
     'Pflanzjahr': 2021,
@@ -63,7 +63,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Rozwarowo': {
     'Projektname': 'Rozwarowo',
     'Standort': 'Rozwarowo ',
-    'Koordinaten': 'https://maps.app.goo.gl/yA9J9UF5SDZ8DKYn8',
+    'MapsURL': 'https://maps.app.goo.gl/yA9J9UF5SDZ8DKYn8',
     'Bundesland': null,
     'Land': 'Polen',
     'Pflanzjahr': 2021,
@@ -78,7 +78,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Grießheim Westring': {
     'Projektname': 'Grießheim Westring',
     'Standort': 'Grießheim ',
-    'Koordinaten': 'https://goo.gl/maps/jj61Add5W4dBMPjSA ',
+    'MapsURL': 'https://goo.gl/maps/jj61Add5W4dBMPjSA ',
     'Bundesland': 'Hessen',
     'Land': 'Deutschland',
     'Pflanzjahr': 2021,
@@ -93,7 +93,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Herford': {
     'Projektname': 'Herford',
     'Standort': 'Herford ',
-    'Koordinaten': 'https://maps.app.goo.gl/CCbFyr6Mz7DVEhJG8 ',
+    'MapsURL': 'https://maps.app.goo.gl/CCbFyr6Mz7DVEhJG8 ',
     'Bundesland': 'NRW',
     'Land': 'Deutschland',
     'Pflanzjahr': 2022,
@@ -108,7 +108,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Griesheim Friedhof und Westring': {
     'Projektname': 'Griesheim Friedhof und Westring',
     'Standort': 'Grießheim ',
-    'Koordinaten':
+    'MapsURL':
         'https://goo.gl/maps/D4DCSpBoz2Nrm1qg6 \n\t\t\thttps://goo.gl/maps/4jDQEZzoVfmPy1ao8 ',
     'Bundesland': 'Hessen',
     'Land': 'Deutschland',
@@ -124,7 +124,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Agrofert': {
     'Projektname': 'Agrofert',
     'Standort': 'Lutherstadt Wittemberg ',
-    'Koordinaten': 'https://maps.app.goo.gl/ZRCuDU3LJFb2nQYa9 ',
+    'MapsURL': 'https://maps.app.goo.gl/ZRCuDU3LJFb2nQYa9 ',
     'Bundesland': 'Sachsen-Anhalt',
     'Land': 'Deutschland',
     'Pflanzjahr': 2022,
@@ -139,7 +139,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Silberahorn': {
     'Projektname': 'Silberahorn',
     'Standort': 'Potsdam ',
-    'Koordinaten': 'https://maps.app.goo.gl/enps3GCpxrfurtnB8 ',
+    'MapsURL': 'https://maps.app.goo.gl/enps3GCpxrfurtnB8 ',
     'Bundesland': 'Brandenburg',
     'Land': 'Deutschland',
     'Pflanzjahr': 2022,
@@ -154,7 +154,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Am Jungfernsee': {
     'Projektname': 'Am Jungfernsee',
     'Standort': 'Potsdam ',
-    'Koordinaten': 'https://maps.app.goo.gl/thAPnQDVU5WExtDN9 ',
+    'MapsURL': 'https://maps.app.goo.gl/thAPnQDVU5WExtDN9 ',
     'Bundesland': 'Brandenburg',
     'Land': 'Deutschland',
     'Pflanzjahr': 2022,
@@ -169,7 +169,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Oderknirpse': {
     'Projektname': 'Oderknirpse',
     'Standort': 'Frankfurt Oder ',
-    'Koordinaten': 'https://maps.app.goo.gl/UheHsH2nSdmgxY8QA ',
+    'MapsURL': 'https://maps.app.goo.gl/UheHsH2nSdmgxY8QA ',
     'Bundesland': 'Brandenburg',
     'Land': 'Deutschland',
     'Pflanzjahr': 2022,
@@ -184,7 +184,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Kleine Füße Naseweiß': {
     'Projektname': 'Kleine Füße Naseweiß',
     'Standort': 'Berlin ',
-    'Koordinaten': 'https://maps.app.goo.gl/hhuV4pTvjsUWu2kL7 ',
+    'MapsURL': 'https://maps.app.goo.gl/hhuV4pTvjsUWu2kL7 ',
     'Bundesland': 'Berlin',
     'Land': 'Deutschland',
     'Pflanzjahr': 2022,
@@ -199,7 +199,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Kita im Grünen': {
     'Projektname': 'Kita im Grünen',
     'Standort': 'Berlin ',
-    'Koordinaten': 'https://maps.app.goo.gl/nKJXKKBYEu34KNSh9 ',
+    'MapsURL': 'https://maps.app.goo.gl/nKJXKKBYEu34KNSh9 ',
     'Bundesland': 'Berlin',
     'Land': 'Deutschland',
     'Pflanzjahr': 2022,
@@ -214,7 +214,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Grießheim 3.0': {
     'Projektname': 'Grießheim 3.0',
     'Standort': 'Grießheim',
-    'Koordinaten': 'https://maps.app.goo.gl/QSAxKVjFtzK5o8YJ7 ',
+    'MapsURL': 'https://maps.app.goo.gl/QSAxKVjFtzK5o8YJ7 ',
     'Bundesland': 'Hessen',
     'Land': 'Deutschland',
     'Pflanzjahr': 2024,
@@ -229,7 +229,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'TGE Eberswalde': {
     'Projektname': 'TGE Eberswalde',
     'Standort': 'Eberswalde ',
-    'Koordinaten': 'https://maps.app.goo.gl/3973ewcVo6sUsTcj7 ',
+    'MapsURL': 'https://maps.app.goo.gl/3973ewcVo6sUsTcj7 ',
     'Bundesland': 'Brandenburg',
     'Land': 'Deutschland',
     'Pflanzjahr': 2023,
@@ -244,7 +244,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Schwäbisch Hall Biodiversitäts-Hain Phase 1': {
     'Projektname': 'Schwäbisch Hall Biodiversitäts-Hain Phase 1',
     'Standort': 'Schwäbsich Hall ',
-    'Koordinaten': 'https://maps.app.goo.gl/cPZtW7kyqDnRwf9dA ',
+    'MapsURL': 'https://maps.app.goo.gl/cPZtW7kyqDnRwf9dA ',
     'Bundesland': 'Baden Württemberg',
     'Land': 'Deutschland',
     'Pflanzjahr': 2023,
@@ -259,7 +259,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Hanau': {
     'Projektname': 'Hanau',
     'Standort': 'Hanau (FFM) ',
-    'Koordinaten': 'https://maps.app.goo.gl/9VVVq4Bu71doTQ8r5 ',
+    'MapsURL': 'https://maps.app.goo.gl/9VVVq4Bu71doTQ8r5 ',
     'Bundesland': 'Hessen',
     'Land': 'Deutschland',
     'Pflanzjahr': 2023,
@@ -274,7 +274,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Rüsselsheim': {
     'Projektname': 'Rüsselsheim',
     'Standort': 'Rüsselsheim, Paul -Ehrlich-Str. 15-19, 65428 Rüsselsheim ',
-    'Koordinaten': 'https://maps.app.goo.gl/UC7chTT37YG8rSUi8 ',
+    'MapsURL': 'https://maps.app.goo.gl/UC7chTT37YG8rSUi8 ',
     'Bundesland': 'Hessen',
     'Land': 'Deutschland',
     'Pflanzjahr': 2023,
@@ -289,7 +289,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Pankow Seniorenresidenz Food Forest + Tiny Forest': {
     'Projektname': 'Pankow Seniorenresidenz Food Forest + Tiny Forest',
     'Standort': 'Berlin ',
-    'Koordinaten': 'https://maps.app.goo.gl/x1f2z3n8Ksbk8R3h8 ',
+    'MapsURL': 'https://maps.app.goo.gl/x1f2z3n8Ksbk8R3h8 ',
     'Bundesland': 'Berlin',
     'Land': 'Deutschland',
     'Pflanzjahr': 2023,
@@ -304,7 +304,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Mühlheim': {
     'Projektname': 'Mühlheim',
     'Standort': 'Mühlheim am Main ',
-    'Koordinaten': 'https://maps.app.goo.gl/GaNjDGjy5HK6Hxof9 ',
+    'MapsURL': 'https://maps.app.goo.gl/GaNjDGjy5HK6Hxof9 ',
     'Bundesland': 'Mühlheim',
     'Land': 'Deutschland',
     'Pflanzjahr': 2024,
@@ -319,7 +319,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'HSBI (Bielefeld)': {
     'Projektname': 'HSBI (Bielefeld)',
     'Standort': 'Bielefeld ',
-    'Koordinaten': 'https://maps.app.goo.gl/F3WBqLorFhsapxp58 ',
+    'MapsURL': 'https://maps.app.goo.gl/F3WBqLorFhsapxp58 ',
     'Bundesland': 'Nordrhein-Westphalen',
     'Land': 'Deutschland',
     'Pflanzjahr': 2024,
@@ -334,7 +334,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'TANO Nordsee': {
     'Projektname': 'TANO Nordsee',
     'Standort': 'Jever und Bad Zwischenahn',
-    'Koordinaten': null,
+    'MapsURL': null,
     'Bundesland': 'Niedersachsen',
     'Land': 'Deutschland',
     'Pflanzjahr': 2024,
@@ -349,7 +349,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Rudersberg': {
     'Projektname': 'Rudersberg',
     'Standort': 'Rudersberg',
-    'Koordinaten': null,
+    'MapsURL': null,
     'Bundesland': 'Baden Württemberg',
     'Land': 'Deutschland',
     'Pflanzjahr': 2024,
@@ -364,7 +364,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Darmstdt Dieburg': {
     'Projektname': 'Darmstdt Dieburg',
     'Standort': 'Darmstadt-Dieburg, John-F.-Kennedy-Schule Münster',
-    'Koordinaten': null,
+    'MapsURL': null,
     'Bundesland': 'Hessen',
     'Land': 'Deutschland',
     'Pflanzjahr': 2024,
@@ -379,7 +379,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'Oranienburg': {
     'Projektname': 'Oranienburg',
     'Standort': null,
-    'Koordinaten': null,
+    'MapsURL': null,
     'Bundesland': 'Brandenburg',
     'Land': 'Deutschland',
     'Pflanzjahr': 2024,
@@ -394,7 +394,7 @@ Map<String, Map<String, dynamic>> forestsDB = {
   'DUH': {
     'Projektname': 'DUH',
     'Standort': 'Hamburg, Leipzig, Berlin',
-    'Koordinaten': null,
+    'MapsURL': null,
     'Bundesland': 'Hamburg, Sachsen, Berlin',
     'Land': 'Deutschland',
     'Pflanzjahr': 2024,

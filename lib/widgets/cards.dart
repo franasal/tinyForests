@@ -4,6 +4,7 @@ import 'package:tinyforests/datamodels/forests_Treesdata.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:tinyforests/screens/event_detail_screen.dart';
 import 'package:tinyforests/screens/plant_detail_screen.dart';
+import 'package:tinyforests/utils/utils.dart';
 
 class PlantCard extends StatelessWidget {
   // This is a custom widget that displays a card for each plant
@@ -13,6 +14,8 @@ class PlantCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Map<String, PlantData> allPlants =
+        getAllPlantsByLanguage(AppLocalizations.of(context)!.localeName);
     return Card(
       color: Colors.white,
       elevation: 4.0,
@@ -288,6 +291,7 @@ class Announcements extends StatelessWidget {
               if (forestData['Koordinaten'] != null)
                 TextButton.icon(
                   onPressed: () {
+                    Uri.parse(forestData['MapsURL']);
                     // Add action to open map with coordinates
                   },
                   icon: Icon(Icons.location_on),

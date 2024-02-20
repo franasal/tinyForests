@@ -1,3 +1,4 @@
+import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tinyforests/datamodels/plants_data.dart'; //  tree data model
@@ -107,8 +108,20 @@ class PlantDetailsScreen extends StatelessWidget {
   }
 }
 
+// String getSystemLanguage(AppLocalizations localizations) {
+//   String systemLanguage = localizations.localeName;
+//   // Extract the language code from the system language (e.g., 'en_US' -> 'en')
+//   String languageCode = systemLanguage.split('_').first;
+//   return languageCode.toUpperCase();
+// }
+
 // Custom function to build a title section with a title, subtitle, and image using a container
 Widget buildCustomTitleSection(BuildContext context, PlantData plantData) {
+  print(CountryLocalizations.of(context)?.countryName(countryCode: 'MX'));
+  print(AppLocalizations.of(context)?.localeName);
+  print(CountryLocalizations.of(context)?.locale);
+  print("hello");
+
   return Container(
     padding: const EdgeInsets.all(15),
     child: Row(

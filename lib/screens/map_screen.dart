@@ -400,16 +400,16 @@ class _ForestMapsState extends State<ForestMaps> {
   }
 
   // Define the order of plant types
-  List<String> plantTypeOrder = [
-    'Hauptbaumart',
-    'Nebenbaumart',
-    'Strauch',
-    'Bodendecker'
-  ];
 
   void _showForestDetails(TinyForest forest) {
+    // Map<String, PlantData> allPlants =
+    //     getAllPlantsByLanguage(AppLocalizations.of(context)!.localeName);
+
+    Map<String, PlantData> allPlants =
+        getAllPlantsByLanguage(AppLocalizations.of(context)!.localeName);
+
     Map<String, Map<String, PlantData>> groupedTrees =
-        groupTreesByType(forest.listPlanted);
+        groupTreesByType(forest.listPlanted, allPlants);
     showModalBottomSheet(
       backgroundColor: Colors.white,
       constraints: BoxConstraints.loose(Size(MediaQuery.of(context).size.width,
@@ -429,6 +429,8 @@ class _ForestMapsState extends State<ForestMaps> {
             10.0, // You can adjust the zoom level as needed
           );
         });
+        List<String> plantTypeOrder =
+            getPlantTypeOrder(AppLocalizations.of(context)!.localeName);
 
         return Padding(
           padding: const EdgeInsets.all(10.0),

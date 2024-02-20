@@ -130,14 +130,6 @@ class _GridScreenState extends State<GridScreen> {
 
   int maxNumber = 100;
 
-  // Define the order of plant types
-  final List<String> plantTypeOrder = [
-    'Hauptbaumart',
-    'Nebenbaumart',
-    'Strauch',
-    'Bodendecker'
-  ];
-
   late List<Widget?> gridItems;
 
   @override
@@ -151,8 +143,14 @@ class _GridScreenState extends State<GridScreen> {
 
   @override
   Widget build(BuildContext context) {
+    List plantTypeOrder =
+        getPlantTypeOrder(AppLocalizations.of(context)!.localeName);
+
+    Map<String, PlantData> allPlants =
+        getAllPlantsByLanguage(AppLocalizations.of(context)!.localeName);
+
     Map<String, Map<String, PlantData>> groupedTrees =
-        groupTreesByType(allPlants);
+        groupTreesByType(allPlants, plantTypeOrder);
 
     return Scaffold(
       appBar: AppBar(

@@ -13,7 +13,23 @@ List<Map<String, dynamic>> filterForestsByYear(
       .toList();
 }
 
-Map<String, PlantData> getPlantsSubset(Map<String, int> plantQuantities) {
+List<String> getPlantTypeOrder(lang) {
+  if (lang == 'es') {
+    return [
+      'Arbole Principal',
+      'Árbol secundario',
+      'Arbusto',
+      'Cobertura del suelo'
+    ];
+  } else if (lang == 'de') {
+    return ['Hauptbaumart', 'Nebenbaumart', 'Strauch', 'Bodendecker'];
+  } else {
+    return ['Main tree', 'Secondary tree', 'Shrub', 'Ground cover'];
+  }
+}
+
+Map<String, PlantData> getPlantsSubset(
+    Map<String, int> plantQuantities, allPlants) {
   Map<String, PlantData> subset = {};
 
   for (String plantName in plantQuantities.keys) {
@@ -26,8 +42,19 @@ Map<String, PlantData> getPlantsSubset(Map<String, int> plantQuantities) {
   return subset;
 }
 
+Map<String, PlantData> getAllPlantsByLanguage(String language) {
+  switch (language) {
+    case 'es':
+      return allPlantsEs;
+    case 'de':
+      return allPlantsDe;
+    default:
+      return allPlantsEn;
+  }
+}
+
 Map<String, Map<String, PlantData>> groupTreesByType<T>(
-    Map<String, T> plantsMap) {
+    Map<String, T> plantsMap, allPlants) {
   Map<String, Map<String, PlantData>> groupedTrees = {};
 
   plantsMap.forEach((key, plantData) {
@@ -75,7 +102,7 @@ Container formatCountryList(
       // style: DefaultTextStyle.of(context).style,
       children: [
         Text(
-          '$natives:\n\n',
+          '$natives:\n',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.black,
@@ -90,7 +117,7 @@ Container formatCountryList(
           ),
         ),
         Text(
-          '\n\n$introduced:\n\n',
+          '$introduced:\n',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.black,
