@@ -20,7 +20,7 @@ class PlantsGridScreen extends StatelessWidget {
 
     // groups the allPlants by plant type with the function defined at the bottom of this file
     Map<String, Map<String, PlantData>> groupedTrees =
-        groupTreesByType(allPlants, plantTypeOrder);
+        groupTreesByType(allPlants, allPlants);
 
     // Sort the keys of groupedTrees based on plantTypeOrder
     List<String> sortedPlantTypes = plantTypeOrder

@@ -150,7 +150,7 @@ class _GridScreenState extends State<GridScreen> {
         getAllPlantsByLanguage(AppLocalizations.of(context)!.localeName);
 
     Map<String, Map<String, PlantData>> groupedTrees =
-        groupTreesByType(allPlants, plantTypeOrder);
+        groupTreesByType(allPlants, allPlants);
 
     return Scaffold(
       appBar: AppBar(

@@ -1,5 +1,6 @@
 // a funciton to select randomly some plants from the full allPlants Map for testing in each forest view
 import 'package:sizer/sizer.dart';
+import 'package:tinyforests/datamodels/countries_lan.dart';
 import 'package:tinyforests/datamodels/plant_distribution.dart';
 import 'package:tinyforests/datamodels/plants_data.dart';
 import 'package:flutter/material.dart';
@@ -80,7 +81,12 @@ Map<String, Map<String, PlantData>> groupTreesByType<T>(
 }
 
 Container formatCountryList(
-    BuildContext context, String plantName, String introduced, String natives) {
+    BuildContext context,
+    String plantName,
+    String introduced,
+    String natives,
+    String language // New parameter for language
+    ) {
   List<String> nativeCountries = [];
   List<String> introducedCountries = [];
 
@@ -91,29 +97,30 @@ Container formatCountryList(
     int status = entry.values.first;
 
     if (status == 0) {
-      nativeCountries.add(country);
+      nativeCountries.add(getTranslatedCountryName(
+          country, language)); // Use translated country name
     } else if (status == 1) {
-      introducedCountries.add(country);
+      introducedCountries.add(getTranslatedCountryName(
+          country, language)); // Use translated country name
     }
   }
   return Container(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      // style: DefaultTextStyle.of(context).style,
       children: [
         Text(
           '$natives:\n',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.black,
-            fontSize: 12.sp, // Adjust the font size as needed
+            fontSize: 12.sp,
           ),
         ),
         Text(
           '${nativeCountries.join(', ')}\n',
           style: TextStyle(
             color: Colors.black,
-            fontSize: 12.sp, // Adjust the font size as needed
+            fontSize: 12.sp,
           ),
         ),
         Text(
@@ -121,18 +128,25 @@ Container formatCountryList(
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.black,
-
-            fontSize: 12.sp, // Adjust the font size as needed
+            fontSize: 12.sp,
           ),
         ),
         Text(
           '${introducedCountries.join(', ')}\n',
           style: TextStyle(
             color: Colors.black,
-            fontSize: 12.sp, // Adjust the font size as needed
+            fontSize: 12.sp,
           ),
         ),
       ],
     ),
   );
+}
+
+String getTranslatedCountryName(String country, String language) {
+  if (language == 'es' || language == 'de') {
+    return countriesTrans[country]?[language] ?? country;
+  } else {
+    return country;
+  }
 }

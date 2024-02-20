@@ -3,8 +3,6 @@ import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sizer/sizer.dart';
-import 'package:tinyforests/datamodels/plants_data.dart';
-// import 'package:tinyforests/screens/event_detail_screen.dart';
 import 'package:tinyforests/screens/info_app_screen.dart';
 import 'package:tinyforests/screens/map_screen.dart';
 import 'package:tinyforests/screens/planned_plantings.dart';

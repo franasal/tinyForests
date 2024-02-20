@@ -95,7 +95,8 @@ class PlantDetailsScreen extends StatelessWidget {
                   context,
                   plantData.scientificName,
                   AppLocalizations.of(context)!.introduced,
-                  AppLocalizations.of(context)!.native),
+                  AppLocalizations.of(context)!.native,
+                  AppLocalizations.of(context)!.localeName),
             ),
           ),
 
