@@ -1,6 +1,6 @@
 {
     "mainTitle": "Winzige Wälder App",
-    "plantsGridScreenTitle": "Anzahl gepflanzten Pflanzen",
+    "plantsGridScreenTitle": "Anzahl gepflanzter Arten",
     "myLocation": "Mein Standort",
     "yearPlanted": "Pflanzjahr {yearplant}",
     "totalTrees": "Anzahl der gepflanzten Pflanzen: {totalTreesPlanted}",
@@ -19,7 +19,7 @@
     "bush": "Strauch",
     "grass": "Gras",
     "height": "Höhe",
-    "allPlantsTitle": "Liste Alle Pflanzen",
+    "allPlantsTitle": "Liste aller Pflanzen",
     "nearbyForests": "TinyForests in deiner Nähe",
     "zoomableGrid": "Zoombare Raster",
 "gridSize": "Rastergröße",
