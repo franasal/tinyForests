@@ -37,6 +37,9 @@ class _PlannedPlantingsState extends State<PlannedPlantings> {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: forestsDB.entries
+                  .where((entry) =>
+                      entry.value['Pflanzjahr'] >=
+                      2024) // Filter entries with Pflanzjahr >= 2024
                   .map((entry) => Announcements(entry.value))
                   .toList(),
             ),

@@ -319,7 +319,7 @@ List<TinyForest> tForest = [
     {
       'Carpinus betulus': 31,
       'Corylus avellana': 35,
-      'Crataegus laevigata agg': 35,
+      'Crataegus laevigata': 35,
       'Fagus sylvatica': 31,
       'Ilex aquifolium': 35,
       'Lonicera periclymenum': 35,

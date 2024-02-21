@@ -70,7 +70,7 @@ class PlantData {
 Map<String, PlantData> allPlantsEn = {
   "Acer campestre": PlantData(
       scientificName: "Acer campestre",
-      commonName: "Feldahorn",
+      commonName: "Field maple",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -89,7 +89,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Acer monspessulanum": PlantData(
       scientificName: "Acer monspessulanum",
-      commonName: "Felsenahorn",
+      commonName: "Montpellier maple",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -109,7 +109,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Acer platanoides": PlantData(
       scientificName: "Acer platanoides",
-      commonName: "Spitz-Ahorn",
+      commonName: "Norway maple",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -129,7 +129,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Main tree"),
   "Acer pseudoplatanus": PlantData(
       scientificName: "Acer pseudoplatanus",
-      commonName: "Bergahorn",
+      commonName: "Sycamore",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -149,7 +149,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Main tree"),
   "Alnus glutinosa": PlantData(
       scientificName: "Alnus glutinosa",
-      commonName: "Schwarzerle",
+      commonName: "Black alder",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -169,7 +169,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Main tree"),
   "Amelanchier ovalis": PlantData(
       scientificName: "Amelanchier ovalis",
-      commonName: "Gewöhnliche Felsenbirne",
+      commonName: "Mespilus",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -188,7 +188,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Anemone nemorosa": PlantData(
       scientificName: "Anemone nemorosa",
-      commonName: "Buschwindröschen",
+      commonName: "Wood anemone",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -207,7 +207,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Ground Cover"),
   "Athyrium filix-femina": PlantData(
       scientificName: "Athyrium filix-femina",
-      commonName: "Wald-Frauenfarn",
+      commonName: "Lady fern",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -226,7 +226,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Ground Cover"),
   "Berberis vulgaris": PlantData(
       scientificName: "Berberis vulgaris",
-      commonName: "Gewöhnliche Berberitze",
+      commonName: "Barberry",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -245,7 +245,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Betula pendula": PlantData(
       scientificName: "Betula pendula",
-      commonName: "Hängebirke",
+      commonName: "Silver birch",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -265,7 +265,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Betula pubescens": PlantData(
       scientificName: "Betula pubescens",
-      commonName: "Moor-Birke",
+      commonName: "Downy birch",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -285,7 +285,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Brachypodium sylvaticum": PlantData(
       scientificName: "Brachypodium sylvaticum",
-      commonName: "Wald-Zwenke",
+      commonName: "False brome",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -305,7 +305,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Ground Cover"),
   "Carex brizoides": PlantData(
       scientificName: "Carex brizoides",
-      commonName: "Zittergras-Segge",
+      commonName: "Quaking-grass sedge",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -325,7 +325,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Ground Cover"),
   "Carpinus betulus": PlantData(
       scientificName: "Carpinus betulus",
-      commonName: "Hainbuche",
+      commonName: "Common hornbeam",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -344,7 +344,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Main tree"),
   "Cornus sanguinea": PlantData(
       scientificName: "Cornus sanguinea",
-      commonName: "Blutroter Hartriegel",
+      commonName: "Bloody dogwood",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -363,7 +363,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Corylus avellana": PlantData(
       scientificName: "Corylus avellana",
-      commonName: "Hasel",
+      commonName: "Common Hazel",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -380,9 +380,9 @@ Map<String, PlantData> allPlantsEn = {
       interestingFact: "Common hazel produces edible nuts.",
       pathPicture: "images/plants/Corylus avellana.jpeg",
       plantType: "Shrub"),
-  "Crataegus laevigata agg": PlantData(
-      scientificName: "Crataegus laevigata agg",
-      commonName: "Zweigriffeliger Weißdorn",
+  "Crataegus laevigata": PlantData(
+      scientificName: "Crataegus laevigata",
+      commonName: "Midlan hawthorn",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -402,7 +402,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Crataegus monogyna": PlantData(
       scientificName: "Crataegus monogyna",
-      commonName: "Weißdorn",
+      commonName: "One-seed hawthorn",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -422,7 +422,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Cytisus scoparius": PlantData(
       scientificName: "Cytisus scoparius",
-      commonName: "Besen Ginster",
+      commonName: "Common broom",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -441,7 +441,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Euonymus europaeus": PlantData(
       scientificName: "Euonymus europaeus",
-      commonName: "europ. Pfaffenhütchen",
+      commonName: "European spindle",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -461,7 +461,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Fagus sylvatica": PlantData(
       scientificName: "Fagus sylvatica",
-      commonName: "Buche",
+      commonName: "European beech",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -481,7 +481,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Main tree"),
   "Frangula alnus": PlantData(
       scientificName: "Frangula alnus",
-      commonName: "Faulbaum",
+      commonName: "Alder buckthorn",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -501,7 +501,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Fraxinus excelsior": PlantData(
       scientificName: "Fraxinus excelsior",
-      commonName: "Esche",
+      commonName: "Ash",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -520,7 +520,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Main tree"),
   "Galium odoratum": PlantData(
       scientificName: "Galium odoratum",
-      commonName: "Waldmeister",
+      commonName: "Sweed woodruff",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -540,7 +540,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Ground Cover"),
   "Galium sylvaticum": PlantData(
       scientificName: "Galium sylvaticum",
-      commonName: "Wald-Labkraut",
+      commonName: "Wood bedstraw",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -559,7 +559,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Ground Cover"),
   "Ilex aquifolium": PlantData(
       scientificName: "Ilex aquifolium",
-      commonName: "Stechpalme",
+      commonName: "Holly",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -578,7 +578,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Impatiens noli-tangere": PlantData(
       scientificName: "Impatiens noli-tangere",
-      commonName: "Großes Springkraut",
+      commonName: "Touch-me-not balsam",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -597,7 +597,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Ground Cover"),
   "Lamium galeobdolon": PlantData(
       scientificName: "Lamium galeobdolon",
-      commonName: "Goldnessel",
+      commonName: "Yellow archangel",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -617,7 +617,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Ground Cover"),
   "Larix decidua": PlantData(
       scientificName: "Larix decidua",
-      commonName: "Polnische Lärche",
+      commonName: "European large",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -636,7 +636,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Lonicera periclymenum": PlantData(
       scientificName: "Lonicera periclymenum",
-      commonName: "Wald-Geißblatt",
+      commonName: "Honeysuckle",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -655,7 +655,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Malus sylvestris": PlantData(
       scientificName: "Malus sylvestris",
-      commonName: "Wild Apfel",
+      commonName: "European crab apple",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -675,7 +675,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Oxalis acetosella": PlantData(
       scientificName: "Oxalis acetosella",
-      commonName: "Sauerklee",
+      commonName: "Wood sorrel",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -695,7 +695,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Ground Cover"),
   "Pinus sylvestris": PlantData(
       scientificName: "Pinus sylvestris",
-      commonName: "Waldkiefer",
+      commonName: "Baltic pine",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -714,7 +714,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Poa nemoralis": PlantData(
       scientificName: "Poa nemoralis",
-      commonName: "Hain-Rispengras",
+      commonName: "Wood bluegrass",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -734,7 +734,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Ground Cover"),
   "Populus tremula": PlantData(
       scientificName: "Populus tremula",
-      commonName: "Zitterpappel",
+      commonName: "Eurasian Aspen",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -754,7 +754,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Potentilla sterilis": PlantData(
       scientificName: "Potentilla sterilis",
-      commonName: "Erdbeer-Fingerkraut",
+      commonName: "Strawberryleaf",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -774,7 +774,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Ground Cover"),
   "Prunus padus": PlantData(
       scientificName: "Prunus padus",
-      commonName: "Traubenkirsche",
+      commonName: "Hackberry",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -794,7 +794,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Prunus spinosa": PlantData(
       scientificName: "Prunus spinosa",
-      commonName: "Schlehe",
+      commonName: "Blackthorn",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -814,7 +814,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Prunus avium": PlantData(
       scientificName: "Prunus avium",
-      commonName: "Vogel-Kische",
+      commonName: "Bird cherry",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -834,7 +834,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Main tree"),
   "Prunus cerasifera": PlantData(
       scientificName: "Prunus cerasifera",
-      commonName: "Kirschpflaume",
+      commonName: "Cherry plum",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -854,7 +854,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Pyrus communis": PlantData(
       scientificName: "Pyrus communis",
-      commonName: "Wild-Birne",
+      commonName: "Common pear",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -874,7 +874,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Quercus petraea": PlantData(
       scientificName: "Quercus petraea",
-      commonName: "Traubeneiche",
+      commonName: "Sessile oak",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -894,7 +894,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Quercus robur": PlantData(
       scientificName: "Quercus robur",
-      commonName: "Stieleiche",
+      commonName: "Pedunculate oak",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -914,7 +914,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Rhamnus cathartica": PlantData(
       scientificName: "Rhamnus cathartica",
-      commonName: "Kreuzdorn",
+      commonName: "European buckthorn",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -934,7 +934,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Rhamnus frangula": PlantData(
       scientificName: "Rhamnus frangula",
-      commonName: "Echter Faulbaum",
+      commonName: "Alder buckthorn",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -954,7 +954,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Ribes rubrum": PlantData(
       scientificName: "Ribes rubrum",
-      commonName: "Rote Johannisbeere",
+      commonName: "Redcurrant",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -973,7 +973,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Rosa arvensis": PlantData(
       scientificName: "Rosa arvensis",
-      commonName: "Feld-Rose",
+      commonName: "Field rose",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -992,7 +992,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Rosa canina agg": PlantData(
       scientificName: "Rosa canina agg",
-      commonName: "Hunds-Rose",
+      commonName: "Dog rose",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1011,7 +1011,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Rubus caesius": PlantData(
       scientificName: "Rubus caesius",
-      commonName: "Kratzbeere",
+      commonName: "European dewberry",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1030,7 +1030,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Rubus idaeus": PlantData(
       scientificName: "Rubus idaeus",
-      commonName: "Himbeere",
+      commonName: "Raspberry",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1049,7 +1049,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Rubus sect. Rubus": PlantData(
       scientificName: "Rubus sect. Rubus",
-      commonName: "Brombeere",
+      commonName: "Blackberry",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1069,7 +1069,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Salix alba": PlantData(
       scientificName: "Salix alba",
-      commonName: "Silberweide",
+      commonName: "White willow",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1089,7 +1089,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Salix aurita": PlantData(
       scientificName: "Salix aurita",
-      commonName: "Ohr-Weide",
+      commonName: "Eared willow",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1109,7 +1109,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Salix caprea": PlantData(
       scientificName: "Salix caprea",
-      commonName: "Salweide",
+      commonName: "Goat willow",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1129,7 +1129,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Salix purpurea": PlantData(
       scientificName: "Salix purpurea",
-      commonName: "Purpur-Weide",
+      commonName: "Purple willow",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1148,7 +1148,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Sambucus nigra": PlantData(
       scientificName: "Sambucus nigra",
-      commonName: "Schwarzer Holunder",
+      commonName: "Black elderberry",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1168,7 +1168,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Sambucus racemosa": PlantData(
       scientificName: "Sambucus racemosa",
-      commonName: "Roter Holunder",
+      commonName: "Red elderberry",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1187,7 +1187,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Sorbus aucuparia": PlantData(
       scientificName: "Sorbus aucuparia",
-      commonName: "Eberesche",
+      commonName: "Rowan",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1207,7 +1207,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Sorbus torminalis": PlantData(
       scientificName: "Sorbus torminalis",
-      commonName: "Elsbeere",
+      commonName: "Torminalis",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1227,7 +1227,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Stellaria holostea": PlantData(
       scientificName: "Stellaria holostea",
-      commonName: "Große Steinmiere",
+      commonName: "Rabelera",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1247,7 +1247,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Ground Cover"),
   "Taxus baccata": PlantData(
       scientificName: "Taxus baccata",
-      commonName: "Europäische Eibe",
+      commonName: "European yew",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1267,7 +1267,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Main tree"),
   "Tilia cordata": PlantData(
       scientificName: "Tilia cordata",
-      commonName: "Winterlinde",
+      commonName: "Small-leaved linden",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1287,7 +1287,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Main tree"),
   "Tilia platyphyllos": PlantData(
       scientificName: "Tilia platyphyllos",
-      commonName: "Sommerlinde",
+      commonName: "Large-leaved linden",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1307,7 +1307,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Main tree"),
   "Tilia tomentosa": PlantData(
       scientificName: "Tilia tomentosa",
-      commonName: "Silberlinde",
+      commonName: "Silver linden",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1327,7 +1327,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Main tree"),
   "Ulmus glabra": PlantData(
       scientificName: "Ulmus glabra",
-      commonName: "Berg-Ulme",
+      commonName: "Wych elm",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1347,7 +1347,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Ulmus laevis": PlantData(
       scientificName: "Ulmus laevis",
-      commonName: "Flatterulme",
+      commonName: "Field elm",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1366,7 +1366,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Ulmus minor": PlantData(
       scientificName: "Ulmus minor",
-      commonName: "Feldulme",
+      commonName: "Fluttering elm",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1385,7 +1385,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Secondary tree"),
   "Vaccinium corymbosum": PlantData(
       scientificName: "Vaccinium corymbosum",
-      commonName: "Heidelbeere",
+      commonName: "Northern highbush blueberry",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1405,7 +1405,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Ground Cover"),
   "Viburnum opulus": PlantData(
       scientificName: "Viburnum opulus",
-      commonName: "Schneeball",
+      commonName: "Guelder-rose",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1425,7 +1425,7 @@ Map<String, PlantData> allPlantsEn = {
       plantType: "Shrub"),
   "Viola reichenbachiana": PlantData(
       scientificName: "Viola reichenbachiana",
-      commonName: "Wald-Veilchen",
+      commonName: "Early dog-violet",
       commonNameEn: "Testing",
       commonNameDe: "Test",
       commonNameEs: "Prueba",
@@ -1448,7 +1448,7 @@ Map<String, PlantData> allPlantsEn = {
 Map<String, PlantData> allPlantsEs = {
   "Acer campestre": PlantData(
       scientificName: "Acer campestre",
-      commonName: "Cuerno de felda",
+      commonName: "Arce menor, arce campestre",
       commonNameEn: "Feldahorn",
       commonNameDe: "Feldahorn",
       commonNameEs: "Cuerno de felda",
@@ -1468,7 +1468,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Acer monspessulanum": PlantData(
       scientificName: "Acer monspessulanum",
-      commonName: "Cuerno Felsena",
+      commonName: "Arce de Montpellier",
       commonNameEn: "Felsenahorn",
       commonNameDe: "Felsenahorn",
       commonNameEs: "Cuerno Felsena",
@@ -1488,7 +1488,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Acer platanoides": PlantData(
       scientificName: "Acer platanoides",
-      commonName: "Spitz-Ahorn",
+      commonName: "Arce platanoide",
       commonNameEn: "Spitz-Ahorn",
       commonNameDe: "Spitz-Ahorn",
       commonNameEs: "Spitz-Ahorn",
@@ -1508,7 +1508,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol principal"),
   "Acer pseudoplatanus": PlantData(
       scientificName: "Acer pseudoplatanus",
-      commonName: "Bergahorn",
+      commonName: "Arce blanco",
       commonNameEn: "Bergahorn",
       commonNameDe: "Bergahorn",
       commonNameEs: "Bergahorn",
@@ -1528,7 +1528,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol principal"),
   "Alnus glutinosa": PlantData(
       scientificName: "Alnus glutinosa",
-      commonName: "negro",
+      commonName: " Aliso común o alno",
       commonNameEn: "Schwarzerle",
       commonNameDe: "Schwarzerle",
       commonNameEs: "negro",
@@ -1548,7 +1548,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol principal"),
   "Amelanchier ovalis": PlantData(
       scientificName: "Amelanchier ovalis",
-      commonName: "Gewöhnliche Felsenbirne",
+      commonName: "Abellomo, amelanchero",
       commonNameEn: "Gewöhnliche Felsenbirne",
       commonNameDe: "Gewöhnliche Felsenbirne",
       commonNameEs: "Gewöhnliche Felsenbirne",
@@ -1567,7 +1567,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Anemone nemorosa": PlantData(
       scientificName: "Anemone nemorosa",
-      commonName: "Buschwindröschen",
+      commonName: "Anémona de bosque",
       commonNameEn: "Buschwindröschen",
       commonNameDe: "Buschwindröschen",
       commonNameEs: "Buschwindröschen",
@@ -1587,7 +1587,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Cobertura del suelo"),
   "Athyrium filix-femina": PlantData(
       scientificName: "Athyrium filix-femina",
-      commonName: "Bosque de Frauenfarn",
+      commonName: "Helecho hembra",
       commonNameEn: "Wald-Frauenfarn",
       commonNameDe: "Wald-Frauenfarn",
       commonNameEs: "Bosque de Frauenfarn",
@@ -1606,7 +1606,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Cobertura del suelo"),
   "Berberis vulgaris": PlantData(
       scientificName: "Berberis vulgaris",
-      commonName: "Gewöhnliche Berberitze",
+      commonName: "Bérbero",
       commonNameEn: "Gewöhnliche Berberitze",
       commonNameDe: "Gewöhnliche Berberitze",
       commonNameEs: "Gewöhnliche Berberitze",
@@ -1625,7 +1625,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Betula pendula": PlantData(
       scientificName: "Betula pendula",
-      commonName: "Hängebirke",
+      commonName: "Abedul Común, abedul llorón",
       commonNameEn: "Hängebirke",
       commonNameDe: "Hängebirke",
       commonNameEs: "Hängebirke",
@@ -1645,7 +1645,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Betula pubescens": PlantData(
       scientificName: "Betula pubescens",
-      commonName: "Moor-Birke",
+      commonName: "Abedul pubescente",
       commonNameEn: "Moor-Birke",
       commonNameDe: "Moor-Birke",
       commonNameEs: "Moor-Birke",
@@ -1665,7 +1665,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Brachypodium sylvaticum": PlantData(
       scientificName: "Brachypodium sylvaticum",
-      commonName: "Wald-Zwenke",
+      commonName: "Falso bromo",
       commonNameEn: "Wald-Zwenke",
       commonNameDe: "Wald-Zwenke",
       commonNameEs: "Wald-Zwenke",
@@ -1685,7 +1685,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Cobertura del suelo"),
   "Carex brizoides": PlantData(
       scientificName: "Carex brizoides",
-      commonName: "Zittergras-Segge",
+      commonName: "Juncia temblona",
       commonNameEn: "Zittergras-Segge",
       commonNameDe: "Zittergras-Segge",
       commonNameEs: "Zittergras-Segge",
@@ -1705,7 +1705,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Cobertura del suelo"),
   "Carpinus betulus": PlantData(
       scientificName: "Carpinus betulus",
-      commonName: "Hainbuche",
+      commonName: "Carpe blanco",
       commonNameEn: "Hainbuche",
       commonNameDe: "Hainbuche",
       commonNameEs: "Hainbuche",
@@ -1725,7 +1725,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol principal"),
   "Cornus sanguinea": PlantData(
       scientificName: "Cornus sanguinea",
-      commonName: "Blutroter Hartriegel",
+      commonName: "Sanguino o sanguiño",
       commonNameEn: "Blutroter Hartriegel",
       commonNameDe: "Blutroter Hartriegel",
       commonNameEs: "Blutroter Hartriegel",
@@ -1745,7 +1745,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Corylus avellana": PlantData(
       scientificName: "Corylus avellana",
-      commonName: "Hasel",
+      commonName: "Avellano",
       commonNameEn: "Hasel",
       commonNameDe: "Hasel",
       commonNameEs: "Hasel",
@@ -1762,9 +1762,9 @@ Map<String, PlantData> allPlantsEs = {
       interestingFact: "El avellano común produce nueces comestibles.",
       pathPicture: "images/plants/Corylus avellana.jpeg",
       plantType: "arbusto"),
-  "Crataegus laevigata agg": PlantData(
-      scientificName: "Crataegus laevigata agg",
-      commonName: "Zweigriffeliger Weißdorn",
+  "Crataegus laevigata": PlantData(
+      scientificName: "Crataegus laevigata",
+      commonName: "Espino Navarro",
       commonNameEn: "Zweigriffeliger Weißdorn",
       commonNameDe: "Zweigriffeliger Weißdorn",
       commonNameEs: "Zweigriffeliger Weißdorn",
@@ -1784,7 +1784,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Crataegus monogyna": PlantData(
       scientificName: "Crataegus monogyna",
-      commonName: "Weissdorn",
+      commonName: "Majuelo, espino albar",
       commonNameEn: "Weißdorn",
       commonNameDe: "Weißdorn",
       commonNameEs: "Weissdorn",
@@ -1804,7 +1804,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Cytisus scoparius": PlantData(
       scientificName: "Cytisus scoparius",
-      commonName: "Besen Ginster",
+      commonName: "Retama negra, escoba rubia",
       commonNameEn: "Besen Ginster",
       commonNameDe: "Besen Ginster",
       commonNameEs: "Besen Ginster",
@@ -1824,7 +1824,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Euonymus europaeus": PlantData(
       scientificName: "Euonymus europaeus",
-      commonName: "europa. Casa Pfaffen",
+      commonName: "Husera, bonetero",
       commonNameEn: "europ. Pfaffenhütchen",
       commonNameDe: "europ. Pfaffenhütchen",
       commonNameEs: "europa. Casa Pfaffen",
@@ -1844,7 +1844,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Fagus sylvatica": PlantData(
       scientificName: "Fagus sylvatica",
-      commonName: "buche",
+      commonName: "Haya común",
       commonNameEn: "Buche",
       commonNameDe: "Buche",
       commonNameEs: "buche",
@@ -1864,7 +1864,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol principal"),
   "Frangula alnus": PlantData(
       scientificName: "Frangula alnus",
-      commonName: "Faulbaum",
+      commonName: "Arraclán",
       commonNameEn: "Faulbaum",
       commonNameDe: "Faulbaum",
       commonNameEs: "Faulbaum",
@@ -1884,7 +1884,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Fraxinus excelsior": PlantData(
       scientificName: "Fraxinus excelsior",
-      commonName: "esche",
+      commonName: "Fresno norteño",
       commonNameEn: "Esche",
       commonNameDe: "Esche",
       commonNameEs: "esche",
@@ -1904,7 +1904,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol principal"),
   "Galium odoratum": PlantData(
       scientificName: "Galium odoratum",
-      commonName: "Waldmeister",
+      commonName: "Reina de los bosques",
       commonNameEn: "Waldmeister",
       commonNameDe: "Waldmeister",
       commonNameEs: "Waldmeister",
@@ -1924,7 +1924,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Cobertura del suelo"),
   "Galium sylvaticum": PlantData(
       scientificName: "Galium sylvaticum",
-      commonName: "Wald-Labkraut",
+      commonName: "Galio",
       commonNameEn: "Wald-Labkraut",
       commonNameDe: "Wald-Labkraut",
       commonNameEs: "Wald-Labkraut",
@@ -1944,7 +1944,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Cobertura del suelo"),
   "Ilex aquifolium": PlantData(
       scientificName: "Ilex aquifolium",
-      commonName: "stechpalme",
+      commonName: "Acebo",
       commonNameEn: "Stechpalme",
       commonNameDe: "Stechpalme",
       commonNameEs: "stechpalme",
@@ -1964,7 +1964,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Impatiens noli-tangere": PlantData(
       scientificName: "Impatiens noli-tangere",
-      commonName: "Großes Springkraut",
+      commonName: "Nometoques",
       commonNameEn: "Großes Springkraut",
       commonNameDe: "Großes Springkraut",
       commonNameEs: "Großes Springkraut",
@@ -1983,7 +1983,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Cobertura del suelo"),
   "Lamium galeobdolon": PlantData(
       scientificName: "Lamium galeobdolon",
-      commonName: "Goldnessel",
+      commonName: "Arcángel amarillo",
       commonNameEn: "Goldnessel",
       commonNameDe: "Goldnessel",
       commonNameEs: "Goldnessel",
@@ -2003,7 +2003,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Cobertura del suelo"),
   "Larix decidua": PlantData(
       scientificName: "Larix decidua",
-      commonName: "Polnische Lärche",
+      commonName: "Alerce Europeo, lárice",
       commonNameEn: "Polnische Lärche",
       commonNameDe: "Polnische Lärche",
       commonNameEs: "Polnische Lärche",
@@ -2022,7 +2022,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Lonicera periclymenum": PlantData(
       scientificName: "Lonicera periclymenum",
-      commonName: "Wald-Geißblatt",
+      commonName: "Madreselva de los bosques",
       commonNameEn: "Wald-Geißblatt",
       commonNameDe: "Wald-Geißblatt",
       commonNameEs: "Wald-Geißblatt",
@@ -2041,7 +2041,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Malus sylvestris": PlantData(
       scientificName: "Malus sylvestris",
-      commonName: "Apfel salvaje",
+      commonName: "Manzano silvestre",
       commonNameEn: "Wild Apfel",
       commonNameDe: "Wilder Apfel",
       commonNameEs: "Apfel salvaje",
@@ -2061,7 +2061,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Oxalis acetosella": PlantData(
       scientificName: "Oxalis acetosella",
-      commonName: "Sauerklee",
+      commonName: "Aleluya",
       commonNameEn: "Sauerklee",
       commonNameDe: "Sauerklee",
       commonNameEs: "Sauerklee",
@@ -2081,7 +2081,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Cobertura del suelo"),
   "Pinus sylvestris": PlantData(
       scientificName: "Pinus sylvestris",
-      commonName: "Waldkiefer",
+      commonName: "Pino silvestre",
       commonNameEn: "Waldkiefer",
       commonNameDe: "Waldkiefer",
       commonNameEs: "Waldkiefer",
@@ -2100,7 +2100,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Poa nemoralis": PlantData(
       scientificName: "Poa nemoralis",
-      commonName: "Hain-rispengras",
+      commonName: "Poa de los bosques",
       commonNameEn: "Hain-Rispengras",
       commonNameDe: "Hain-Rispengras",
       commonNameEs: "Hain-rispengras",
@@ -2120,7 +2120,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Cobertura del suelo"),
   "Populus tremula": PlantData(
       scientificName: "Populus tremula",
-      commonName: "Zitterpappel",
+      commonName: "Álamo temblón",
       commonNameEn: "Zitterpappel",
       commonNameDe: "Zitterpappel",
       commonNameEs: "Zitterpappel",
@@ -2140,7 +2140,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Potentilla sterilis": PlantData(
       scientificName: "Potentilla sterilis",
-      commonName: "Erdbeer-Fingerkraut",
+      commonName: "Falsa fresa",
       commonNameEn: "Erdbeer-Fingerkraut",
       commonNameDe: "Erdbeer-Fingerkraut",
       commonNameEs: "Erdbeer-Fingerkraut",
@@ -2160,7 +2160,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Cobertura del suelo"),
   "Prunus padus": PlantData(
       scientificName: "Prunus padus",
-      commonName: "Traubenkirche",
+      commonName: "Cerezo de racimos",
       commonNameEn: "Traubenkirsche",
       commonNameDe: "Traubenkirsche",
       commonNameEs: "Traubenkirche",
@@ -2180,7 +2180,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Prunus spinosa": PlantData(
       scientificName: "Prunus spinosa",
-      commonName: "Schlehe",
+      commonName: "Endrino",
       commonNameEn: "Schlehe",
       commonNameDe: "Schlehe",
       commonNameEs: "Schlehe",
@@ -2200,7 +2200,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Prunus avium": PlantData(
       scientificName: "Prunus avium",
-      commonName: "Vogel-Kische",
+      commonName: "Cerezo silvestre",
       commonNameEn: "Vogel-Kische",
       commonNameDe: "Vogel-Kische",
       commonNameEs: "Vogel-Kische",
@@ -2220,7 +2220,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol principal"),
   "Prunus cerasifera": PlantData(
       scientificName: "Prunus cerasifera",
-      commonName: "Kirschpflaume",
+      commonName: "Ciruelo de jardín",
       commonNameEn: "Kirschpflaume",
       commonNameDe: "Kirschpflaume",
       commonNameEs: "Kirschpflaume",
@@ -2240,7 +2240,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Pyrus communis": PlantData(
       scientificName: "Pyrus communis",
-      commonName: "Birne salvaje",
+      commonName: "Peral europeo",
       commonNameEn: "Wild-Birne",
       commonNameDe: "Wild-Birne",
       commonNameEs: "Birne salvaje",
@@ -2260,7 +2260,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Quercus petraea": PlantData(
       scientificName: "Quercus petraea",
-      commonName: "Traubeneiche",
+      commonName: "Roble albar",
       commonNameEn: "Traubeneiche",
       commonNameDe: "Traubeneiche",
       commonNameEs: "Traubeneiche",
@@ -2280,7 +2280,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Quercus robur": PlantData(
       scientificName: "Quercus robur",
-      commonName: "Stieleiche",
+      commonName: "Roble carballo",
       commonNameEn: "Stieleiche",
       commonNameDe: "Stieleiche",
       commonNameEs: "Stieleiche",
@@ -2300,7 +2300,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Rhamnus cathartica": PlantData(
       scientificName: "Rhamnus cathartica",
-      commonName: "Kreuzdorn",
+      commonName: "Espino cerval",
       commonNameEn: "Kreuzdorn",
       commonNameDe: "Kreuzdorn",
       commonNameEs: "Kreuzdorn",
@@ -2320,7 +2320,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Rhamnus frangula": PlantData(
       scientificName: "Rhamnus frangula",
-      commonName: "Echter Faulbaum",
+      commonName: "Arraclán",
       commonNameEn: "Echter Faulbaum",
       commonNameDe: "Echter Faulbaum",
       commonNameEs: "Echter Faulbaum",
@@ -2340,7 +2340,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Ribes rubrum": PlantData(
       scientificName: "Ribes rubrum",
-      commonName: "Rote Johannisbeere",
+      commonName: "Grosellero rojo",
       commonNameEn: "Rote Johannisbeere",
       commonNameDe: "Rote Johannisbeeren",
       commonNameEs: "Rote Johannisbeere",
@@ -2359,7 +2359,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Rosa arvensis": PlantData(
       scientificName: "Rosa arvensis",
-      commonName: "Feld-Rose",
+      commonName: "Rosa silvestre",
       commonNameEn: "Feld-Rose",
       commonNameDe: "Feld-Rose",
       commonNameEs: "Feld-Rose",
@@ -2379,7 +2379,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Rosa canina agg": PlantData(
       scientificName: "Rosa canina agg",
-      commonName: "Hunds-Rose",
+      commonName: "Rosal silvestre",
       commonNameEn: "Hunds-Rose",
       commonNameDe: "Hunds-Rose",
       commonNameEs: "Hunds-Rose",
@@ -2399,7 +2399,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Rubus caesius": PlantData(
       scientificName: "Rubus caesius",
-      commonName: "Kratzbeere",
+      commonName: "Zarza pajarera",
       commonNameEn: "Kratzbeere",
       commonNameDe: "Kratzbeere",
       commonNameEs: "Kratzbeere",
@@ -2418,7 +2418,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Rubus idaeus": PlantData(
       scientificName: "Rubus idaeus",
-      commonName: "Himbeere",
+      commonName: "Frambuesa",
       commonNameEn: "Himbeere",
       commonNameDe: "Himbeere",
       commonNameEs: "Himbeere",
@@ -2438,7 +2438,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Rubus sect. Rubus": PlantData(
       scientificName: "Rubus sect. Rubus",
-      commonName: "Brombeere",
+      commonName: "Mora",
       commonNameEn: "Brombeere",
       commonNameDe: "Brombeere",
       commonNameEs: "Brombeere",
@@ -2458,7 +2458,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Salix alba": PlantData(
       scientificName: "Salix alba",
-      commonName: "Plata",
+      commonName: "Salguero",
       commonNameEn: "Silberweide",
       commonNameDe: "Silberweide",
       commonNameEs: "Plata",
@@ -2478,7 +2478,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Salix aurita": PlantData(
       scientificName: "Salix aurita",
-      commonName: "Ohr-Weide",
+      commonName: "Sauce orejón",
       commonNameEn: "Ohr-Weide",
       commonNameDe: "Ohr-Weide",
       commonNameEs: "Ohr-Weide",
@@ -2498,7 +2498,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Salix caprea": PlantData(
       scientificName: "Salix caprea",
-      commonName: "Salweide",
+      commonName: "Sauce cabruno",
       commonNameEn: "Salweide",
       commonNameDe: "Salweide",
       commonNameEs: "Salweide",
@@ -2518,7 +2518,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Salix purpurea": PlantData(
       scientificName: "Salix purpurea",
-      commonName: "Purpur-Weide",
+      commonName: "Mimbrena púrpura",
       commonNameEn: "Purpur-Weide",
       commonNameDe: "Purpur-Weide",
       commonNameEs: "Purpur-Weide",
@@ -2538,7 +2538,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Sambucus nigra": PlantData(
       scientificName: "Sambucus nigra",
-      commonName: "Holunder Schwarzer",
+      commonName: "Saúco",
       commonNameEn: "Schwarzer Holunder",
       commonNameDe: "Schwarzer Holunder",
       commonNameEs: "Holunder Schwarzer",
@@ -2558,7 +2558,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Sambucus racemosa": PlantData(
       scientificName: "Sambucus racemosa",
-      commonName: "Roter Holunder",
+      commonName: "Saúco rojo",
       commonNameEn: "Roter Holunder",
       commonNameDe: "Roter Holunder",
       commonNameEs: "Roter Holunder",
@@ -2578,7 +2578,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Sorbus aucuparia": PlantData(
       scientificName: "Sorbus aucuparia",
-      commonName: "Eberesche",
+      commonName: "Cerollo",
       commonNameEn: "Eberesche",
       commonNameDe: "Eberesche",
       commonNameEs: "Eberesche",
@@ -2598,7 +2598,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Sorbus torminalis": PlantData(
       scientificName: "Sorbus torminalis",
-      commonName: "Elsbeere",
+      commonName: "Sorbo silvestre",
       commonNameEn: "Elsbeere",
       commonNameDe: "Elsbeere",
       commonNameEs: "Elsbeere",
@@ -2618,7 +2618,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Stellaria holostea": PlantData(
       scientificName: "Stellaria holostea",
-      commonName: "Gran Steinmiere",
+      commonName: "Estrellada",
       commonNameEn: "Große Steinmiere",
       commonNameDe: "Große Steinmiere",
       commonNameEs: "Gran Steinmiere",
@@ -2638,7 +2638,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Cobertura del suelo"),
   "Taxus baccata": PlantData(
       scientificName: "Taxus baccata",
-      commonName: "Europa del Este",
+      commonName: "Tejo común",
       commonNameEn: "Europäische Eibe",
       commonNameDe: "Europäische Eibe",
       commonNameEs: "Europa del Este",
@@ -2658,7 +2658,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol principal"),
   "Tilia cordata": PlantData(
       scientificName: "Tilia cordata",
-      commonName: "invierno",
+      commonName: "Tilo Norteño",
       commonNameEn: "Winterlinde",
       commonNameDe: "Winterlinde",
       commonNameEs: "invierno",
@@ -2678,7 +2678,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol principal"),
   "Tilia platyphyllos": PlantData(
       scientificName: "Tilia platyphyllos",
-      commonName: "Sommerlinde",
+      commonName: "Tilo de hoja ancha",
       commonNameEn: "Sommerlinde",
       commonNameDe: "Sommerlinde",
       commonNameEs: "Sommerlinde",
@@ -2698,7 +2698,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol principal"),
   "Tilia tomentosa": PlantData(
       scientificName: "Tilia tomentosa",
-      commonName: "Silberlinde",
+      commonName: "Tilo plateado",
       commonNameEn: "Silberlinde",
       commonNameDe: "Silberlinde",
       commonNameEs: "Silberlinde",
@@ -2718,7 +2718,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol principal"),
   "Ulmus glabra": PlantData(
       scientificName: "Ulmus glabra",
-      commonName: "Berg-Ulme",
+      commonName: "Olmo montano",
       commonNameEn: "Berg-Ulme",
       commonNameDe: "Berg-Ulme",
       commonNameEs: "Berg-Ulme",
@@ -2738,7 +2738,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Ulmus laevis": PlantData(
       scientificName: "Ulmus laevis",
-      commonName: "Flatterulme",
+      commonName: "Olmo blanco",
       commonNameEn: "Flatterulme",
       commonNameDe: "Flatterulme",
       commonNameEs: "Flatterulme",
@@ -2758,7 +2758,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Ulmus minor": PlantData(
       scientificName: "Ulmus minor",
-      commonName: "Feldulme",
+      commonName: "Olmo común, negrillo",
       commonNameEn: "Feldulme",
       commonNameDe: "Feldulme",
       commonNameEs: "Feldulme",
@@ -2778,7 +2778,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Árbol secundario"),
   "Vaccinium corymbosum": PlantData(
       scientificName: "Vaccinium corymbosum",
-      commonName: "Heidelbeere",
+      commonName: "Mora azul",
       commonNameEn: "Heidelbeere",
       commonNameDe: "Heidelbeere",
       commonNameEs: "Heidelbeere",
@@ -2797,7 +2797,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "Cobertura del suelo"),
   "Viburnum opulus": PlantData(
       scientificName: "Viburnum opulus",
-      commonName: "bola de nieve",
+      commonName: "Flor del mundo",
       commonNameEn: "Schneeball",
       commonNameDe: "Schneeball",
       commonNameEs: "bola de nieve",
@@ -2817,7 +2817,7 @@ Map<String, PlantData> allPlantsEs = {
       plantType: "arbusto"),
   "Viola reichenbachiana": PlantData(
       scientificName: "Viola reichenbachiana",
-      commonName: "Wald-Veilchen",
+      commonName: "Violeta del bosque",
       commonNameEn: "Wald-Veilchen",
       commonNameDe: "Wald-Veilchen",
       commonNameEs: "Wald-Veilchen",
@@ -3153,8 +3153,8 @@ Map<String, PlantData> allPlantsDe = {
       interestingFact: "Die Haselnuss produziert essbare Nüsse.",
       pathPicture: "images/plants/Corylus avellana.jpeg",
       plantType: "Strauch"),
-  "Crataegus laevigata agg": PlantData(
-      scientificName: "Crataegus laevigata agg",
+  "Crataegus laevigata": PlantData(
+      scientificName: "Crataegus laevigata",
       commonName: "Zweigriffeliger Weißdorn",
       commonNameEn: "Zweigriffeliger Weißdorn",
       commonNameDe: "Zweigriffeliger Weißdorn",
